@@ -16,11 +16,25 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
-
+# START:for_download_tuto
+from django.conf import settings
+from django.conf.urls.static import static
+from django.urls import re_path
+from django.views.static import serve
+# END:for_download_tuto
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('main.urls')),
-    path('', include('django.contrib.auth.urls'))
+    path('', include('django.contrib.auth.urls')),
+    # START:for_download_tuto
+    re_path(r'^download/(?P<path>.*)$', serve, {'document_root':settings.MEDIA_ROOT}),
+    # END:for_download_tuto
 ]
 urlpatterns += staticfiles_urlpatterns()
+
+# START:for_download_tuto
+if settings.DEBUG:
+    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+# END:for_download_tuto

@@ -1,5 +1,12 @@
 {% extends 'main/base.html' %}
 {% block title %}Home Page{% endblock %}
 {% block content %}
+
 <h1>Home Page</h1>
+
+{% for post in file %}
+<h2>{{post.title}}</h2>
+<a href="{{post.adminupload.url}}" download="{{post.adminupload.url}}">Download</a>
+{% endfor %}
+
 {% endblock %}
