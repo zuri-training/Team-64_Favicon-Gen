@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="fontawesome-free-6.1.2-web/css/all.min.css" />
+    <title>Document</title>
+    <link rel="stylesheet" href="signup.css" />
+  </head>
+  <body>
+    <header>
+      <h1>ZuriconGen</h1>
+      <hr />
+    </header>
+    <main>
+      <div class="wrapper">
+        <div class="container-1">
+          <img
+            src="images/Zuricon-img1.png"
+            alt="Avatar"
+            style="width: 550px"
+            class="img-avatar"
+          />
+        </div>
+        <div class="container-2">
+          <p class="text">
+            Create stunning favicons with us. We offer the best!
+          </p>
+          <p class="text-2">Try ZuriconGen today. Its absolutely free!</p>
+          <form class="box">
+            <div class="form-control">
+              <label for="username" class="label">Username:</label>
+              <input
+                type="text"
+                id="Username"
+                placeholder="Username"
+                required
+              />
+            </div>
+            <div class="form-control">
+              <label for="email" class="label">Email:</label>
+              <input
+                type="email"
+                id="email"
+                placeholder="name@email.com"
+                required
+              />
+            </div>
+            <div class="form-control">
+              <label for="password" class="label">Password:</label>
+              <input
+                type="password"
+                placeholder="Password"
+                required
+                id="myInput"
+              />
+              <span class="eye" onclick="myFunction()">
+                <i id="hide1" class="fa-solid fa-eye"></i>
+                <i id="hide2" class="fa-solid fa-eye-slash"></i>
+              </span>
+            </div>
+            <div class="sign">
+              <button>SIGN UP</button>
+              <small
+                >Already have an account?
+                <a href="#">Sign in</a>
+              </small>
+            </div>
+            <!-- <hr /> -->
+            <p class="or">OR</p>
+            <!-- <hr /> -->
+            <div class="google">
+              <p>Sign up with:</p>
+              <a class="circle" href="#" target="blank"
+                ><img src="images/google.png"
+              /></a>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="terms">
+        <p>
+          <small
+            >By creating an account, I agree to ZuriconGen's Terms of Service,
+            Privacy Policy and default Notification Settings.</small
+          >
+        </p>
+      </div>
+      <hr />
+    </main>
+
+
+      <script>
+          function myFunction(){
+            var x = document.getElementById("myInput");
+            var y = document.getElementById("hide1");
+            var z = document.getElementById("hide2");
+
+            if(x.type ==='password'){
+              x.type = "text";
+              y.style.display = "block";
+              z.style.display = "none";
+            }
+
+            else{
+              x.type = "password";
+              y.style.display = "none";
+              z.style.display = "block";
+            }
+          }
+      </script>
+    
+  </body>
+</html>
