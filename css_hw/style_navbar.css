@@ -1,0 +1,54 @@
+nav {
+    position: relative;
+    display: flex;
+    padding: 1.5rem 1rem;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #ffffff;
+    z-index: 100;
+}
+
+nav h2 {
+font-size: 40px;
+color: #251181;
+margin-left: 1rem;
+}
+
+nav h2 span {
+color: #f7b05e;
+}
+
+nav .links a {
+font-size: 24px;
+font-weight: 400;
+color: #251181;
+margin: 0 1rem;
+}
+
+nav .authentication__links {
+display: flex;
+justify-content: space-between;
+}
+
+nav .authentication__links .login__btn {
+margin: 0 0.5rem;
+color: #251181;
+background-color: #ffffff;
+border: 1px solid #251181;
+border-radius: 8px;
+padding: 10px 55px;
+align-items: center;
+cursor: pointer;
+font-size: 18px;
+}
+
+nav .authentication__links .signin__btn {
+margin: 0 0.5rem;
+color: #ffffff;
+background-color: #251181;
+border-radius: 8px;
+padding: 10px 55px;
+align-items: center;
+cursor: pointer;
+font-size: 18px;
+}
