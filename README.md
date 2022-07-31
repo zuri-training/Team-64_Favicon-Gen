@@ -7,10 +7,12 @@ The main feature is the Favicon Converter which will allow users to upload an im
 
 TECHNOLOGIES EMPLOYED IN THIS PROJECT
 1) Client-Side Scripting / Coding
+      
       HTML (HyperText Markup Language)
       CSS (Cascading Style Sheets)
       JavaScript
 2) Server-Side Scripting / Coding
+
       Python
 
 COLLABORATORS' GUIDE
@@ -43,11 +45,13 @@ B] Create a new (feature/ topic) branch
 First, run the –set-upstream switch. This informs your new branch of the remote repo to pull changes from to update your local repo.
 
 To do this, run this command in your terminal:
+
 $ git remote add upstream https://github.com/zuri-training/Team-64_Favicon-Gen
 
 Secondly, switch to the appropriate dev branch i.e., Backend or frontend.
 
 To do this, run either of these commands in your terminal:
+
 $ git checkout Frontend-dev
 OR
 $ git checkout Backend-dev
@@ -55,6 +59,7 @@ $ git checkout Backend-dev
 Then, create a feature branch.
 
 To do this, run this command in your terminal:
+
 $ git checkout -b branchname
 
 Good!
@@ -71,6 +76,7 @@ E] Update from your upstream branch.
 Right before you push your codes to your feature branch, check for any updates to the upstream branch. 
 
 To do this, run this command in your terminal:
+
 $ git pull upstream Frontend-dev
 OR
 $ git pull upstream Backend-dev
@@ -82,6 +88,7 @@ F] Publish/ Push your branch.
 Publish your feature branch and the committed changes.
 
 To do this, run this command in your terminal:
+
 $ git push origin branchname
 
 G] Make a Pull Request.
@@ -117,8 +124,4 @@ Product Designers (These collaborators cannot push codes to the repo)
 11) Rerealonge
 12) Kobimdi
 13) Guzi-goz
-<<<<<<< HEAD
 14) Udokaineh
-=======
-14) Udokaineh
->>>>>>> 812b0f5685ccefb8504b0bdd1f19aef1ac69f5f5
