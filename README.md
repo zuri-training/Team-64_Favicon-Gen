@@ -33,6 +33,11 @@ A] Clone the repo to your local machine.
 To do this, run this command in your command prompt:
 git clone https://github.com/<your-github-username>/Team-64_Favicon-Gen
 
+OR 
+
+Open your code editor and choose "Clone Git Repository", then click on "Clone from GitHUb", and enter https://github.com/zuri-training/Team-64_Favicon-Gen.git to search for this repository. 
+Next, open the cloned repository.
+
 B] Create a new (feature/ topic) branch
 
 First, run the –set-upstream switch. This informs your new branch of the remote repo to pull changes from to update your local repo.
