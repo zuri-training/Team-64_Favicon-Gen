@@ -31,7 +31,7 @@ Follow the steps below to collaborate here properly.
 A] Clone the repo to your local machine.
 
 To do this, run this command in your command prompt:
-git clone https://github.com/<your-github-username>/Team-64_Favicon-Gen
+git clone https://github.com/your-github-username/Team-64_Favicon-Gen
 
 OR 
 
