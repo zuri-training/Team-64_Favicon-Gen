@@ -7,12 +7,14 @@ The main feature is the Favicon Converter which will allow users to upload an im
 
 ## TECHNOLOGIES EMPLOYED IN THIS PROJECT
 1) Client-Side Scripting / Coding
+
       HTML (HyperText Markup Language)
 
       CSS (Cascading Style Sheets)
       
       JavaScript
 2) Server-Side Scripting / Coding
+
       Python
 
 ## COLLABORATORS' GUIDE
@@ -26,10 +28,10 @@ This repository contains the following branches:
 
 2) Dev branches
 
-i) Frontend-dev branch
+i) frontend branch
 All subsequent frontend branches created by collaborators will be merged here by the Master merger(s).
 
-ii) Backend-dev branch
+ii) Backend branch
 All subsequent backend branches created by collaborators will be merged here by the Master merger(s).
 
 3) Topic (Feature) branches
@@ -60,11 +62,11 @@ To do this, run this command in your terminal:
 
 To do this, run either of these commands in your terminal:
 
-```git checkout Frontend-dev```
+```git checkout frontend```
 
 OR
 
-```git checkout Backend-dev```
+```git checkout Backend```
 
 **Then**, create a feature branch.
 
@@ -90,11 +92,11 @@ Right before you push your codes to your feature branch, check for any updates t
 
 To do this, run this command in your terminal:
 
-```git pull upstream Frontend-dev```
+```git pull upstream frontend```
 
 OR
 
-```git pull upstream Backend-dev```
+```git pull upstream Backend```
 
 (Check for any ensuing conflicts, resolve them, and commit the changes before you push)
 
@@ -109,7 +111,7 @@ To do this, run this command in your terminal:
 **G] Make a Pull Request.**
 
 When you have made all necessary commits:
-Move over to the GitHub repo, and create a Pull Request to the appropriate dev branch i.e., Frontend-dev or Backend-dev. Include the changes you made or feature you built in your topic branch, and tag the assigned Master Merger(s) to alert them for a review.
+Move over to the GitHub repo, and create a Pull Request to the appropriate dev branch i.e., frontend or Backend. Include the changes you made or feature you built in your topic branch, and tag the assigned Master Merger(s) to alert them for a review.
 
 ## CONTRIBUTORS TO THIS PROJECT
 (GitHub Usernames)
