@@ -7,14 +7,12 @@ The main feature is the Favicon Converter which will allow users to upload an im
 
 ## TECHNOLOGIES EMPLOYED IN THIS PROJECT
 1) Client-Side Scripting / Coding
-      
       HTML (HyperText Markup Language)
 
       CSS (Cascading Style Sheets)
       
       JavaScript
 2) Server-Side Scripting / Coding
-
       Python
 
 ## COLLABORATORS' GUIDE
