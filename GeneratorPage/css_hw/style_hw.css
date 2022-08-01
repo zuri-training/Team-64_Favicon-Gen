@@ -14,10 +14,17 @@ ul, ol {
 }
 /* ******************************* */
 .mb_30_hw {
-    margin-bottom: 25px;
+    margin-bottom: 30px;
 }
-
-
+/* **************************************** */
+.fs20_bold{
+    font-size: 20px;
+    font-weight: bold;
+}
+.fs18_bold{
+    font-size: 18px;
+    font-weight: bold;
+}
 
 /* ******************************* */
 .gen_page_title1_hw {
@@ -31,6 +38,12 @@ ul, ol {
 .plain_text_hw {
     font-size: 20px;
     line-height: 28px;
+}
+.text_align_center {
+    text-align: center;
+}
+.text_align_right {
+    text-align: right;
 }
 
 /* ******************************* */
@@ -82,12 +95,12 @@ ul, ol {
 
 .btn_hw {
     outline: none;
-    font-size: 24px;
+    font-size: 20px;
     padding: 10px 30px;
     border-radius: 5px;
     border: 1px solid #251181;
     min-width: 182px;
-    min-height: 55px
+    min-height: 55px;
 }
 .btn_zuricongen_filled_hw {
     background: #251181;
@@ -96,6 +109,15 @@ ul, ol {
 .btn_zuricongen_outlined_hw {
     background: transparent;
     color: #251181;
+}
+
+.btn_text_img_hw {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.btn_text_img_hw :first-child {
+    margin-right: 10px;
 }
 
 
