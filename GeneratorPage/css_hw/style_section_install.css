@@ -19,3 +19,14 @@
 .btn_install_container_hw {
     margin: 40px 0;
 }
+
+
+
+@media (max-width:920px) {
+    .section_install_container_hw {
+        width: 100%;
+    }
+    .favicons_html_code_zone_hw > *{
+        margin-bottom: 20px !important;
+    }
+}

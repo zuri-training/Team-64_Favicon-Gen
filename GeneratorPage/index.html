@@ -17,6 +17,9 @@
 </head>
 <body>
     <nav>
+        <input type="checkbox" name="triple_bar_menu_check" id="triple_bar_menu_check">
+        <label for="triple_bar_menu_check" class="triple_bar_menu"><span></span></label>
+
         <h2>Zuricon<span>Gen</span></h2>
         <div class="links">
             <a href="/">Converter</a>
@@ -30,8 +33,9 @@
             <div class="signin__btn">Sign in</div>
         </div>
     </nav>
+
     <header class="gen_page_header_hw">
-        <h1 class="gen_page_title1_hw posa_center_top_hw">
+        <h1 class="gen_page_title1_hw posa_center_top_hw text_align_center">
             Generator Page
         </h1>
         <p class="gen_page_subtitle1_hw">
@@ -64,54 +68,74 @@
     </section>
 
     <section class="section_generator_hw">
-        <div class="sgenerator_titles_container_hw mb_30_hw">
-            <h2 class="gen_page_section_title_hw zuricongen_blue_color">Font</h2>
-            <h2 class="gen_page_section_title_hw zuricongen_blue_color">Input</h2>
-            <h2 class="gen_page_section_title_hw zuricongen_blue_color">Background</h2>
-        </div>
         <div class="sgenerator_inputs_container_hw">
             <div class="sgenerator_inputs_subcontainer_hw">
+
+                <h2 class="gen_page_section_title_hw zuricongen_blue_color">Font</h2>
+
                 <div class="sgenerator_input_container_hw">
                     <label for="fonts" class="fs18_bold zuricongen_blue_color">Font Family</label>
-                    <select name="fonts" id="fonts">
-                        <option value="Lato">Lato</option>
-                        <option value="Poppins">Poppins</option>
-                        <option value="Montserrat">Montserrat</option>
-                        <option value="Roboto">Roboto</option>
+                    <select name="fonts" id="texticon_fonts_hw">
+                        <option value="Lato" style="font-family: Lato">Lato</option>
+                        <option value="Dancing Script" style="font-family: Dancing Script">Dancing Script</option>
+                        <option value="Poppins" style="font-family: Poppins">Poppins</option>
+                        <option value="Montserrat" style="font-family: Montserrat">Montserrat</option>
+                        <option value="Lobster" style="font-family: Lobster">Lobster</option>
+                        <option value="RobotoMono" style="font-family: Roboto Mono">Roboto Mono</option>
+                        <option value="Josefin Sans" style="font-family: Josefin Sans">Josefin Sans</option>
+                        <option value="Mouse Memoirs" style="font-family: Mouse Memoirs">Mouse Memoirs</option>
+                        <option value="Pacifico" style="font-family: Pacifico">Pacifico</option>
+                        <option value="Raleway" style="font-family: Raleway">Raleway</option>
+                        <option value="Uchen" style="font-family: Uchen">Uchen</option>
+                        <option value="Square Peg" style="font-family: Square Peg">Square Peg</option>
+                        
                     </select>
                 </div>
+
                 <div class="sgenerator_input_container_hw range_slider_container_hw color_container_hw color_square_hw">
                     <label class="fs18_bold zuricongen_blue_color">Font Size</label>
-                    <input type="range" min="1" max="100" value="14" class="slider" id="myRange">
+                    <input type="range" min="12" max="64" value="14" class="slider" id="myRange">
                     <p><span id="range_output_hw"></span></p>
                 </div>
+
                 <div class="sgenerator_input_container_hw color_container_hw color_square_hw">
                     <label for="cars" class="fs18_bold zuricongen_blue_color">Font Color</label>
-                    <input type="text" class="coloris" value="#f7b05e">
-                </div>                
+                    <input type="text" id="texticon_font_color_hw" class="coloris" value="#f7b05e">
+                </div> 
+
             </div>
 
             <div class="sgenerator_inputs_subcontainer_hw">
+                
+                <h2 class="gen_page_section_title_hw zuricongen_blue_color">Input</h2>
+
                 <div class="sgenerator_input_container_hw color_container_hw color_square_hw">
                     <label class="fs18_bold zuricongen_blue_color text_align_center">Text</label>
-                    <input type="text" class="text_align_center" placeholder="Abc">
+                    <input type="text" id="texticon_input_hw" value="ZURI" class="text_align_center" placeholder="Abc" maxlength="4">
                 </div>
             </div>
 
             <div class="sgenerator_inputs_subcontainer_hw">
+                
+                <h2 class="gen_page_section_title_hw zuricongen_blue_color">Background</h2>
 
                 <div class="sgenerator_input_container_hw">
-                    <label for="fonts" class="fs18_bold zuricongen_blue_color text_align_right">Background Shape</label>
-                    <select name="fonts" id="fonts">
+                    <label for="texticon_bg_shape" class="fs18_bold zuricongen_blue_color text_align_right">Background Shape</label>
+                    <select name="texticon_bg_shape" id="texticon_bg_shape_hw">
                         <option value="Rounded">Rounded</option>
                         <option value="Square">Square</option>
-                        <option value="Square">Circle</option>
+                        <option value="Circle">Circle</option>
                     </select>
                 </div>
                 
                 <div class="sgenerator_input_container_hw color_container_hw color_square_hw">
                     <label for="cars" class="fs18_bold zuricongen_blue_color text_align_right">Background Color</label>
-                    <input type="text" class="coloris" value="#f7b05e">
+                    <input type="text" id="texticon_bg_color_hw" class="coloris" value="#251181">
+                </div> 
+
+                <div class="sgenerator_input_container_hw color_container_hw color_square_hw">
+                    <label for="cars" class="fs18_bold zuricongen_blue_color text_align_right">Border Color</label>
+                    <input type="text" id="texticon_border_color_hw" class="coloris" value="#ffffff00">
                 </div> 
             </div>
 
@@ -119,7 +143,12 @@
                 <div class="sgenerator_preview_container_top_hw">
                     <div class="sgenerator_input_container_hw color_container_hw color_square_hw">
                         <label class="fs18_bold zuricongen_blue_color text_align_center">Preview</label>
-                        <div class="sgenerator_preview_box_hw"></div>
+                        <div id="texticon_preview_hw"class="sgenerator_preview_box_hw">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="120" height="120" viewBox="0 0 64 64">                                
+                                <rect x="0" y="0" width="64" height="64" rx="15" ry="15" fill="#251181" stroke="#ffffff00" stroke-width="2px"/>
+                                <text x="50%" y="50%" font-size="50px" font-weight="bold" dominant-baseline="central" fill="#f7b05e" text-anchor="middle">Z</text>
+                            </svg>
+                        </div>
                     </div>
                 </div>
                 <div class="sgenerator_preview_container_bottom_hw">
@@ -228,9 +257,6 @@
                 <a href="#">
                     <img src="./img/LinkedIn_Circled.svg" alt="">
                 </a>
-            <!-- <i class="fa-brands fa-square-facebook"></i>
-            <i class="fa-brands fa-twitter"></i>
-            <i class="fa-brands fa-linkedin"></i> -->
           </div>
 
           <div class="bottom__links">
@@ -240,7 +266,7 @@
             <a href="">Cookies</a>
           </div>
         </div>
-      </footer>
+    </footer>
 
 
 
@@ -248,7 +274,9 @@
 
       <!-- SCRIPTS START -->
     
-      <script type="text/javascript" src="./js_hw/range_slider.js"></script>
+    <script type="text/javascript" src="./js_hw/range_slider.js"></script>
+    <script type="text/javascript" src="./js_hw/texticon.js"></script>
+     
     <script type="text/javascript" src="./js_hw/coloris.min.js"></script>
     <script type="text/javascript">
 

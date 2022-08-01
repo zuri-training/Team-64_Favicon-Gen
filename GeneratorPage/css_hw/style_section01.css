@@ -26,3 +26,18 @@
     margin-right: 7px;
     border: 1px solid #ccc;
 }
+
+
+@media (max-width:650px) {
+    .section01_gen_hw {
+        padding-left: 20px;
+        padding-right: 10px !important;
+    }
+    .gen_examples_hw {
+        flex-wrap: wrap;
+    }
+    .gen_examples_boxes_container_hw {
+        margin-left: 20px;
+    }
+
+}
