@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+				<meta charset="UTF-8">
+                <meta http-equiv="X-UA-Compactible" content="IE=edge">
+				<meta name="viewport" content="width=device-width, initial-scale=1.0">	
+				<title>How to download files with django</title>
+				
+</head>
+
+<body>
+
+    {% for post in file %}
+    <h2>This is the image I want to download</h2>
+    <h2>{{post.title}}</h2>
+    <button> <a href="{{post.adminupload.url}}" download="{{post.adminupload.url}}">Download Images</a></button>
+    {% endfor %}
+				
+
+
+</body>
+
+</html>
