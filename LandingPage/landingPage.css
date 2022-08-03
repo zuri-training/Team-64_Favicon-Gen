@@ -127,7 +127,7 @@ main .section:nth-child(1){
 
 main .section:nth-child(1) h1{
   color: #251181;
-  margin: .5rem 0 .5rem 12.5rem;
+  margin: 1rem 0 3rem 12.5rem;
   font-size: 54px;
 }
 
@@ -271,12 +271,28 @@ footer p{
   color: #1C0D65;
 }
 
-footer .copyrights .icons i {
-  font-size: 24px;
-  color: #251181;
-  margin: 0 2rem;
-  cursor: pointer;
+.icons.footer_icons_hw {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  margin: 25px 0;
 }
+
+.icons.footer_icons_hw a{
+  position: relative;
+  width: 32px;
+  height: 32px;
+  overflow: hidden;
+  margin: 0 20px !important;
+}
+
+.icons.footer_icons_hw a img {
+  object-fit: cover;
+  height: 100%;
+  width: auto;
+}
+
 
 footer .copyrights .bottom__links {
   width: 50%;

@@ -17,7 +17,7 @@ html {
   color: var(--blue);
 }
 
-body{
+body {
   max-width: 1440px;
   margin: auto;
 }
@@ -175,7 +175,6 @@ h4 {
   background-color: var(--lightgray);
   padding-right: 20rem;
   padding-bottom: 4.375rem;
-  
 }
 .download {
   padding-right: 20rem;
@@ -292,11 +291,26 @@ footer p {
   color: #1c0d65;
 }
 
-footer .copyrights .icons i {
-  font-size: 24px;
-  color: #251181;
-  margin: 0 2rem;
-  cursor: pointer;
+.icons.footer_icons_hw {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  margin: 25px 0;
+}
+
+.icons.footer_icons_hw a {
+  position: relative;
+  width: 32px;
+  height: 32px;
+  overflow: hidden;
+  margin: 0 20px !important;
+}
+
+.icons.footer_icons_hw a img {
+  object-fit: cover;
+  height: 100%;
+  width: auto;
 }
 
 footer .copyrights .bottom__links {
