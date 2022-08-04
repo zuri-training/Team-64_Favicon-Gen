@@ -127,7 +127,8 @@ STATICFILES_DIRS= [
 
 # START:for_download_tuto
 MEDIA_URL = "/media/"
-MEDIA_ROOT = os.path.join(BASE_DIR,'media_cdn')
+MEDIA_ROOT = os.path.join(BASE_DIR,'medias')
+# MEDIA_ROOT = os.path.join(BASE_DIR,'media_cdn')
 # END:for_download_tuto
 
 # Default primary key field type
