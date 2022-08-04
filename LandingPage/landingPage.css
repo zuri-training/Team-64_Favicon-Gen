@@ -102,7 +102,7 @@ nav .authentication__links .signin__btn {
 }
 
 .header__content .header__content__image img {
-  width: 600px;
+  
   height: 450px;
 }
 
@@ -303,4 +303,46 @@ footer .copyrights .bottom__links {
 footer .copyrights .bottom__links a {
   margin: 0 1.5rem;
   color: #251181;
+}
+
+
+@media (max-width: 768px) {
+  header{
+    width: 100%;
+  }
+
+  .header__content{
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .header__content .header__content__text h2{
+    font-size: 26px;
+  }
+
+  .header__content .header__content__text p{
+    font-size: 16px;
+    margin-bottom: .8rem;
+  }
+
+  .header__content__image img{
+    width: 95%;
+    height: 200px;
+  }
+
+  main .section{
+    margin-bottom: 6rem;
+  }
+
+  main .section h1{
+    text-align: center;
+  }
+
+  main .section .section__content {
+    flex-direction: column;
+  }
+
+  main .section:nth-child(2) .section__content{
+    flex-direction: column-reverse;
+  }
 }
