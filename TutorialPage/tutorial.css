@@ -152,54 +152,71 @@ h4 {
 
   color: #151515;
 }
-.tutorial p {
-  font-family: "Lato";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 20px;
-  line-height: 24px;
-  color: var(--black);
-  margin-top: 1.5rem;
-  width: 70.25rem;
-}
-.tutorial > * {
-  width: 70.25rem;
-}
-.tutorial h4 {
-  text-align: left;
-  margin-top: 1.5rem;
+
+.tutorial{
   width: 100%;
-  padding-left: 7.5rem;
 }
 
-.tutorial {
-  display: flex;
+.tutorial p{
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+    color: var(--black);
+    margin-top: 1.5rem;
+    width: 76%; 
+    
+}
+
+.tutorial h4{
+    text-align: left;
+    margin-top: 1.5rem;
+    width: 76%;
+}
+
+.tutorial{
+   display: flex;
   margin-bottom: 5.375rem;
-  flex-direction: column;
+  flex-direction: column; 
   align-items: center;
 }
-
-.how {
-  width: 100%;
+.what, .formats, .download {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  padding-top: 0.5rem;
-  margin-top: 1rem;
-  background-color: var(--lightgray);
-  padding-bottom: 4.375rem;
+  flex-direction: column;
+  text-align: left;
+  width: 100%;
+}
+.how{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 0.5rem;
+    margin-top: 1rem;
+    background-color:var(--lightgray) ;
+    padding-bottom: 4.375rem;
 }
 
-.img-container {
+.img-container{
   display: flex;
-  width: 100%;
+  width: 76%;
   justify-content: center;
   margin-top: 1.5rem;
 }
-
-.amazon {
-  margin-left: 1.5rem;
+.example1{
+  width: 90%;
 }
+.example2{
+  width: 57%;
+}
+
+.amazon{
+    margin-left: 1.5rem;
+    width: 30%;
+   
+} 
 .link {
   box-sizing: border-box;
   display: flex;
@@ -345,6 +362,16 @@ footer .copyrights .bottom__links a {
   color: #251181;
 }
 
+@media (max-width: 1024px) {
+  .tutorial p {
+    width: 80%;
+  }
+  .tutorial h4 {
+    width: 80%;
+  }
+}
+
+
 @media (max-width: 920px) {
   .aqua {
     margin-top: 2.5rem;
@@ -356,30 +383,18 @@ footer .copyrights .bottom__links a {
     width: 35.6rem;
     color: var(--yellow);
   }
-  .tutorial > * {
-    width: 43rem;
+  .tutorial h4{
+    width: 85%;
   }
-  .tutorial h4 {
-    width: 43rem;
-    padding-left: 0;
-  }
+  .tutorial p{
+    width: 85%;
+  } 
 
-  .tutorial p {
-    width: 43rem;
-  }
   .how {
     width: 100%;
   }
 
-  .example1 {
-    width: 90%;
-  }
-  .example2 {
-    width: 57%;
-  }
-  .amazon {
-    width: 30%;
-  }
+
   main {
     padding-top: 0rem;
   }
@@ -394,7 +409,6 @@ footer .copyrights .bottom__links a {
     width: 150px;
     text-align: left;
 
-    /* background: #f7b05e */
   }
   .authentication__links {
     margin-left: auto;
@@ -424,12 +438,6 @@ footer .copyrights .bottom__links a {
     width: 4rem;
   }
 
-  .open {
-    /* margin: auto; */
-    margin-right: 3rem;
-    display: block;
-    width: 1.5rem;
-  }
 
   .responsive-nav {
     position: fixed;
@@ -519,30 +527,17 @@ footer .copyrights .bottom__links a {
     width: 20rem;
     color: var(--yellow);
   }
-  .tutorial > * {
-    width: 22rem;
+  .tutorial h4{
+    width: 89%;
   }
-  .tutorial h4 {
-    width: fit-content;
-    padding: 0;
-  }
-  .tutorial p {
-    width: 22rem;
-    padding: 0.5rem;
+  .tutorial p{
+    width: 89%;
   }
   .how {
     width: 100%;
   }
 
-  .example1 {
-    width: 90%;
-  }
-  .example2 {
-    width: 57%;
-  }
-  .amazon {
-    width: 30%;
-  }
+ 
 
   /*FOOTER*/
   footer {
@@ -577,16 +572,3 @@ footer .copyrights .bottom__links a {
   }
 }
 
-@media (max-width: 1024px) {
-  .tutorial p {
-    width: 98%;
-  }
-
-  .tutorial > * {
-    width: 98%;
-  }
-
-  .tutorial h4 {
-    padding-left: 0.5rem;
-  }
-}
