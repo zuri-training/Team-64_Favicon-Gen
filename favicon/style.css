@@ -1,0 +1,324 @@
+                        @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,700;1,400&display=swap');
+                        /* global styles */
+                        
+                        *,
+                        *::before,
+                        *::after {
+                            margin: 0;
+                            padding: 0;
+                            box-sizing: border-box;
+                        }
+                        
+                        html {
+                            font-family: "Lato", sans-serif;
+                            font-weight: 400;
+                            font-size: 20px;
+                            scroll-behavior: smooth;
+                        }
+                        
+                        h1 {
+                            font-family: "Lato", sans-serif;
+                            font-weight: 700;
+                        }
+                        /* desktop style */
+                        
+                        @media screen and (min-device-width: 1512px) {
+                            .navlink,
+                            .icon,
+                            .having {
+                                display: none;
+                            }
+                            .first-line {
+                                display: flex;
+                                flex: 1;
+                                justify-content: space-between;
+                                align-items: center;
+                                margin: 50px 50px 0px 0px;
+                                padding: 1.4em;
+                            }
+                            .second-line {
+                                display: flex;
+                                flex: 1;
+                                justify-content: space-between;
+                            }
+                            .main-img {
+                                width: 575px;
+                                height: 516px;
+                                margin: 220px 0px 246px 119px;
+                            }
+                            .box-left {
+                                width: 700px;
+                                height: 756px;
+                                border-radius: 16px;
+                                box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+                                ;
+                                margin: 113px 16px 113px 102px;
+                            }
+                            .reset {
+                                font-size: 32px;
+                                font-weight: 700;
+                                text-align: center;
+                                color: #251181;
+                                margin: 100px 224px 40px 224px;
+                                width: 262px;
+                            }
+                            .enter {
+                                width: 550px;
+                                margin: 0px 75px 40px 75px;
+                            }
+                            .email {
+                                width: 120px;
+                                margin: 0px 445px 8px 75px;
+                            }
+                            input {
+                                width: 550px;
+                                margin: 0px 75px 16px 75px;
+                                border-radius: 8px;
+                                padding: 16px;
+                                color: rgba(21, 21, 21, 0.2);
+                                border: 1px solid rgba(21, 21, 21, 0.4);
+                                transition: 0.5s;
+                                outline: none;
+                            }
+                            input::placeholder {
+                                font-size: 16px;
+                                margin: 16px 305px 16px 16px;
+                                color: rgba(21, 21, 21, 0.2);
+                            }
+                            input:hover {
+                                cursor: pointer;
+                            }
+                            button {
+                                width: 550px;
+                                text-align: center;
+                                margin: 0px 75px 28px 75px;
+                                background-color: transparent;
+                                border-radius: 8px;
+                                border: 1px solid rgba(21, 21, 21, 0.4);
+                                transition: 0.5s;
+                                outline: none;
+                                padding: 22px 206px;
+                            }
+                            button:hover {
+                                cursor: pointer;
+                                border: 1px solid rgba(21, 21, 21, 0.4);
+                            }
+                            .a {
+                                text-decoration: none;
+                                color: rgba(10, 0, 22, 1);
+                                font-size: 18px;
+                            }
+                            .small {
+                                margin: 0px 116px 279px 117px;
+                                text-align: center;
+                                font-size: 16px;
+                                color: rgba(37, 17, 129, 1);
+                            }
+                            .p {
+                                font-size: 16px;
+                                text-align: center;
+                                color: rgba(0, 0, 0, 1);
+                            }
+                            .login {
+                                text-decoration: none;
+                                color: black;
+                            }
+                        }
+                        /* Ipad styling */
+                        
+                        @media only screen and (min-device-width: 834px) and (max-device-width: 1511px) {
+                            .navlink,
+                            .icon,
+                            .having {
+                                display: none;
+                            }
+                            .first-line {
+                                display: flex;
+                                flex: 1;
+                                justify-content: space-between;
+                                align-items: center;
+                                margin: 50px 50px 0px 0px;
+                                padding: 1.4em;
+                            }
+                            .login {
+                                text-decoration: none;
+                                color: black;
+                            }
+                            .second-line {
+                                display: flex;
+                                flex: 1;
+                                align-items: center;
+                                justify-content: center;
+                            }
+                            .main-img {
+                                width: 323px;
+                                height: 497px;
+                                margin: 308px 0px 389px 60px;
+                            }
+                            .box-left {
+                                width: 391px;
+                                height: 561px;
+                                border-radius: 8px;
+                                box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+                                margin: 204px 60px 203px 18px;
+                            }
+                            .reset {
+                                text-align: center;
+                                margin: 103px 40px;
+                                font-weight: 700;
+                                font-size: 24px;
+                                color: #251181;
+                            }
+                            .enter {
+                                width: 343px;
+                                font-size: 16px;
+                                margin: 0px 24px 0px 24px;
+                                color: rgba(245, 165, 71, 1);
+                            }
+                            .email {
+                                margin: 40px 223px 8px 24px;
+                                font-size: 12px;
+                            }
+                            input {
+                                width: 343px;
+                                margin: 0px 24px 24px 24px;
+                                border-radius: 8px;
+                                padding: 16px;
+                                color: rgba(21, 21, 21, 0.2);
+                                border: 1px solid rgba(21, 21, 21, 0.4);
+                                transition: 0.5s;
+                                outline: none;
+                            }
+                            input::placeholder {
+                                font-size: 16px;
+                                margin: 16px 189px 16px 16px;
+                                color: rgba(21, 21, 21, 0.2);
+                            }
+                            input:hover {
+                                cursor: pointer;
+                            }
+                            button {
+                                width: 343px;
+                                margin: 0px 24px 24px 24px;
+                                background-color: transparent;
+                                border-radius: 8px;
+                                border: 1px solid rgba(21, 21, 21, 0.4);
+                                transition: 0.5s;
+                                outline: none;
+                                padding: 17px 117px;
+                            }
+                            button:hover {
+                                cursor: pointer;
+                                border: 1px solid rgba(21, 21, 21, 0.4);
+                            }
+                            .a {
+                                text-decoration: none;
+                                color: rgba(10, 0, 22, 1);
+                                font-size: 14px;
+                                font-weight: 400;
+                            }
+                            .small {
+                                margin: 0px 20px 185px 20px;
+                                text-align: center;
+                                font-size: 12px;
+                                color: rgba(37, 17, 129, 1);
+                            }
+                            .p {
+                                font-size: 16px;
+                                text-align: center;
+                                color: rgba(0, 0, 0, 1);
+                                margin: 226px 157px 184px 157px;
+                            }
+                        }
+                        /* Mobile styling */
+                        
+                        @media only screen and (max-device-width: 833px) {
+                            .main-img,
+                            .p {
+                                display: none;
+                            }
+                            .main {
+                                width: 100%;
+                            }
+                            .second-line {
+                                display: flex;
+                                flex-direction: column;
+                                align-items: center;
+                            }
+                            .icon {
+                                width: 44px;
+                                height: 44px;
+                                margin: 36px 192px 0px 192px;
+                            }
+                            .reset {
+                                font-size: 22px;
+                                margin: 24px 122px;
+                                color: rgba(37, 17, 129, 1);
+                                font-weight: 700;
+                                text-align: center;
+                            }
+                            .enter {
+                                color: rgba(37, 17, 129, 1);
+                                margin: 0px 65px 24px 20px;
+                                width: 343px;
+                                font-size: 16px;
+                            }
+                            .email {
+                                font-size: 16px;
+                                font-weight: 400;
+                                width: 96px;
+                                margin: 0px 216px 8px 20px;
+                            }
+                            input {
+                                width: 388px;
+                                margin: 0px 20px 36px 20px;
+                                border-radius: 8px;
+                                padding: 16px;
+                                color: rgba(21, 21, 21, 0.2);
+                                border: 1px solid rgba(21, 21, 21, 0.4);
+                                transition: 0.5s;
+                                outline: none;
+                            }
+                            input::placeholder {
+                                font-size: 16px;
+                                margin: 16px 301px 16px 16px;
+                                color: rgba(21, 21, 21, 0.2);
+                            }
+                            input:hover {
+                                cursor: pointer;
+                            }
+                            button {
+                                width: 388px;
+                                margin: 0px 20px 8px 20px;
+                                background-color: transparent;
+                                border-radius: 8px;
+                                border: 1px solid rgba(21, 21, 21, 0.4);
+                                transition: 0.5s;
+                                outline: none;
+                                padding: 20px 139px;
+                            }
+                            button:hover {
+                                cursor: pointer;
+                                border: 1px solid rgba(21, 21, 21, 0.4);
+                            }
+                            .a {
+                                text-decoration: none;
+                                color: rgba(10, 0, 22, 1);
+                                font-size: 14px;
+                                font-weight: 400;
+                                width: 110px;
+                            }
+                            .small {
+                                margin: 0px 45px 48px 33px;
+                                text-align: center;
+                                font-size: 12px;
+                                color: rgba(10, 0, 22, 1);
+                            }
+                            .having {
+                                font-size: 16px;
+                                color: rgba(0, 0, 0, 1);
+                                margin: 0px 32px 344px 32px;
+                                width: 365px;
+                                text-align: center;
+                            }
+                        }
