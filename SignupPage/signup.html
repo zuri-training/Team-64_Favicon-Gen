@@ -4,22 +4,28 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
-    <title>Signup</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+    />
+    <title>ZuriconGen - Signup</title>
     <link rel="stylesheet" href="signup.css" />
   </head>
   <body>
     <header>
-      <h1>ZuriconGen</h1>
-      <hr />
+      <img src="images/ZuriconGen logo.png" alt="ZuriconGen logo" />
     </header>
     <main>
+      <img
+            src="images/Smiling Face.png"
+            alt="Avatar"
+            class="smiling-avatar"
+          />
       <div class="wrapper">
         <div class="container-1">
           <img
             src="images/Zuricon-img1.png"
             alt="Avatar"
-            style="width: 550px"
             class="img-avatar"
           />
         </div>
@@ -67,9 +73,7 @@
                 <a href="../SigninPage/signin.html">Sign in</a>
               </small>
             </div>
-            <!-- <hr /> -->
             <p class="or">OR</p>
-            <!-- <hr /> -->
             <div class="google">
               <p>Sign up with:</p>
               <a class="circle" href="#" target="blank"
@@ -82,34 +86,32 @@
       <div class="terms">
         <p>
           <small
-            >By creating an account, I agree to ZuriconGen's Terms of Service,
-            Privacy Policy and default Notification Settings.</small
+            >By creating an account, I agree to ZuriconGen's <a href="#">Terms of Service,
+            Privacy Policy</a> and default <a href="#">Notification Settings.</a></small
           >
         </p>
       </div>
       <hr />
     </main>
 
+    <script>
+      function myFunction() {
+        var x = document.getElementById("myInput");
+        var y = document.getElementById("hide1");
+        var z = document.getElementById("hide2");
 
-      <script>
-          function myFunction(){
-            var x = document.getElementById("myInput");
-            var y = document.getElementById("hide1");
-            var z = document.getElementById("hide2");
-
-            if(x.type ==='password'){
-              x.type = "text";
-              y.style.display = "block";
-              z.style.display = "none";
-            }
-
-            else{
-              x.type = "password";
-              y.style.display = "none";
-              z.style.display = "block";
-            }
-          }
-      </script>
-    
+        if (x.type === "password") {
+          x.type = "text";
+          y.style.display = "block";
+          z.style.display = "none";
+        } else {
+          x.type = "password";
+          y.style.display = "none";
+          z.style.display = "block";
+        }
+      }
+    </script>
+    <footer>
+    </footer>
   </body>
 </html>
