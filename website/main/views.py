@@ -24,26 +24,27 @@ from django.core.files.base import ContentFile, File
 
 @login_required(login_url="/login")
 def home(request):
-    # START:for_download_tuto
     context = {'file':FilesAdmin.objects.all()}
     return render(request, 'main/home.html', context)
-    # END:for_download_tuto
 
 
 @login_required(login_url="/login")
-def generatorPage(request, document_root):
+def generatorPage(request):
+    return render(request, 'generator_page/generator.html')
+
+@login_required(login_url="/login")
+def faviconGeneration(request, document_root):
     if request.method == 'POST':
         current_user = request.user
+        timestr = time.strftime("%Y%m%d-%H%M%S")
+        mainName = 'ZuriconGen-'+current_user.username+'-'+timestr
+        genFileName = 'ZuriconGen_Favicon_Generation'
+        pathToGeneratedFiles = os.path.join(document_root,'generator', mainName)
+        relativePathToGeneratedFiles = os.path.join('generator', mainName)
+        html_codes = []
         try:
             svgContent = request.POST['sgenerator_svg_content']
             
-            timestr = time.strftime("%Y%m%d-%H%M%S")
-            mainName = 'ZuriconGen-'+current_user.username+'-'+timestr
-            genFileName = 'ZuriconGen_Favicon_Generation'
-            pathToGeneratedFiles = os.path.join(document_root,'generator', mainName)
-            relativePathToGeneratedFiles = os.path.join('generator', mainName)
-            # relativePathToGeneratedFiles = pathToGeneratedFiles
-
             os.mkdir(pathToGeneratedFiles)
             # CREATE ZIP FILE
             my_zip = zipfile.ZipFile(os.path.join(pathToGeneratedFiles,mainName+'.zip'), 'w')
@@ -67,7 +68,9 @@ def generatorPage(request, document_root):
             gen_favicon_svg.path.name=os.path.join(relativePathToGeneratedFiles,genFileName+'.svg')
             gen_favicon_svg.save()
             
-            # CREATE PNG FILE
+            html_codes.append("<link rel='icon' href='"+genFileName+".svg'>\n")
+            my_zip.write(pathToGeneratedFiles+"/"+genFileName+".svg", arcname=os.path.join(pathToGeneratedFiles.replace(pathToGeneratedFiles, ""), genFileName+".svg"))
+            
             # Copy svg file
             shutil.copy(
                 os.path.join(pathToGeneratedFiles,genFileName+".svg"), 
@@ -86,88 +89,40 @@ def generatorPage(request, document_root):
                 
             drawing = svg2rlg(copyPath)
             renderPM.drawToFile(drawing, os.path.join(pathToGeneratedFiles,genFileName+".png"), fmt="PNG")            
-            imgPNG = Image.open(os.path.join(pathToGeneratedFiles,genFileName+".png"))
-            imgPNG.thumbnail((64, 64))
-            imgPNG.save(os.path.join(pathToGeneratedFiles,genFileName+"-64x64.png"))
 
-            os.remove(copyPath)
-            os.remove(os.path.join(pathToGeneratedFiles,genFileName+".png"))
-
-            gen_favicon_png = GeneratedFavicon(
-                user=current_user,
-                zip_file=gen_zipfile,
-                name=genFileName,                
-                img_type="png",
-                html_code="<link rel='icon' sizes='64x64' href='"+genFileName+"-64x64.png'>"
-            )            
-            gen_favicon_png.path.name=os.path.join(relativePathToGeneratedFiles,genFileName+'-64x64.png')
-            gen_favicon_png.save()
-
-            # CREATE JPG FILE
-            imgJPG = Image.open(os.path.join(pathToGeneratedFiles,genFileName+"-64x64.png"))
-            imgJPG.save(os.path.join(pathToGeneratedFiles,genFileName+"-64x64.jpg"))
-            # SAVE JPG FILE IN THE DATABASE
-            gen_favicon_jpg = GeneratedFavicon(
-                user=current_user,
-                zip_file=gen_zipfile,
-                name=genFileName,                
-                img_type="jpg",
-                html_code="<link rel='icon' sizes='64x64' href='"+genFileName+"-64x64.jpg'>"
-            )            
-            gen_favicon_jpg.path.name=os.path.join(relativePathToGeneratedFiles,genFileName+'-64x64.jpg')
-            gen_favicon_jpg.save()
-
-            # CREATE ICO FILE
-            img = Image.open(os.path.join(pathToGeneratedFiles,genFileName+"-64x64.png"))
-            img.save(os.path.join(pathToGeneratedFiles,genFileName+"-32x32.ico"), format='ICO', sizes=[(32,32)])
-            # SAVE ICO FILE IN THE DATABASE
-            gen_favicon_ico = GeneratedFavicon(
-                user=current_user,
-                zip_file=gen_zipfile,
-                name=genFileName,                
-                img_type="ico",
-                html_code="<link rel='icon' sizes='64x64' href='"+genFileName+"-32x32.ico'>"
-            )            
-            gen_favicon_ico.path.name=os.path.join(relativePathToGeneratedFiles,genFileName+'-32x32.ico')
-            gen_favicon_ico.save()
+            pathToImgToConvert = os.path.join(pathToGeneratedFiles,genFileName+".png")
             
-            
-            # CREATE HTML_CODE.TXT FILE
-            html_codes = [
-                
-                "<link rel='icon' sizes='120x120' href='"+genFileName+".svg'>\n",
-                "<link rel='icon' sizes='64x64' href='"+genFileName+"-64x64.png'>\n",
-                "<link rel='icon' sizes='64x64' href='"+genFileName+"-64x64.jpg'>\n",
-                "<link rel='icon' sizes='32x32' href='"+genFileName+"-32x32.ico'>\n",
-            ]
+            # generate Favicon Files
+            formatsList = ["png", "jpg", "ico"]
+            sizesList = [16, 32, 64, 128]
+            for imgFormat in formatsList:
+                for size in sizesList:
+                    generateFaviconFile("generation",current_user, gen_zipfile, pathToGeneratedFiles, relativePathToGeneratedFiles, 
+                            pathToImgToConvert, genFileName, imgFormat, size)
+                    
+                    code = "<link rel='icon' sizes='"+str(size)+"x"+str(size)+"' href='"+genFileName+"-"+str(size)+"x"+str(size)+"."+imgFormat+"'>\n"
+                    html_codes.append(code)
+
+                    my_zip.write(pathToGeneratedFiles+"/"+genFileName+"-"+str(size)+"x"+str(size)+"."+imgFormat, arcname=os.path.join(pathToGeneratedFiles.replace(pathToGeneratedFiles, ""), genFileName+"-"+str(size)+"x"+str(size)+"."+imgFormat))
+
             ftxt = open(pathToGeneratedFiles+"/html_codes.txt", "a")            
             for code in html_codes:
                 ftxt.write(code)            
             ftxt.close()
-
-
-            # my_zip = zipfile.ZipFile(pathToGeneratedFiles+"/"+genFileName+'.zip', 'w')
-            my_zip.write(pathToGeneratedFiles+"/"+genFileName+".svg", arcname=os.path.join(pathToGeneratedFiles.replace(pathToGeneratedFiles, ""), genFileName+".svg"))
-            my_zip.write(pathToGeneratedFiles+"/"+genFileName+"-64x64.png", arcname=os.path.join(pathToGeneratedFiles.replace(pathToGeneratedFiles, ""), genFileName+"-64x64.png"))
-            my_zip.write(pathToGeneratedFiles+"/"+genFileName+"-64x64.jpg", arcname=os.path.join(pathToGeneratedFiles.replace(pathToGeneratedFiles, ""), genFileName+"-64x64.jpg"))
-            my_zip.write(pathToGeneratedFiles+"/"+genFileName+"-32x32.ico", arcname=os.path.join(pathToGeneratedFiles.replace(pathToGeneratedFiles, ""), genFileName+"-32x32.ico"))
             my_zip.write(pathToGeneratedFiles+"/html_codes.txt", arcname=os.path.join(pathToGeneratedFiles.replace(pathToGeneratedFiles, ""),"html_codes.txt"))
             my_zip.close()
-        
+            # end
+            os.remove(copyPath)
+            os.remove(os.path.join(pathToGeneratedFiles,genFileName+".png"))
 
             zip_toDownload = open(os.path.join(pathToGeneratedFiles,mainName+'.zip'), 'rb')
             response = FileResponse(zip_toDownload)             
             return response
 
-            # return render(request, 'main/success.html', {"filelink":gen_zipfile.path, 
-            #                                             "statusMessage":"Successfully generated favicon!",
-            #                                             "goBack":"/generator_page"})
-
         except KeyError:
             print ('Where is my svg content ?')
             return redirect('error_w')
 
-    return render(request, 'generator_page/generator.html')
 
 
 
@@ -183,14 +138,19 @@ def generatorPage(request, document_root):
 
 
 
+
+@login_required(login_url="/login")
+def converterPage(request):
+    return render(request, 'main/converter.html')
 
 # @login_required(login_url="/login")
-def converterPage(request, document_root):
+def faviconConversion(request, document_root):
     if request.method == 'POST':
         current_user = request.user
         timestr = time.strftime("%Y%m%d-%H%M%S")
         mainName = 'ZuriconGen-'+ current_user.username+'-'+timestr
         convFileName = 'ZuriconGen_Favicon_Conversion'
+        html_codes = []
         try:
             # imgToConvert = request.FILES['imgToConvert']
             imgToConvert = request.FILES['uploadedImg']
@@ -211,86 +171,35 @@ def converterPage(request, document_root):
             gen_zipfile.path.name=os.path.join(relativePathToConvertedFiles,mainName+'.zip')
             gen_zipfile.save()            
             
-            # CREATE PNG FILE            
-            imgPNG = Image.open(pathToUploadedImg)
-            imgPNG.thumbnail((64, 64))
-            imgPNG.save(os.path.join(pathToConvertedFiles,convFileName+"-64x64.png"))
 
-            gen_favicon_png = ConvertedFavicon(
-                user=current_user,
-                zip_file=gen_zipfile,
-                name=convFileName,                
-                img_type="png",
-                html_code="<link rel='icon' sizes='64x64' href='"+convFileName+"-64x64.png'>"
-            )            
-            gen_favicon_png.path.name=os.path.join(relativePathToConvertedFiles,convFileName+'-64x64.png')
-            gen_favicon_png.save()
+            formatsList = ["png", "jpg", "ico"]
+            sizesList = [16, 32, 64, 128]
+            for imgFormat in formatsList:
+                for size in sizesList:
+                    generateFaviconFile("conversion", current_user, gen_zipfile, pathToConvertedFiles, relativePathToConvertedFiles, 
+                            pathToUploadedImg, convFileName, imgFormat, size)
+                    
+                    code = "<link rel='icon' sizes='"+str(size)+"x"+str(size)+"' href='"+convFileName+"-"+str(size)+"x"+str(size)+"."+imgFormat+"'>\n"
+                    html_codes.append(code)
 
-            # CREATE JPG FILE
-            imgJPG = Image.open(os.path.join(pathToConvertedFiles,convFileName+"-64x64.png"))
-            imgJPG.save(os.path.join(pathToConvertedFiles,convFileName+"-64x64.jpg"))
-            # SAVE JPG FILE IN THE DATABASE
-            gen_favicon_jpg = ConvertedFavicon(
-                user=current_user,
-                zip_file=gen_zipfile,
-                name=convFileName,                
-                img_type="jpg",
-                html_code="<link rel='icon' sizes='64x64' href='"+convFileName+"-64x64.jpg'>"
-            )            
-            gen_favicon_jpg.path.name=os.path.join(relativePathToConvertedFiles,convFileName+'-64x64.jpg')
-            gen_favicon_jpg.save()
+                    my_zip.write(pathToConvertedFiles+"/"+convFileName+"-"+str(size)+"x"+str(size)+"."+imgFormat, arcname=os.path.join(pathToConvertedFiles.replace(pathToConvertedFiles, ""), convFileName+"-"+str(size)+"x"+str(size)+"."+imgFormat))
 
-            # CREATE ICO FILE
-            img = Image.open(os.path.join(pathToConvertedFiles,convFileName+"-64x64.png"))
-            img.save(os.path.join(pathToConvertedFiles,convFileName+"-32x32.ico"), format='ICO', sizes=[(32,32)])
-            # SAVE ICO FILE IN THE DATABASE
-            gen_favicon_ico = ConvertedFavicon(
-                user=current_user,
-                zip_file=gen_zipfile,
-                name=convFileName,                
-                img_type="ico",
-                html_code="<link rel='icon' sizes='64x64' href='"+convFileName+"-32x32.ico'>"
-            )            
-            gen_favicon_ico.path.name=os.path.join(relativePathToConvertedFiles,convFileName+'-32x32.ico')
-            gen_favicon_ico.save()
-            
-            
-            # CREATE HTML_CODE.TXT FILE
-            html_codes = [
-                "<link rel='icon' sizes='64x64' href='"+convFileName+"-64x64.png'>\n",
-                "<link rel='icon' sizes='64x64' href='"+convFileName+"-64x64.jpg'>\n",
-                "<link rel='icon' sizes='32x32' href='"+convFileName+"-32x32.ico'>\n",
-            ]
             ftxt = open(pathToConvertedFiles+"/html_codes.txt", "a")            
             for code in html_codes:
                 ftxt.write(code)            
             ftxt.close()
-
-
-            # Delete uploaded file
-            uploadedImgObj.delete()
-            # my_zip = zipfile.ZipFile(pathToConvertedFiles+"/"+convFileName+'.zip', 'w')            
-            my_zip.write(pathToConvertedFiles+"/"+convFileName+"-64x64.png", arcname=os.path.join(pathToConvertedFiles.replace(pathToConvertedFiles, ""), convFileName+"-64x64.png"))
-            my_zip.write(pathToConvertedFiles+"/"+convFileName+"-64x64.jpg", arcname=os.path.join(pathToConvertedFiles.replace(pathToConvertedFiles, ""), convFileName+"-64x64.jpg"))
-            my_zip.write(pathToConvertedFiles+"/"+convFileName+"-32x32.ico", arcname=os.path.join(pathToConvertedFiles.replace(pathToConvertedFiles, ""), convFileName+"-32x32.ico"))
             my_zip.write(pathToConvertedFiles+"/html_codes.txt", arcname=os.path.join(pathToConvertedFiles.replace(pathToConvertedFiles, ""),"html_codes.txt"))
             my_zip.close()
-        
-            # return JsonResponse({"filelink":gen_zipfile.path.url})
-            
-            zip_toDownload = open(os.path.join(pathToConvertedFiles,mainName+'.zip'), 'rb')
-            response = FileResponse(zip_toDownload, mainName+'.zip') 
-            # response['Content-Disposition'] = 'attachment; filename="' + mainName + '.zip"'
-            return response
+            # Delete uploaded file
+            uploadedImgObj.delete()  
 
-            # return render(request, 'main/success.html', {"filelink":gen_zipfile.path, 
-            #                                             "statusMessage":"Successfully converted favicon!",
-            #                                             "goBack":"/converter_page"})
+            zip_toDownload = open(os.path.join(pathToConvertedFiles,mainName+'.zip'), 'rb')
+            response = FileResponse(zip_toDownload, mainName+'.zip')             
+            return response
 
         except KeyError:
             return redirect('error_w')
 
-    return render(request, 'main/converter.html')
 
 
 
@@ -314,18 +223,6 @@ def converterPage(request, document_root):
 
 
 
-
-# START:for_download_tuto
-# def download(request, path):
-#     file_path = os.path.join(settings.MEDIA_ROOT, path)
-#     if os.path.exists(file_path):
-#         with open(file_path, 'ro') as fh:
-#             response = HttpResponse(fh.read(), content_type="application/adminupload")
-#             response['Content-Disposition'] = 'inline;filename='+os.path.basename(file_path)
-#             return response
-    
-#     raise Http404
-# END:for_download_tuto
 
 
 def sign_up(request):
@@ -343,7 +240,41 @@ def sign_up(request):
 
 def success(request, filelink):
     return render(request, 'main/success.html', {"filelink":filelink})
-	# return HttpResponse('Successfully generated favicon!')
 
 def error_w(request):
 	return HttpResponse('There was an error !')
+
+
+
+# EXTRA FUNCTIONS 
+def generateFaviconFile(convGen, current_user, gen_zipfile, pathToFiles, relativePathToFiles, 
+                            pathToImgToConvert, convFileName, imgFormat, size):
+
+    img = Image.open(pathToImgToConvert)
+    if (imgFormat == "jpg"):
+        img = img.convert('RGB')
+    
+    if (imgFormat == "ico"):
+        img.save(os.path.join(pathToFiles,convFileName+"-"+str(size)+"x"+str(size)+"."+imgFormat), format='ICO', sizes=[(size,size)])
+    else:
+        img.thumbnail((size, size))
+        img.save(os.path.join(pathToFiles,convFileName+"-"+str(size)+"x"+str(size)+"."+imgFormat))
+
+    if (convGen == "generation"):
+        convgen_favicon = GeneratedFavicon(
+            user=current_user,
+            zip_file=gen_zipfile,
+            name=convFileName,                
+            img_type=imgFormat,
+            html_code="<link rel='icon' sizes='"+str(size)+"x"+str(size)+"' href='"+convFileName+"-"+str(size)+"x"+str(size)+"."+imgFormat+"'>"
+        ) 
+    elif (convGen == "conversion"):
+        convgen_favicon = ConvertedFavicon(
+            user=current_user,
+            zip_file=gen_zipfile,
+            name=convFileName,                
+            img_type=imgFormat,
+            html_code="<link rel='icon' sizes='"+str(size)+"x"+str(size)+"' href='"+convFileName+"-"+str(size)+"x"+str(size)+"."+imgFormat+"'>"
+        )            
+    convgen_favicon.path.name=os.path.join(relativePathToFiles,convFileName+'-'+str(size)+'x'+str(size)+'.'+imgFormat)
+    convgen_favicon.save()

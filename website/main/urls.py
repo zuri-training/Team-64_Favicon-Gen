@@ -5,8 +5,10 @@ from . import views
 urlpatterns = [
     path('', views.home, name="home"),
     path('home', views.home, name="home"),
-    path('generator_page', views.generatorPage, { 'document_root': settings.MEDIA_ROOT }, name="generator_page"),
-    path('converter_page', views.converterPage, { 'document_root': settings.MEDIA_ROOT }, name="converter_page"),
+    path('generator_page', views.generatorPage, name="generator_page"),    
+    path('favicon_generation', views.faviconGeneration, { 'document_root': settings.MEDIA_ROOT }, name="favicon_generation"),
+    path('converter_page', views.converterPage, name="converter_page"), 
+    path('favicon_conversion', views.faviconConversion, { 'document_root': settings.MEDIA_ROOT }, name="favicon_conversion"),
     
     path('sign-up', views.sign_up, name="sign_up"),
 

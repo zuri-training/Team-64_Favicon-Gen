@@ -5,7 +5,7 @@
                                         @import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&amp;family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,500;1,600;1,700&amp;family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&amp;family=Lobster&amp;family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;family=Mouse+Memoirs&amp;family=Pacifico&amp;family=Poppins:wght@400;500;600;700&amp;family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&amp;family=Square+Peg&amp;family=Uchen&amp;display=swap");
                                     </style>
                                 </defs>
-                                <rect x="0" y="0" width="64" height="64" rx="15" ry="15" fill="#251181" stroke="#ffffff00" stroke-width="2px"></rect>
-                                <text x="50%" y="50%" font-size="14" font-weight="bold" dominant-baseline="central" fill="#f7b05e" text-anchor="middle" style="font-family:Lato">ZURI</text>
+                                <rect x="0" y="0" width="64" height="64" rx="32" ry="32" fill="#251181" stroke="#ffffff00" stroke-width="2px"></rect>
+                                <text x="50%" y="50%" font-size="55" font-weight="bold" dominant-baseline="central" fill="#f7b05e" text-anchor="middle" style="font-family:Dancing Script">H</text>
                             </svg>
                         

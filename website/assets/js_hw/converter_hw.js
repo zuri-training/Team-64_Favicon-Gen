@@ -32,10 +32,18 @@ document.addEventListener('DOMContentLoaded', () => {
             $.ajaxSetup({
                 headers:{
                 'X-CSRFToken': getCookie("csrftoken")
-                }
+                },
+                beforeSend: function() {
+                    $('#upload_img_btn_group').hide();
+                    $('#loader_hw').removeClass("displayNone");
+                },
+                complete: function(){
+                    $('#upload_img_btn_group').show();
+                    $('#loader_hw').addClass("displayNone");
+                 },
             });
             jQuery.ajax({
-                url: "/converter_page",
+                url: "/favicon_conversion",
                 type: "POST",
                 data: form_data,
                 contentType: false,

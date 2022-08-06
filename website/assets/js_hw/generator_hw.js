@@ -136,10 +136,18 @@ document.addEventListener('DOMContentLoaded', () => {
         $.ajaxSetup({
             headers:{
             'X-CSRFToken': getCookie("csrftoken")
-            }
+            },
+            beforeSend: function() {
+                $('#sgenerator_download_save_buttons').hide();
+                $('#loader_hw').removeClass("displayNone");
+            },
+            complete: function(){
+                $('#sgenerator_download_save_buttons').show();
+                $('#loader_hw').addClass("displayNone");
+             },
         });
         jQuery.ajax({
-            url: "/generator_page",
+            url: "/favicon_generation",
             type: "POST",
             data: form_data,
             contentType: false,
