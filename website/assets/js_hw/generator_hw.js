@@ -98,15 +98,69 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     // SUBMIT DESIGNED FAVICON
+    // downloadTexticonBtn.onclick = function (e) { 
+    //     e.preventDefault();
+    //     var texticonSvg = `${texticonDiv.innerHTML}`;
+    //     svgContent.setAttribute('value', texticonSvg);        
+    //     console.log(texticonSvg)
+    //     document.forms[0].submit();
+    //     return false;
+    // }
+
+
+
+    // function upload(url) {
+        function getCookie(name) {
+            let cookieValue = null;
+            if (document.cookie && document.cookie !== '') {
+                const cookies = document.cookie.split(';');
+                for (let i = 0; i < cookies.length; i++) {
+                    const cookie = cookies[i].trim();
+                    // Does this cookie string begin with the name we want?
+                    if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                        cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                        break;
+                    }
+                }
+            }
+            return cookieValue;
+        }
+
     downloadTexticonBtn.onclick = function (e) { 
         e.preventDefault();
         var texticonSvg = `${texticonDiv.innerHTML}`;
-        svgContent.setAttribute('value', texticonSvg);        
-        console.log(texticonSvg)
-        document.forms[0].submit();
-        return false;
+        // svgContent.setAttribute('value', texticonSvg);
+        
+        let form_data = new FormData();
+        form_data.append("sgenerator_svg_content", texticonSvg);
+        $.ajaxSetup({
+            headers:{
+            'X-CSRFToken': getCookie("csrftoken")
+            }
+        });
+        jQuery.ajax({
+            url: "/generator_page",
+            type: "POST",
+            data: form_data,
+            contentType: false,
+            processData: false,
+            xhrFields:{
+                responseType: 'blob'
+            },
+            success: function (response) {
+                var link = document.createElement('a');
+                link.href = window.URL.createObjectURL(response)
+                // link.href = response
+                // console.log(response)             
+                link.download = 'ZuriconGen_Favicon_Generation.zip';
+                document.body.appendChild(link);
+                link.click();
+                
+            },
+            error: function (response) {
+                alert("Something went wrong");
+            }
+        });
     }
-
-
 
 });
