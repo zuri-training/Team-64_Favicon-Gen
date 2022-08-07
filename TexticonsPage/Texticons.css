@@ -13,6 +13,10 @@ body {
   scroll-behavior: smooth;
 }
 
+.logo h2{
+  padding-left: 20px;
+}
+
 .TexticonsPage-container {
   max-width: 1440px;
   margin: auto;
@@ -157,7 +161,6 @@ body {
 /* Tablet */
 @media (max-width: 920px) {
   .TexticonsContainer {
-    margin: auto;
     grid-template-columns: 1fr 1fr 1fr;
   }
 
