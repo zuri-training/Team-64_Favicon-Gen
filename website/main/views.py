@@ -295,9 +295,14 @@ def converterPage(request, document_root):
 
 
 def drafts(request, document_root):
-     favicon = GeneratedFavicon.objects.filter(user = request.user, img_type = "png")
-     ziplink = FaviconZipFile.objects.filter(user = request.user)
-     context = {"favicon": favicon, "ziplink": ziplink}
+     favicon = GeneratedFavicon.objects.filter(user = request.user, img_type = "svg")
+     context = {"allitems": []}
+     for fav in favicon:
+        zipId = fav.zip_file.id
+        ziplink = FaviconZipFile.objects.get(id=zipId)
+        context["allitems"].append({"favicon":fav, "ziplink":ziplink})
+        
+
      return render(request, 'main/drafts.html', context)
 
 
