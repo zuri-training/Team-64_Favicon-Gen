@@ -42,14 +42,15 @@ def faviconGeneration(request, document_root):
         pathToGeneratedFiles = os.path.join(document_root,'generator', mainName)
         relativePathToGeneratedFiles = os.path.join('generator', mainName)
         html_codes = []
+        savedToDrafts = False
         try:
             svgContent = request.POST['sgenerator_svg_content']
-            
+            savedToDrafts = request.POST['saved_to_drafts']     
             os.mkdir(pathToGeneratedFiles)
             # CREATE ZIP FILE
             my_zip = zipfile.ZipFile(os.path.join(pathToGeneratedFiles,mainName+'.zip'), 'w')
             # SAVE ZIP FILE IN THE DATABASE
-            gen_zipfile = FaviconZipFile(user=current_user, name=mainName)            
+            gen_zipfile = FaviconZipFile(user=current_user, name=mainName, saved_to_drafts=savedToDrafts)            
             gen_zipfile.path.name=os.path.join(relativePathToGeneratedFiles,mainName+'.zip')
             gen_zipfile.save()
 
@@ -63,6 +64,8 @@ def faviconGeneration(request, document_root):
                 zip_file=gen_zipfile,
                 name=genFileName,                
                 img_type="svg",
+                size=120,
+                saved_to_drafts=savedToDrafts,
                 html_code="<link rel='icon' sizes='120x120' href='"+genFileName+".svg'>"
             )            
             gen_favicon_svg.path.name=os.path.join(relativePathToGeneratedFiles,genFileName+'.svg')
@@ -94,10 +97,10 @@ def faviconGeneration(request, document_root):
             
             # generate Favicon Files
             formatsList = ["png", "jpg", "ico"]
-            sizesList = [16, 32, 64, 128]
+            sizesList = [16, 32, 96, 180]
             for imgFormat in formatsList:
                 for size in sizesList:
-                    generateFaviconFile("generation",current_user, gen_zipfile, pathToGeneratedFiles, relativePathToGeneratedFiles, 
+                    generateFaviconFile("generation", savedToDrafts, current_user, gen_zipfile, pathToGeneratedFiles, relativePathToGeneratedFiles, 
                             pathToImgToConvert, genFileName, imgFormat, size)
                     
                     code = "<link rel='icon' sizes='"+str(size)+"x"+str(size)+"' href='"+genFileName+"-"+str(size)+"x"+str(size)+"."+imgFormat+"'>\n"
@@ -114,7 +117,7 @@ def faviconGeneration(request, document_root):
             # end
             os.remove(copyPath)
             os.remove(os.path.join(pathToGeneratedFiles,genFileName+".png"))
-
+        
             zip_toDownload = open(os.path.join(pathToGeneratedFiles,mainName+'.zip'), 'rb')
             response = FileResponse(zip_toDownload)             
             return response
@@ -151,10 +154,11 @@ def faviconConversion(request, document_root):
         mainName = 'ZuriconGen-'+ current_user.username+'-'+timestr
         convFileName = 'ZuriconGen_Favicon_Conversion'
         html_codes = []
+        savedToDrafts = False
         try:
             # imgToConvert = request.FILES['imgToConvert']
             imgToConvert = request.FILES['uploadedImg']
-
+            savedToDrafts = request.POST['saved_to_drafts']  
             uploadedImgObj = UploadedFile(name=mainName, path=imgToConvert, user=current_user)
             uploadedImgObj.save()
             
@@ -167,16 +171,16 @@ def faviconConversion(request, document_root):
             # CREATE ZIP FILE
             my_zip = zipfile.ZipFile(os.path.join(pathToConvertedFiles,mainName+'.zip'), 'w')
             # SAVE ZIP FILE IN THE DATABASE
-            gen_zipfile = FaviconZipFile(user=current_user, name=mainName)            
+            gen_zipfile = FaviconZipFile(user=current_user, name=mainName, saved_to_drafts=savedToDrafts)            
             gen_zipfile.path.name=os.path.join(relativePathToConvertedFiles,mainName+'.zip')
             gen_zipfile.save()            
             
 
             formatsList = ["png", "jpg", "ico"]
-            sizesList = [16, 32, 64, 128]
+            sizesList = [16, 32, 96, 180]
             for imgFormat in formatsList:
                 for size in sizesList:
-                    generateFaviconFile("conversion", current_user, gen_zipfile, pathToConvertedFiles, relativePathToConvertedFiles, 
+                    generateFaviconFile("conversion",  savedToDrafts, current_user, gen_zipfile, pathToConvertedFiles, relativePathToConvertedFiles, 
                             pathToUploadedImg, convFileName, imgFormat, size)
                     
                     code = "<link rel='icon' sizes='"+str(size)+"x"+str(size)+"' href='"+convFileName+"-"+str(size)+"x"+str(size)+"."+imgFormat+"'>\n"
@@ -208,10 +212,21 @@ def faviconConversion(request, document_root):
 
 
 
+def drafts(request):
+    genfavicons = GeneratedFavicon.objects.filter(user = request.user, img_type="svg", saved_to_drafts = True)
+    convfavicons = ConvertedFavicon.objects.filter(user = request.user, img_type="png", size=32, saved_to_drafts = True)
+    context={"genfavicons": [], "convfavicons": []}
+    for fav in genfavicons:
+        zipId = fav.zip_file.id
+        ziplink = FaviconZipFile.objects.get(id=zipId)
+        context["genfavicons"].append({"favicon": fav, "ziplink":ziplink})
+    
+    for fav in convfavicons:
+        zipId = fav.zip_file.id
+        ziplink = FaviconZipFile.objects.get(id=zipId)
+        context["convfavicons"].append({"favicon": fav, "ziplink":ziplink})
 
-
-
-
+    return render(request, 'main/drafts.html', context)
 
 
 
@@ -247,7 +262,7 @@ def error_w(request):
 
 
 # EXTRA FUNCTIONS 
-def generateFaviconFile(convGen, current_user, gen_zipfile, pathToFiles, relativePathToFiles, 
+def generateFaviconFile(convGen, savedToDrafts, current_user, gen_zipfile, pathToFiles, relativePathToFiles, 
                             pathToImgToConvert, convFileName, imgFormat, size):
 
     img = Image.open(pathToImgToConvert)
@@ -266,6 +281,8 @@ def generateFaviconFile(convGen, current_user, gen_zipfile, pathToFiles, relativ
             zip_file=gen_zipfile,
             name=convFileName,                
             img_type=imgFormat,
+            size=size,
+            saved_to_drafts=savedToDrafts,
             html_code="<link rel='icon' sizes='"+str(size)+"x"+str(size)+"' href='"+convFileName+"-"+str(size)+"x"+str(size)+"."+imgFormat+"'>"
         ) 
     elif (convGen == "conversion"):
@@ -274,6 +291,8 @@ def generateFaviconFile(convGen, current_user, gen_zipfile, pathToFiles, relativ
             zip_file=gen_zipfile,
             name=convFileName,                
             img_type=imgFormat,
+            size=size,
+            saved_to_drafts=savedToDrafts,
             html_code="<link rel='icon' sizes='"+str(size)+"x"+str(size)+"' href='"+convFileName+"-"+str(size)+"x"+str(size)+"."+imgFormat+"'>"
         )            
     convgen_favicon.path.name=os.path.join(relativePathToFiles,convFileName+'-'+str(size)+'x'+str(size)+'.'+imgFormat)

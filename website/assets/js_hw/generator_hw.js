@@ -13,7 +13,8 @@ document.addEventListener('DOMContentLoaded', () => {
     var texticonFontColor = document.getElementById("texticon_font_color_hw");
     var texticonBgColor = document.getElementById("texticon_bg_color_hw");
     var texticonBorderColor = document.getElementById("texticon_border_color_hw");
-    var downloadTexticonBtn = document.getElementById("download_texticon_btn");
+    var downloadGenerationBtn = document.getElementById("download_generation_btn");
+    var saveGenerationBtn = document.getElementById("save_generation_btn");
 
     var svgContent = document.getElementById("sgenerator_svg_content");
 
@@ -110,29 +111,31 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     // function upload(url) {
-        function getCookie(name) {
-            let cookieValue = null;
-            if (document.cookie && document.cookie !== '') {
-                const cookies = document.cookie.split(';');
-                for (let i = 0; i < cookies.length; i++) {
-                    const cookie = cookies[i].trim();
-                    // Does this cookie string begin with the name we want?
-                    if (cookie.substring(0, name.length + 1) === (name + '=')) {
-                        cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
-                        break;
-                    }
+    function getCookie(name) {
+        let cookieValue = null;
+        if (document.cookie && document.cookie !== '') {
+            const cookies = document.cookie.split(';');
+            for (let i = 0; i < cookies.length; i++) {
+                const cookie = cookies[i].trim();
+                // Does this cookie string begin with the name we want?
+                if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                    cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                    break;
                 }
             }
-            return cookieValue;
         }
+        return cookieValue;
+    }
 
-    downloadTexticonBtn.onclick = function (e) { 
+    function sendGenerationRequest(e, saved_to_drafts) {
         e.preventDefault();
         var texticonSvg = `${texticonDiv.innerHTML}`;
+        var saved = saved_to_drafts;
         // svgContent.setAttribute('value', texticonSvg);
         
         let form_data = new FormData();
-        form_data.append("sgenerator_svg_content", texticonSvg);
+        form_data.append("saved_to_drafts", saved);
+        form_data.append("sgenerator_svg_content", texticonSvg);      
         $.ajaxSetup({
             headers:{
             'X-CSRFToken': getCookie("csrftoken")
@@ -157,10 +160,12 @@ document.addEventListener('DOMContentLoaded', () => {
             },
             success: function (response) {
                 var link = document.createElement('a');
-                link.href = window.URL.createObjectURL(response)
-                // link.href = response
-                // console.log(response)             
-                link.download = 'ZuriconGen_Favicon_Generation.zip';
+                if (!saved) {
+                    link.href = window.URL.createObjectURL(response)      
+                    link.download = 'ZuriconGen_Favicon_Generation.zip';
+                } else {
+                    link.href = "/drafts"
+                }                
                 document.body.appendChild(link);
                 link.click();
                 
@@ -171,4 +176,14 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+
+    // downloadGenerationBtn.onclick = sendGenerationRequest(0) 
+    // saveGenerationBtn.onclick = sendGenerationRequest(1) 
+
+    downloadGenerationBtn.addEventListener("click", function(e){
+        sendGenerationRequest(e, 0)
+    })
+    saveGenerationBtn.addEventListener("click", function(e){
+        sendGenerationRequest(e, 1)
+    })
 });

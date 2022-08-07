@@ -2,33 +2,37 @@ document.addEventListener('DOMContentLoaded', () => {
 
     var convertFormId = document.getElementById("convertFormId");
     var fileInput = document.getElementById("myImgUploadInput");
-    var uploadImgBtn = document.getElementById("upload_img_btn");
-    var uploadImgBtnMsg = document.getElementById("upload_img_btn_msg");
+    var convertImgBtn = document.getElementById("convert_img_btn");
+    var saveImgBtn = document.getElementById("save_img_btn");
+    var convertImgBtnMsg = document.getElementById("convert_img_btn_msg");
+    
     
     // function upload(url) {
-        function getCookie(name) {
-            let cookieValue = null;
-            if (document.cookie && document.cookie !== '') {
-                const cookies = document.cookie.split(';');
-                for (let i = 0; i < cookies.length; i++) {
-                    const cookie = cookies[i].trim();
-                    // Does this cookie string begin with the name we want?
-                    if (cookie.substring(0, name.length + 1) === (name + '=')) {
-                        cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
-                        break;
-                    }
+    function getCookie(name) {
+        let cookieValue = null;
+        if (document.cookie && document.cookie !== '') {
+            const cookies = document.cookie.split(';');
+            for (let i = 0; i < cookies.length; i++) {
+                const cookie = cookies[i].trim();
+                // Does this cookie string begin with the name we want?
+                if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                    cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                    break;
                 }
             }
-            return cookieValue;
         }
+        return cookieValue;
+    }
 
-    uploadImgBtn.onclick = function (e) { 
+    function sendConvertRequest(e, saved_to_drafts) { 
         e.preventDefault();
         if(fileInput.files.length !== 0 ) {
             let uploaded_img = $('#myImgUploadInput').get(0).files[0];
-            
+            var saved = saved_to_drafts;
             let form_data = new FormData();
+            form_data.append("saved_to_drafts", saved);
             form_data.append("uploadedImg", uploaded_img);
+            
             $.ajaxSetup({
                 headers:{
                 'X-CSRFToken': getCookie("csrftoken")
@@ -53,10 +57,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 },
                 success: function (response) {
                     var link = document.createElement('a');
-                    link.href = window.URL.createObjectURL(response)
-                    // link.href = response
-                    // console.log(response)             
-                    link.download = 'ZuriconGen_Favicon_Conversion.zip';
+                    if (!saved) {
+                        link.href = window.URL.createObjectURL(response)      
+                        link.download = 'ZuriconGen_Favicon_Generation.zip';
+                    } else {
+                        link.href = "/drafts"
+                    } 
                     document.body.appendChild(link);
                     link.click();
                     
@@ -68,11 +74,19 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             });
         } else {
-            uploadImgBtnMsg.innerHTML = "Insert a file first"
+            convertImgBtnMsg.innerHTML = "Insert a file first"
         }
     }
 
     
+    convertImgBtn.addEventListener("click", function(e){
+        console.log("You clicked on convert")
+        sendConvertRequest(e, 0)
+    })
+    saveImgBtn.addEventListener("click", function(e){
+        console.log("You clicked on save")
+        sendConvertRequest(e, 1)
+    })
 
 
 

@@ -167,13 +167,13 @@
                 <form id="sgenerator_download_save_buttons" method="post" action="{% url 'generator_page' %}" class="sgenerator_preview_container_bottom_hw">
                     {% csrf_token %}
                     <input type="hidden" id="sgenerator_svg_content" name="sgenerator_svg_content" value="2" />
-                    <a href="#" id="download_texticon_btn" class="btn_hw btn_zuricongen_filled_hw">
+                    <a href="#" id="download_generation_btn" class="btn_hw btn_zuricongen_filled_hw">
                         Generate
                     </a>
-                    <button class="btn_hw btn_zuricongen_outlined_hw btn_text_img_hw">
+                    <a href="#" id="save_generation_btn" class="btn_hw btn_zuricongen_outlined_hw btn_text_img_hw">
                         <span>Save to drafts</span>
                         <img src="{% static 'img/chevron_right.svg' %}" width="12px" alt="">
-                    </button>
+                    </a>
                 </form>
                 <!-- <div class="sgenerator_preview_container_bottom_hw">
                     <button class="btn_hw btn_zuricongen_filled_hw">

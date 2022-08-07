@@ -1,0 +1,35 @@
+{% extends 'main/base.html' %}
+{% block title %}Success{% endblock %}
+{% block content %}
+
+<h1>DRAFTS</h1>
+<h2>Generated</h2>
+<ul>
+    {% for item in genfavicons %}
+    <li>
+        <img src="{{ item.favicon.path.url }}" alt="Favicon_Image">
+        <span>{{ item.favicon.name }}</span>
+        <a href="{{ item.ziplink.path.url }}">Favicon Link</a>
+    </li>
+
+    {% endfor %}
+</ul>
+
+<h2>Converted</h2>
+
+<ul>
+    {% for item in convfavicons %}
+    <li>
+        <img src="{{ item.favicon.path.url }}" alt="Favicon_Image">
+        <span>{{ item.favicon.name }}</span>
+        <a href="{{ item.ziplink.path.url }}">Favicon Link</a>
+    </li>
+
+    {% endfor %}
+</ul>
+<!-- {% for post in file %}
+<h2>{{post.title}}</h2>
+<a href="{{post.adminupload.url}}" download="{{post.adminupload.url}}">Download</a>
+{% endfor %} -->
+
+{% endblock %}

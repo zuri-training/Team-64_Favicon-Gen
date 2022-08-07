@@ -9,7 +9,7 @@ urlpatterns = [
     path('favicon_generation', views.faviconGeneration, { 'document_root': settings.MEDIA_ROOT }, name="favicon_generation"),
     path('converter_page', views.converterPage, name="converter_page"), 
     path('favicon_conversion', views.faviconConversion, { 'document_root': settings.MEDIA_ROOT }, name="favicon_conversion"),
-    
+    path('drafts', views.drafts, name="drafts"),
     path('sign-up', views.sign_up, name="sign_up"),
 
     # path('success', views.success, name = 'success'),
