@@ -1,3 +1,4 @@
+from multiprocessing import context
 from django.http import HttpResponse, FileResponse, JsonResponse
 from django.shortcuts import render, redirect
 from .forms import RegisterForm
@@ -293,6 +294,11 @@ def converterPage(request, document_root):
     return render(request, 'main/converter.html')
 
 
+def drafts(request, document_root):
+     favicon = GeneratedFavicon.objects.filter(user = request.user, img_type = "png")
+     ziplink = FaviconZipFile.objects.filter(user = request.user)
+     context = {"favicon": favicon, "ziplink": ziplink}
+     return render(request, 'main/drafts.html', context)
 
 
 

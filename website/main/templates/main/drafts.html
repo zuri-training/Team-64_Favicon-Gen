@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    {% for i in favicon %}
+<div>
+    
+    <span>{{ i.name }}</span>
+    <span>{{ i.img_type }}</span>
+    <img src="{{i.path.url}}" alt="">
+    
+</div>
+
+
+    {%endfor%}
+
+    {% for i in ziplink%}
+   <p> <a href="{{i.path.url}}" download="{{i.path.url}}">Click me</a></p>
+    {%endfor%}
+    
+</body>
+</html>
