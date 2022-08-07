@@ -157,6 +157,7 @@ body {
 /* Tablet */
 @media (max-width: 920px) {
   .TexticonsContainer {
+    margin: auto;
     grid-template-columns: 1fr 1fr 1fr;
   }
 

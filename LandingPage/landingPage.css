@@ -126,8 +126,9 @@ main .section:nth-child(1) {
 
 main .section:nth-child(1) h1 {
   color: #251181;
-  margin: 1rem 0 3rem 12.5rem;
+  text-align: center;
   font-size: 54px;
+  margin: 2.5rem 0;
 }
 
 main .section:nth-child(2) {
@@ -163,7 +164,7 @@ main .section .section__text p {
 main .section .section__text a {
   background-color: #251181;
   color: #ffffff;
-  padding: 12px 40px;
+  padding: 8px 38px;
   border-radius: 8px;
 }
 
@@ -178,7 +179,7 @@ main .section .section__text a {
 
 .bottom_content_container .box {
   width: 380px;
-  height: 360px;
+  height: 370px;
 }
 
 .bottom_content_container .box .box_content {
@@ -196,7 +197,9 @@ main .section .section__text a {
 .bottom_content_container .box a {
   color: #251181;
   font-size: 24px;
-  margin-left: 6rem;
+  font-weight: bold;
+  width: 100%;
+  text-align: center;
 }
 
 footer {
@@ -398,7 +401,6 @@ footer .copyrights .bottom__links a {
   }
 
   .bottom_content_container .box a{
-    margin-left: 8rem;
     margin-top: 1rem;
   }
 
