@@ -7,40 +7,106 @@
     <title>ZuriconGen Converter</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="../navbar_unauthenticated/style.css">
 </head>
 <body>
     <div class="top-container">
         <header class="header_ma">
+            <nav class="header_ma">
                 <div class="navbar_ma">
-                    <div class="logo">
-                        <a href="#">
-                            <img src="./images/Group 100.png" class="desktop-logo" alt="logo">
-                        </a>
-                        <img src="./images/Group 101.png" class="mobile-logo" alt="logo">
-                        <h2>Zuricon<span>Gen</span></h2>
-                    </div>
-                    
-                    <div class="navlinks">
-                        <ul>
-                            <li><a class="nav-link" href="../Converter_page_by_ChrisMike/converter.html">Converter</a></li>
-                            <li><a class="nav-link" href="../GeneratorPage/index.html">Generator</a></li>
-                            <li><a class="nav-link" href="#">Texticon</a></li>
-                            <li><a class="nav-link" href="../TutorialPage/tutorial.html">Tutorial</a></li>
-                            
-                        </ul>
-                    </div>
-
-                    <div class="auth__menu">
-                        <div class="registration">
-                            <a href="../SigninPage/signin.html" class="btn">Log in</a>
-                            <a href="../SignupPage/signup.html" class="btn">Sign Up</a>
-                        </div>
+                  <div class="logo">
+                    <a href="#">
+                      <img
+                        src="../navbar_unauthenticated/images/Group 100.png"
+                        class="desktop-logo"
+                        alt="logo"
+                      />
+                    </a>
+                    <img
+                      src="../navbar_unauthenticated/images/Group 101.png"
+                      class="mobile-logo"
+                      alt="logo"
+                    />
+                    <h2>Zuricon<span>Gen</span></h2>
+                  </div>
     
-                        <div class="menu-icon"></div>
+                  <div class="navlinks">
+                    <ul>
+                      <li>
+                        <a
+                          class="nav-link"
+                          href="../Converter_page_by_ChrisMike/converter.html"
+                          >Converter</a
+                        >
+                      </li>
+                      <li>
+                        <a class="nav-link" href="../GeneratorPage/index.html"
+                          >Generator</a
+                        >
+                      </li>
+                      <li><a class="nav-link" href="#">Texticon</a></li>
+                      <li>
+                        <a class="nav-link" href="../TutorialPage/tutorial.html"
+                          >Tutorial</a
+                        >
+                      </li>
+                    </ul>
+                  </div>
+    
+                  <div class="auth__menu">
+                    <div class="registration">
+                      <a href="../SigninPage/signin.html" class="btn">Log in</a>
+                      <a href="../SignupPage/signup.html" class="btn">Sign Up</a>
                     </div>
     
-                    
+                    <div class="menu-icon"></div>
+                  </div>
                 </div>
+              </nav>
+    
+              <!-----------------Mobile & Tablet Menu ------------------>
+              <div class="mobile-menu" id="menu">
+                <ul>
+                  <li>
+                    <a
+                      class="mobile-nav-link"
+                      href="../Converter_page_by_ChrisMike/converter.html"
+                      >Converter</a
+                    >
+                  </li>
+                  <li>
+                    <a class="mobile-nav-link" href="../GeneratorPage/index.html"
+                      >Generator</a
+                    >
+                  </li>
+                  <li>
+                    <a class="mobile-nav-link" href="#">Texticons</a>
+                  </li>
+                  <li>
+                    <a class="mobile-nav-link" href="../TutorialPage/tutorial.html"
+                      >Tutorial</a
+                    >
+                  </li>
+                  <li>
+                    <a class="mobile-nav-link" href="#">Saved Favicons</a>
+                  </li>
+                  <li>
+                    <a
+                      class="mobile-nav-link auth__link"
+                      href="../SigninPage/signin.html"
+                      >Log In</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="mobile-nav-link auth__link"
+                      href="../SignupPage/signup.html"
+                      >Sign Up</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </div>
         </header>
 
 
@@ -203,8 +269,8 @@
                     <div class="second">
                       <h3>Resources</h3>
                       <ul>
-                        <li><a href="#">Favicon Converter</a></li>
-                        <li><a href="#">Favicon Generator</a></li>
+                        <li><a href="../Converter_page_by_ChrisMike/converter.html">Favicon Converter</a></li>
+                        <li><a href="../GeneratorPage/index.html">Favicon Generator</a></li>
                         <li><a href="#">Texticons</a></li>
                       </ul>
                     </div>
@@ -248,5 +314,6 @@
         </body>
         </html>
     <script src="script.js" defer></script>
+    <script src="../navbar_unauthenticated/script.js"></script>
 </body>
 </html>
