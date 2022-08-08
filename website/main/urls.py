@@ -12,7 +12,7 @@ urlpatterns = [
     path('converter_page', views.converterPage, name="converter_page"), 
     path('favicon_conversion', views.faviconConversion, { 'document_root': settings.MEDIA_ROOT }, name="favicon_conversion"),
     path('drafts', views.drafts, { 'document_root': settings.MEDIA_ROOT }, name="drafts"),
-
+    re_path(r'^delete_favicon/(?P<value>\d+)/$', views.deleteFavicon, name="delete_favicon"), 
     path('sign-up', views.sign_up, name="sign_up"),
    
 

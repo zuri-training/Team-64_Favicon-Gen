@@ -13,12 +13,14 @@ document.querySelectorAll('.mobile-nav-link').forEach(link => {
 }) 
 
 //Hamburger-Menu Open & Close
-const menu = document.querySelector('.menu-icon')
+// const menu = document.querySelector('.menu-icon')
+const menu = document.querySelector('.triple_bar_menu')
+
 const mobile = document.querySelector('.mobile-menu')
 const nav = document.querySelector('.navbar_ma')
 
 menu.addEventListener('click', () => {
   menu.classList.toggle('active')
   mobile.classList.toggle('active')
-  nav.classList.toggle('no-scroll')
+//   nav.classList.toggle('no-scroll')
 })

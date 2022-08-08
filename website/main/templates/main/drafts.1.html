@@ -130,7 +130,7 @@
    <input type="text" class="search" name="search" placeholder="Search Drafts" size="80">
     </div>
     <p class="date">Generated Favicons</p>  
-    {% for item in genfavicons %}
+    {% for item in savedGenfavicons %}
    
         
     <div class="favicon-control">
@@ -142,14 +142,16 @@
         
       </span>
     
-     <a href=""> <div class="x" >
+     <a href="/delete_favicon/{{item.ziplink.id}}">
+       <div class="x" >
         <i class="fa-solid fa-xmark"></i>
-      </div></a>
+      </div>
+    </a>
     </div>
     {%endfor%}
 
     <p class="date">Converted Favicons</p>
-    {% for item in convfavicons %}
+    {% for item in savedConvfavicons %}
    
         
     <div class="favicon-control">
@@ -161,7 +163,7 @@
         
       </span>
     
-     <a href=""> <div class="x" >
+     <a href="/delete_favicon/{{item.ziplink.id}}"> <div class="x" >
         <i class="fa-solid fa-xmark"></i>
       </div></a>
     </div>
@@ -176,7 +178,47 @@
       <i class="fas fa-search icon fa-xl"></i>
    <input type="text" class="search" name="search" placeholder="Search Downloads" size="80">
     </div>
-    <p class="date">Today</p>  
+    <p class="date">Generated Favicons</p>  
+    {% for item in downloadedGenfavicons %}
+   
+        
+    <div class="favicon-control">
+      <span class="image">    <img src="{{item.favicon.path.url}}" alt=""></span>
+      <span class="title">
+        <h2>{{ item.favicon.name }}.{{ item.favicon.img_type }}</h2>
+        <a href="{{item.ziplink.path.url}}" download="{{item.ziplink.path.url}} " class="link">Download</a>
+        
+        
+      </span>
+    
+     <a href="/delete_favicon/{{item.ziplink.id}}"> <div class="x" >
+        <i class="fa-solid fa-xmark"></i>
+      </div></a>
+    </div>
+    {%endfor%}
+
+    <p class="date">Converted Favicons</p>
+    {% for item in downloadedConvfavicons %}
+   
+        
+    <div class="favicon-control">
+      <span class="image">
+        <img src="{{item.favicon.path.url}}" alt="">
+      </span>
+      <span class="title">
+        <h2>{{ item.favicon.name }}.{{ item.favicon.img_type }}</h2>
+        <a href="{{item.ziplink.path.url}}" download="{{item.ziplink.path.url}} " class="link">Download</a>
+        
+        
+      </span>
+    
+      <a href="/delete_favicon/{{item.ziplink.id}}">
+        <div class="x">
+          <i class="fa-solid fa-xmark"></i>
+        </div>
+      </a>
+    </div>
+    {%endfor%} 
    
   
    
@@ -242,7 +284,7 @@
             <a href="#" class="zuricongen_blue_color">Privacy and terms</a>
           </p>
   
-          <div class="icons footer_icons">
+          <!-- <div class="icons footer_icons">
             <a href="#">
               <img src="../LandingPage/Assets/Facebook.svg" alt="" />
             </a>
@@ -252,7 +294,7 @@
             <a href="#">
               <img src="../LandingPage/Assets/LinkedIn_Circled.svg" alt="" />
             </a>
-          </div>
+          </div> -->
   
           <div class="bottom__links">
             <a href="">Privacy Policy</a>
@@ -264,43 +306,10 @@
       </footer>
 
 
-      <script src="../navbar_unauthenticated/script.js"></script>
+      <script src="{% static  'navbar_unauthenticated/script.js' %}"></script>
+      <script type="text/javascript" src="{% static 'js_hw/drafts.js' %}"></script>
       <script>
-let close = document.getElementsByClassName("x");
-let select = document.getElementsByClassName("select");
-let control = document.getElementsByClassName("favicon-control");
-const search = document.getElementsByName("search")[0];
-const folder = document.getElementsByClassName("folder");
-for (let i = 0; i < close.length; i++) {
-  close[i].addEventListener("click", function() {
-    control[i].style.display = "none";
-})
-}
 
-for (let i = 0; i < select.length; i++) {
-  select[i].addEventListener("click", function() {
-    select[0].classList.remove("active2");
-    select[1].classList.remove("active2");
-    select[i].classList.add("active2");
-   console.log(i);
-   switch (i){
-    
-    case 0:
-      // search.placeholder ="Search Downloads";
-      document.getElementsByClassName("download")[0].classList.remove("hide");
-      document.getElementsByClassName("drafts")[0].classList.add("hide");
-      break;
-    case 1:
-      // search.placeholder = "Search Drafts";
-      document.getElementsByClassName("download")[0].classList.add("hide");
-      document.getElementsByClassName("drafts")[0].classList.remove("hide");
-      // folder.forEach(element => {
-      //   element.style.display = "none";
-      // })
-      break;
-   }
-})
-}
 
 
       </script>

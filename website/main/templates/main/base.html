@@ -12,7 +12,7 @@
     <!-- bootstrap -->
     <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
     <link rel="stylesheet" href="{% static 'css_hw/style_hw.css' %}">
-
+    {% block css_styles %}My Site{% endblock %}
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -66,5 +66,7 @@
     
     <script type="text/javascript" src="{% static 'js_hw/converter_hw.js' %}"></script>
     
+    {% block js_scripts %}
+    {% endblock %}
 </body>
 </html>

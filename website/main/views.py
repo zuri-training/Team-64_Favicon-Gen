@@ -27,12 +27,12 @@ from django.core.files.base import ContentFile, File
 @login_required(login_url="/login")
 def home(request):
     context = {'file':FilesAdmin.objects.all()}
-    return render(request, 'main/home.html', context)
+    return render(request, 'pages/home.html', context)
 
 
 @login_required(login_url="/login")
 def generatorPage(request):
-    return render(request, 'generator_page/generator.html')
+    return render(request, 'pages/generator.html')
 
 @login_required(login_url="/login")
 def faviconGeneration(request, document_root):
@@ -146,7 +146,7 @@ def faviconGeneration(request, document_root):
 
 @login_required(login_url="/login")
 def converterPage(request):
-    return render(request, 'main/converter.html')
+    return render(request, 'pages/converter.html')
 
 # @login_required(login_url="/login")
 def faviconConversion(request, document_root):
@@ -217,24 +217,59 @@ def faviconConversion(request, document_root):
 
 
 def drafts(request, document_root):
-    genfavicons = GeneratedFavicon.objects.filter(user = request.user, img_type="svg", saved_to_drafts = True)
-    convfavicons = ConvertedFavicon.objects.filter(user = request.user, img_type="png", size=32, saved_to_drafts = True)
-    context={"genfavicons": [], "convfavicons": []}
-    for fav in genfavicons:
+    downloadedGenfavicons = GeneratedFavicon.objects.filter(user = request.user, img_type="svg", saved_to_drafts = False)
+    downloadedConvfavicons = ConvertedFavicon.objects.filter(user = request.user, img_type="png", size=96, saved_to_drafts = False)
+    savedGenfavicons = GeneratedFavicon.objects.filter(user = request.user, img_type="svg", saved_to_drafts = True)
+    savedConvfavicons = ConvertedFavicon.objects.filter(user = request.user, img_type="png", size=96, saved_to_drafts = True)
+    context={"savedGenfavicons": [], "savedConvfavicons": [], "downloadedGenfavicons": [], "downloadedConvfavicons": []}
+    for fav in downloadedGenfavicons:
         zipId = fav.zip_file.id
         ziplink = FaviconZipFile.objects.get(id=zipId)
-        context["genfavicons"].append({"favicon": fav, "ziplink":ziplink})
+        context["downloadedGenfavicons"].append({"favicon": fav, "ziplink":ziplink})
     
-    for fav in convfavicons:
+    for fav in downloadedConvfavicons:
         zipId = fav.zip_file.id
         ziplink = FaviconZipFile.objects.get(id=zipId)
-        context["convfavicons"].append({"favicon": fav, "ziplink":ziplink})
+        context["downloadedConvfavicons"].append({"favicon": fav, "ziplink":ziplink})
 
-    return render(request, 'main/drafts.html', context)
+    for fav in savedGenfavicons:
+        zipId = fav.zip_file.id
+        ziplink = FaviconZipFile.objects.get(id=zipId)
+        context["savedGenfavicons"].append({"favicon": fav, "ziplink":ziplink})
+    
+    for fav in savedConvfavicons:
+        zipId = fav.zip_file.id
+        ziplink = FaviconZipFile.objects.get(id=zipId)
+        context["savedConvfavicons"].append({"favicon": fav, "ziplink":ziplink})
+
+    return render(request, 'pages/drafts.html', context)
 
 
 
 
+
+
+
+def deleteFavicon(request, value):
+    zipId = value
+    try:
+        faviconsToDelete = []
+        faviconsToDelete = GeneratedFavicon.objects.filter(user = request.user, zip_file_id=zipId)
+        if len(faviconsToDelete) == 0:
+            faviconsToDelete = ConvertedFavicon.objects.filter(user = request.user, zip_file_id=zipId)
+
+        for fav in faviconsToDelete:
+            fav.delete()
+        
+        zipFileToDelete = FaviconZipFile.objects.get(id=zipId)
+        zipFileToDelete.delete()
+        
+        return redirect('drafts')
+
+    except KeyError:
+            return redirect('error_w')
+
+    
 
 
 
