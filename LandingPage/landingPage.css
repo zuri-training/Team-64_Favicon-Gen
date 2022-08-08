@@ -266,6 +266,7 @@ footer .footer__content .second__section {
 .footer__content .second__section > div ul li,
 .footer__content .second__section > div ul li a {
   color: #251181;
+  font-size: 20px;
 }
 
 footer .footer__content .second__section h3 {

@@ -119,6 +119,7 @@ width: unset !important;
 .fc_hw .second__section > div ul li,
 .fc_hw .second__section > div ul li a {
     color: #251181;
+    font-size: 20px;
 }
 
 .footer_icons_hw {
