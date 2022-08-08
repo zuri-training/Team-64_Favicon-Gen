@@ -163,6 +163,9 @@ align-items: center;
 .fa-xmark{
     color: white;
 }
+.hide{
+    display: none;
+}
 /*FOOTER*/
 footer {
     width: 100%;

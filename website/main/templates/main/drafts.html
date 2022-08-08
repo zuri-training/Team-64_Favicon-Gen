@@ -123,21 +123,41 @@
     <div class="select active2"> <h4>Downloads</h4></div>
     <div class="select"><h4>Drafts</h4></div>
   </div>
-  <div class="content">
+  <div class="content download">
     <div class="search-bar">
       <i class="fas fa-search icon fa-xl"></i>
    <input type="text" class="search" name="search" placeholder="Search Downloads" size="80">
     </div>
     <p class="date">Today</p>  
      {%for i in allitems%}
-    <!-- <div>
+   
         
-        <span></span>
-        <span></span>
-        <img src="{{i.favicon.path.url}}" alt="">
-        <p> <a href="{{i.ziplink.path.url}}" download="{{item.ziplink.path.url}}">Click me</a></p>
+    <div class="favicon-control">
+      <span class="image">    <img src="{{i.favicon.path.url}}" alt=""></span>
+      <span class="title">
+        <h2>{{ i.favicon.name }}.{{ i.favicon.img_type }}</h2>
+        <a href="{{i.ziplink.path.url}}" download="{{i.ziplink.path.url}} " class="link">Download</a>
         
-    </div> -->
+        
+      </span>
+    
+     <a href=""> <div class="x" >
+        <i class="fa-solid fa-xmark"></i>
+      </div></a>
+    </div>
+    {%endfor%}
+
+  
+   
+  </div>
+  <div class="content drafts hide">
+    <div class="search-bar">
+      <i class="fas fa-search icon fa-xl"></i>
+   <input type="text" class="search" name="search" placeholder="Search Drafts" size="80">
+    </div>
+    <p class="date">Today</p>  
+     {%for i in allitems%}
+   
         
     <div class="favicon-control">
       <span class="image">    <img src="{{i.favicon.path.url}}" alt=""></span>
@@ -262,10 +282,14 @@ for (let i = 0; i < select.length; i++) {
    switch (i){
     
     case 0:
-      search.placeholder ="Search Downloads";
+      // search.placeholder ="Search Downloads";
+      document.getElementsByClassName("download")[0].classList.remove("hide");
+      document.getElementsByClassName("drafts")[0].classList.add("hide");
       break;
     case 1:
-      search.placeholder = "Search Drafts";
+      // search.placeholder = "Search Drafts";
+      document.getElementsByClassName("download")[0].classList.add("hide");
+      document.getElementsByClassName("drafts")[0].classList.remove("hide");
       // folder.forEach(element => {
       //   element.style.display = "none";
       // })

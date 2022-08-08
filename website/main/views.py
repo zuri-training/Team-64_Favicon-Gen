@@ -1,4 +1,5 @@
 from multiprocessing import context
+from unicodedata import name
 from django.http import HttpResponse, FileResponse, JsonResponse
 from django.shortcuts import render, redirect
 from .forms import RegisterForm
@@ -304,6 +305,12 @@ def drafts(request, document_root):
         
 
      return render(request, 'main/drafts.html', context)
+
+def delete_download(request, download_name, zipId):
+    download = GeneratedFavicon.objects.filter(name = download_name)
+    deletezip = FaviconZipFile.objects.get(id=zipId)
+
+
 
 
 

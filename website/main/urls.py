@@ -9,6 +9,7 @@ urlpatterns = [
     path('converter_page', views.converterPage, { 'document_root': settings.MEDIA_ROOT }, name="converter_page"),
     path('drafts', views.drafts,{ 'document_root': settings.MEDIA_ROOT }, name="drafts"),
     path('sign-up', views.sign_up, name="sign_up"),
+    path('delete', views.delete_download,{ 'document_root': settings.MEDIA_ROOT }, name="delete"),
 
     # path('success', views.success, name = 'success'),
     # path('success/<str:filelink>', views.success, name = 'success'),
