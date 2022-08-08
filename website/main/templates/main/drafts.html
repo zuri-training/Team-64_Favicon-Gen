@@ -121,13 +121,13 @@
 <main>
 <section class="main">
   <div class="panel">
-    <div class="select active2"> <h4>Downloads</h4></div>
-    <div class="select"><h4>Drafts</h4></div>
+    <div class="select "> <h4>Downloads</h4></div>
+    <div class="select active2"><h4>Drafts</h4></div>
   </div>
-  <div class="content download">
+  <div class="content drafts">
     <div class="search-bar">
       <i class="fas fa-search icon fa-xl"></i>
-   <input type="text" class="search" name="search" placeholder="Search Downloads" size="80">
+   <input type="text" class="search" name="search" placeholder="Search Drafts" size="80">
     </div>
     <p class="date">Generated Favicons</p>  
     {% for item in genfavicons %}
@@ -171,10 +171,10 @@
   
    
   </div>
-  <div class="content drafts hide">
+  <div class="content download hide">
     <div class="search-bar">
       <i class="fas fa-search icon fa-xl"></i>
-   <input type="text" class="search" name="search" placeholder="Search Drafts" size="80">
+   <input type="text" class="search" name="search" placeholder="Search Downloads" size="80">
     </div>
     <p class="date">Today</p>  
    
