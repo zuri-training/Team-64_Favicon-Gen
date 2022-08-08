@@ -16,6 +16,7 @@ class FaviconZipFile(models.Model):
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     name = models.CharField(max_length=255)
     path = models.FileField (upload_to="generator/" ,null=True, blank=True)
+    saved_to_drafts = models.BooleanField(default=False)
 
 class GeneratedFavicon(models.Model):
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
@@ -23,6 +24,8 @@ class GeneratedFavicon(models.Model):
     name = models.CharField(max_length=255)
     path = models.FileField (upload_to="generator/" ,null=True, blank=True)
     img_type = models.CharField(max_length=255)
+    size = models.IntegerField(null=True)
+    saved_to_drafts = models.BooleanField(default=False)
     html_code = models.CharField(max_length=255)
 
 
@@ -41,4 +44,7 @@ class ConvertedFavicon(models.Model):
     name = models.CharField(max_length=255)
     path = models.FileField (upload_to="converter/" ,null=True, blank=True)
     img_type = models.CharField(max_length=255)
+    size = models.IntegerField(null=True)
+    saved_to_drafts = models.BooleanField(default=False)
     html_code = models.CharField(max_length=255)
+    

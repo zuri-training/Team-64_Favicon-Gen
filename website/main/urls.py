@@ -5,11 +5,16 @@ from . import views
 urlpatterns = [
     path('', views.home, name="home"),
     path('home', views.home, name="home"),
-    path('generator_page', views.generatorPage, { 'document_root': settings.MEDIA_ROOT }, name="generator_page"),
-    path('converter_page', views.converterPage, { 'document_root': settings.MEDIA_ROOT }, name="converter_page"),
-    path('drafts', views.drafts,{ 'document_root': settings.MEDIA_ROOT }, name="drafts"),
+
+
+    path('generator_page', views.generatorPage, name="generator_page"),    
+    path('favicon_generation', views.faviconGeneration, { 'document_root': settings.MEDIA_ROOT }, name="favicon_generation"),
+    path('converter_page', views.converterPage, name="converter_page"), 
+    path('favicon_conversion', views.faviconConversion, { 'document_root': settings.MEDIA_ROOT }, name="favicon_conversion"),
+    path('drafts', views.drafts, { 'document_root': settings.MEDIA_ROOT }, name="drafts"),
+
     path('sign-up', views.sign_up, name="sign_up"),
-    path('delete', views.delete_download,{ 'document_root': settings.MEDIA_ROOT }, name="delete"),
+   
 
     # path('success', views.success, name = 'success'),
     # path('success/<str:filelink>', views.success, name = 'success'),

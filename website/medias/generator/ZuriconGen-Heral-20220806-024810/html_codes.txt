@@ -1,4 +1,0 @@
-<link rel='icon' sizes='120x120' href='ZuriconGen_Favicon_Generation.svg'>
-<link rel='icon' sizes='64x64' href='ZuriconGen_Favicon_Generation-64x64.png'>
-<link rel='icon' sizes='64x64' href='ZuriconGen_Favicon_Generation-64x64.jpg'>
-<link rel='icon' sizes='32x32' href='ZuriconGen_Favicon_Generation-32x32.ico'>

@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -128,15 +129,15 @@
       <i class="fas fa-search icon fa-xl"></i>
    <input type="text" class="search" name="search" placeholder="Search Downloads" size="80">
     </div>
-    <p class="date">Today</p>  
-     {%for i in allitems%}
+    <p class="date">Generated Favicons</p>  
+    {% for item in genfavicons %}
    
         
     <div class="favicon-control">
-      <span class="image">    <img src="{{i.favicon.path.url}}" alt=""></span>
+      <span class="image">    <img src="{{item.favicon.path.url}}" alt=""></span>
       <span class="title">
-        <h2>{{ i.favicon.name }}.{{ i.favicon.img_type }}</h2>
-        <a href="{{i.ziplink.path.url}}" download="{{i.ziplink.path.url}} " class="link">Download</a>
+        <h2>{{ item.favicon.name }}.{{ item.favicon.img_type }}</h2>
+        <a href="{{item.ziplink.path.url}}" download="{{item.ziplink.path.url}} " class="link">Download</a>
         
         
       </span>
@@ -147,6 +148,26 @@
     </div>
     {%endfor%}
 
+    <p class="date">Converted Favicons</p>
+    {% for item in convfavicons %}
+   
+        
+    <div class="favicon-control">
+      <span class="image">    <img src="{{item.favicon.path.url}}" alt=""></span>
+      <span class="title">
+        <h2>{{ item.favicon.name }}.{{ item.favicon.img_type }}</h2>
+        <a href="{{item.ziplink.path.url}}" download="{{item.ziplink.path.url}} " class="link">Download</a>
+        
+        
+      </span>
+    
+     <a href=""> <div class="x" >
+        <i class="fa-solid fa-xmark"></i>
+      </div></a>
+    </div>
+    {%endfor%}
+
+
   
    
   </div>
@@ -156,24 +177,7 @@
    <input type="text" class="search" name="search" placeholder="Search Drafts" size="80">
     </div>
     <p class="date">Today</p>  
-     {%for i in allitems%}
    
-        
-    <div class="favicon-control">
-      <span class="image">    <img src="{{i.favicon.path.url}}" alt=""></span>
-      <span class="title">
-        <h2>{{ i.favicon.name }}.{{ i.favicon.img_type }}</h2>
-        <a href="{{i.ziplink.path.url}}" download="{{item.ziplink.path.url}} " class="link">Download</a>
-        
-        
-      </span>
-    
-      <div class="x">
-        <i class="fa-solid fa-xmark"></i>
-      </div>
-    </div>
-    {%endfor%}
-
   
    
   </div>
@@ -303,3 +307,6 @@ for (let i = 0; i < select.length; i++) {
    
 </body>
 </html>
+
+    
+    

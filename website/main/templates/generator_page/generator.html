@@ -7,7 +7,7 @@
     <title>Generator Page</title>
 
     {% load static %}
-    <link rel='icon' sizes='120x120' href="{% static 'img/ZuriconGen-Heral-20220803-180522.svg' %}">
+    <link rel='icon' href="{% static 'img/ZuriconGen_Favicon_Generation.svg' %}">
 
     <link rel="stylesheet" href="{% static 'css_hw/style_navbar.css' %}">
     <link rel="stylesheet" href="{% static 'css_hw/style_header.css' %}">
@@ -27,8 +27,8 @@
 
         <a href="{% url 'home'%}"><h2>Zuricon<span>Gen</span></h2></a>
         <div class="links">
-            <a href="#">Converter</a>
-            <a href="#">Generator</a>
+            <a href="/converter_page">Converter</a>
+            <a href="/generator_page">Generator</a>
             <a href="#">Texticons</a>
             <a href="#">Tutorials</a>
         </div>
@@ -161,16 +161,19 @@
                         </div>
                     </div>
                 </div>
+
+                <div id="loader_hw" class="loader_hw displayNone"></div>
+
                 <form id="sgenerator_download_save_buttons" method="post" action="{% url 'generator_page' %}" class="sgenerator_preview_container_bottom_hw">
                     {% csrf_token %}
                     <input type="hidden" id="sgenerator_svg_content" name="sgenerator_svg_content" value="2" />
-                    <a href="#" id="download_texticon_btn" class="btn_hw btn_zuricongen_filled_hw">
+                    <a href="#" id="download_generation_btn" class="btn_hw btn_zuricongen_filled_hw">
                         Generate
                     </a>
-                    <button class="btn_hw btn_zuricongen_outlined_hw btn_text_img_hw">
+                    <a href="#" id="save_generation_btn" class="btn_hw btn_zuricongen_outlined_hw btn_text_img_hw">
                         <span>Save to drafts</span>
                         <img src="{% static 'img/chevron_right.svg' %}" width="12px" alt="">
-                    </button>
+                    </a>
                 </form>
                 <!-- <div class="sgenerator_preview_container_bottom_hw">
                     <button class="btn_hw btn_zuricongen_filled_hw">
