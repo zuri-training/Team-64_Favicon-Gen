@@ -412,3 +412,13 @@ footer .copyrights .bottom__links a {
     width: 100%;
   }
 }
+
+@media (max-width: 282px) {
+  .body__content .second__section{
+    grid-template-columns: 1fr;
+  }
+
+  .body__content .second__section .box{
+    margin: auto;
+  }
+}
