@@ -89,7 +89,7 @@ button {
 .navlinks ul {
     display: flex;
     justify-content: space-between;
-    width: 65%;
+    width: 70%;
     margin: 0 20% 0 2%;
     position: relative;
     left: 1rem;
@@ -115,15 +115,26 @@ button {
     position: relative;
 }
 .auth__profile {
-    display: inline-block;
-    margin-right: 4%;
+    display: flex;
+    width: 7.875rem;
+    align-items: center;
+    justify-content: space-between;
 }
-
+.auth__profile a {
+    display: inline-block;
+    font-size: 1rem;
+    color: var(--blue);
+    font-weight: 700;
+}
 .mobile-menu {
     display: none;
 }
 .navbar_ma .menu-icon {
     display: none;
+}
+.navbar_ma {
+    display: flex;
+    justify-content: space-between;
 }
 
 /********Media Query*********/
@@ -156,6 +167,10 @@ button {
     }
     .auth__profile{
         padding-right: 20px;
+        width: auto;
+    }
+    .auth__profile .nav-link {
+        display: none;
     }
     .navbar_ma .menu-icon {
         display: inline-block;
@@ -176,7 +191,7 @@ button {
         right: 0;
         left: 100%;
         width: 100%;
-        height: 50%;
+        height: auto;
         background-color: #fff;
         padding: 0;
         box-shadow: inset 0 4px 3px -3px rgb(0 0 0 /10%), inset 0 4px 2px -2px rgb(0 0 0 / 7%);
@@ -194,7 +209,7 @@ button {
     }
     .mobile-menu ul li a {
         display: block;
-        font-size: 1.5rem;
+        font-size: 25px;
         padding: 10px 0 10px 30px;
     }
     .mobile-menu.active {
@@ -245,7 +260,7 @@ button {
         right: 0;
         left: 100%;
         width: 100%;
-        height: 50%;
+        height: auto;
         overflow: hidden;
     }
     .mobile-menu ul {
