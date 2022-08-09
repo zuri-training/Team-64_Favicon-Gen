@@ -21,12 +21,12 @@
     <div class="content_jol drafts">
       <div class="search-bar">
         <i class="fas fa-search icon fa-xl"></i>
-        <input type="text" class="search" name="search" placeholder="Search Drafts" size="80">
+        <input type="text" class="search" name="search" placeholder="Search Drafts" size="80" onkeyup="search()">
       </div>
       <p class="date">Generated Favicons</p>  
 
       {% for item in savedGenfavicons %}
-      <div class="favicon-control">
+      <div class="favicon-control" id="{{ item.favicon.name }}.{{ item.favicon.img_type }}">
         <span class="image">
           <img src="{{item.favicon.path.url}}" alt="">
         </span>
@@ -49,7 +49,7 @@
       {% for item in savedConvfavicons %}
     
           
-      <div class="favicon-control">
+      <div class="favicon-control " id="{{ item.favicon.name }}.{{ item.favicon.img_type }}">
         <span class="image">
           <img src="{{item.favicon.path.url}}" alt="">
         </span>
@@ -73,7 +73,7 @@
     <div class="content_jol download hide">
       <div class="search-bar">
         <i class="fas fa-search icon fa-xl"></i>
-        <input type="text" class="search" name="search" placeholder="Search Downloads" size="80"/>
+        <input type="text" class="search" name="search" placeholder="Search Downloads" size="80" onkeyup="search()"/>
       </div>
       <p class="date">Generated Favicons</p>  
       {% for item in downloadedGenfavicons %}
@@ -124,6 +124,27 @@
 
 {% block js_scripts %}
 <script type="text/javascript" src="{% static 'js/js_hw/drafts.js' %}"></script>
+<script>
+   const input1 = document.getElementsByClassName("search")[0];
+ 
+  let fav = document.getElementsByClassName("favicon-control");
+function search(){
+ console.log(input1.value.toUpperCase());
+
+  for (let i = 0; i < fav.length; i++) {
+   let new2 = fav[i].id.toString().toUpperCase();
+   if (new2.indexOf(input1.value.toUpperCase()) > -1){
+    fav[i].style.display = "";
+   }
+   else{
+    fav[i].style.display= "none";
+   }
+    
+  }
+
+}
+
+</script>
 {% endblock %}
 
 <!-- </body>
