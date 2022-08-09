@@ -1,0 +1,23 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Favicon_image</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'js/favicon_image_form.js' %}" />
+    <link rel="stylesheet" href="{% static 'css/favicon_image_form.css' %}" />
+  </head>
+  <body>
+    <h4>IMAGE UPLOADED</h4>
+    <img
+      src="{{emp.emp_image.url}}"
+      alt="Smiley face"
+      width="250"
+      height="250"
+    />
+    <br />
+    <a href="{% url 'home' %}">Return</a>
+    <a href="{% url 'home' %}">Download Now</a>
+  </body>
+</html>

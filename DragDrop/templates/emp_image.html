@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Favicon_image</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'js/favicon_image_form.js' %}" />
+    <link rel="stylesheet" href="{% static 'css/favicon_image_form.css' %}" />
+  </head>
+  <body>
+    <form
+      method="post"
+      enctype="multipart/form-data"
+      input
+      type="file"
+      name="multiple_files[]"
+      multiple
+    >
+      <h4>UPLOAD IMAGE</h4>
+      <div class="upload-container">{% csrf_token %} {{ form.as_p }}</div>
+      <br />
+      <button class="upload-btn" onclick="uploadFile()">Submit</button>
+    </form>
+  </body>
+</html>
