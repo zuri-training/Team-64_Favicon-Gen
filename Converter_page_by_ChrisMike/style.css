@@ -39,6 +39,9 @@ span {
 button {
   cursor: pointer;
 }
+button:hover {
+    transform: scale(0.98);
+}
 
 /****header****/
 .header_ma {
@@ -64,6 +67,14 @@ nav {
   align-items: center;
   justify-content: space-between;
   background-color: #ffffff;
+}
+.logo h2 {
+    font-size: 1.5rem;
+    color: var(--blue);
+    font-weight: 700;
+}
+.logo .mobile-logo {
+    display: none;
 }
 
 nav h2 {
@@ -184,7 +195,6 @@ nav .authentication__links .signin__btn {
 .blue-border {
   color: var(--blue);
 }
-
 .upload-bottom button {
   width: 24.68rem;
   height: 4rem;
@@ -192,14 +202,15 @@ nav .authentication__links .signin__btn {
   background-color: var(--light-blue);
   border: none;
   border-radius: 0.625rem;
-  font-family: "Lato";
+  font-family: 'Lato';
   font-style: normal;
   font-weight: 700;
   font-size: 1rem;
   line-height: 22px;
   text-align: center;
-  color: #ffffff;
+  color: #FFFFFF;
 }
+
 .content-options {
   position: relative;
   display: flex;
@@ -227,6 +238,7 @@ nav .authentication__links .signin__btn {
 .content-options button:first-child {
   background-color: var(--blue);
   color: #fff;
+  border: none;
 }
 .content-options button:nth-child(2) {
   background-color: #fff;
@@ -302,7 +314,7 @@ nav .authentication__links .signin__btn {
 }
 .section_install_container_hw p {
   font-size: 1.25rem;
-  line-height: 1.8;
+  line-height: 1.4;
   margin-bottom: 1.2rem;
 }
 
@@ -482,6 +494,109 @@ footer.footer_hw {
 
 /********Media Query*********/
 
+/***********Tablet********/
+
+@media(max-width: 960px) {
+    body {
+        overflow-y: scroll;
+    }
+    body::-webkit-scrollbar {
+        display: none;
+    }
+    body {
+        scrollbar-width: none;
+    }
+    .top-container{
+        width: auto;
+        max-width: 960px;
+        padding-left: 2%;
+    }
+    .converter h1 {
+        font-size: 1.5rem;
+    }
+    .droparea img {
+        height: 1.5rem;
+        width: 1.5rem;
+        margin: 1.875rem;
+    }
+    .drag p {
+        display: none;
+    }
+    .content-options button {
+        width: 12rem;
+        height: 3.875rem;
+        font-size: 1.25rem;
+    }
+    .how-to {
+        width: auto;
+        max-width: 100%;
+        margin: 0;
+        padding: 3% 5%;
+      }
+    .section_install_hw {
+        width: auto;
+        max-width: 100%;
+        margin: 0;
+        padding: 2% 3%;
+        background-color: #fff;
+      }
+    .section_install_hw .section_install_container_hw{
+        background-color: #fff;
+        width: 100%;
+        padding: 0 0.5% 0 1%;
+        margin: 0;
+    }
+    .footer {
+        background-color: #fff;
+        padding: 0;
+    }
+    footer.footer_hw {
+        background-color: #fff;
+        width: auto;
+        margin-top: 5rem;
+        padding: 0;
+    }
+    .footer__content{
+        flex-direction: column;
+        padding: 0 0.5% 0 3%;
+        margin: 0;
+        width: 100%;
+    }
+    .footer__content .second__section .first{
+        margin: 0;
+    }
+    footer .footer__content .second__section .third a{
+        font: 0.75rem !important;
+    }
+    .footer__content .fc_hw li{
+        font-size: 0.875rem;
+        padding: 0;
+    }
+    .favicons_html_code_zone_hw {
+        background-color: #D9D9D9;
+        color: var(--blue);
+        border-radius: 0.5rem;
+        width: 100%;
+        height: auto;
+        position: relative;
+        top: 3rem !important;
+        padding: 3% 2%;
+        line-height: 1.5;
+    }
+    .btn_install_container_hw {
+        width: 10rem;
+        margin-top: 5rem;
+    }
+    .btn_install_container_hw button{
+        background-color: var(--blue) !important;
+        position: relative;
+        top: 0rem;
+    }
+    .copyrights a {
+        font-size: 0.9rem;
+    }
+}
+
 /*********Mobile*********/
 
 @media (max-width: 480px) {
@@ -491,38 +606,15 @@ footer.footer_hw {
     width: auto;
     max-width: 100%;
   }
-  .navbar_ma {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-  }
-  .navbar_ma a {
-    display: none;
-  }
-
-  .logo h1 {
-    font-size: 1.5rem;
-  }
-
-  .navbar_ma .menu-icon {
-    display: block;
-    cursor: pointer;
-  }
-  .navlinks {
-    display: none;
-  }
-  .registration {
-    display: none;
-  }
   .converter {
     margin: 4.5% 8.5%;
   }
   .converter h1 {
-    font-size: 2rem;
+    font-size: 1.5rem;
   }
   .converter-box {
     width: 17.8rem;
-    height: 15rem;
+    height: auto;
   }
   .upload-top {
     padding: 0.6rem 0.3rem;
@@ -544,21 +636,16 @@ footer.footer_hw {
   .droparea img {
     height: 1.5rem;
     width: 1.5rem;
-    margin: 0;
   }
   .upload-bottom button {
-    width: 15.6rem;
-    height: 2.5rem;
-    margin: 0;
-    padding: 0;
-    position: relative;
-    top: -1.3rem;
+    display: none;
   }
 
   .content-options button {
-    width: 9.875rem;
+    width: 7.875rem;
     height: 3rem;
     margin: 1rem 1% 2rem 1%;
+    font-size: 1.25rem;
     background-color: var(--blue);
   }
   .content-options .mobile-save {
@@ -571,10 +658,7 @@ footer.footer_hw {
   }
 
   .how-to {
-    width: auto;
-    max-width: 100%;
-    margin: 0;
-    padding: 1.5rem 0.8rem;
+    padding: 3% 8%;
   }
   .text h1 {
     font-size: 1.3rem;
@@ -590,7 +674,7 @@ footer.footer_hw {
     width: auto;
     max-width: 100%;
     margin: 0;
-    margin-bottom: 0;
+    padding: 2% 3%;
     background-color: #fff;
   }
   .section_install_hw .section_install_container_hw {
@@ -605,7 +689,7 @@ footer.footer_hw {
   }
   .section_install_container_hw h2 {
     font-size: 1.1rem;
-    color: #b1aaaa;
+    color: var(--blue);
   }
   .conv-page-section-install {
     width: 21.4rem;
@@ -689,7 +773,7 @@ footer.footer_hw {
   }
 
   footer .footer__content .second__section h3 {
-    font-size: 1.25rem;
+    font-size: 1rem;
   }
   footer .footer__content .second__section .second a {
     font-size: 0.75rem;
@@ -761,96 +845,7 @@ footer.footer_hw {
     align-items: center;
     width: auto;
   }
-}
-
-/***********Tablet********/
-
-@media (max-width: 960px) {
-  .top-container {
-    width: auto;
-    max-width: 960px;
-  }
-  .logo h1 {
-    font-size: 1.75rem;
-  }
-  .navlinks {
-    display: none;
-  }
-  .navbar_ma .menu-icon {
-    display: inline-block;
-    position: relative;
-    cursor: pointer;
-    color: var(--blue);
-  }
-  .navbar_ma .registration {
-    position: relative;
-    left: 10%;
-    margin-left: 17.8%;
-  }
-  .navbar_ma .registration a {
-    width: 5.25rem;
-    height: 2.25rem;
-    font-size: 1.125rem;
-    font-weight: 400;
-    padding: 0.5rem 0 0.5rem 0.8rem;
-    margin: 0 0.75rem;
-  }
-  .converter h1 {
-    font-size: 2.5rem;
-  }
-  .section_install_hw {
-    background-color: #fff;
-  }
-  .section_install_hw .section_install_container_hw {
-    background-color: #fff;
-    width: 100%;
-    padding: 0 0.5%;
+  footer .copyrights .bottom__links a {
     margin: 0;
-  }
-  .footer {
-    background-color: #fff;
-    padding: 0;
-  }
-  footer.footer_hw {
-    background-color: #fff;
-    width: auto;
-    padding: 0;
-  }
-  .footer__content {
-    flex-direction: column;
-    padding: 0 0.5% 0 1%;
-    margin: 0;
-    width: 100%;
-  }
-  .footer__content .second__section .first {
-    margin: 0;
-  }
-  footer .footer__content .second__section .third a {
-    font: 0.75rem !important;
-  }
-  .footer__content .fc_hw li {
-    font-size: 0.875rem;
-    padding: 0;
-  }
-  .favicons_html_code_zone_hw {
-    background-color: #d9d9d9;
-    color: var(--blue);
-    border-radius: 0.5rem;
-    width: 100%;
-    height: auto;
-    position: relative;
-    top: 3.5rem;
-    padding: 3% 2%;
-    line-height: 1.5;
-  }
-  .btn_install_container_hw {
-    width: 10rem;
-    margin-top: 5rem;
-  }
-  .btn_install_container_hw button {
-    background-color: var(--blue);
-  }
-  .copyrights a {
-    font-size: 1.125rem;
   }
 }

@@ -108,6 +108,35 @@
               </div>
             </div>
         </header>
+
+
+        <!-----------------Mobile & Tablet Menu ------------------>
+        <div class="mobile-menu" id="menu">
+            <ul>
+                <li>
+                    <a class="mobile-nav-link" href="../Converter_page_by_ChrisMike/converter.html">Converter</a>
+                </li>
+                <li>
+                    <a class="mobile-nav-link" href="../GeneratorPage/index.html">Generator</a>
+                </li>
+                <li>
+                    <a class="mobile-nav-link" href="#">Texticons</a>
+                </li>
+                <li>
+                    <a class="mobile-nav-link" href="../TutorialPage/tutorial.html">Tutorial</a>
+                </li>
+                <li>
+                    <a class="mobile-nav-link" href="#">Saved Favicons</a>
+                </li>
+                <li>
+                    <a class="mobile-nav-link auth__link" href="../SigninPage/signin.html">Log In</a>
+                </li>
+                <li>
+                    <a class="mobile-nav-link auth__link" href="../SignupPage/signup.html">Sign Up</a>
+                </li>
+            </ul>
+        </div>
+
     <!---------------------Main Content----------------------->
         <main>
             <section class="content">
@@ -124,24 +153,25 @@
                         </div>
 
                         <div class="droparea">
-                           <div class="image">
+                          <div class="image">
                             <img src="./images/Icon 24 x 24 (1).png" alt="">
-                           </div>
-                           <div class="drag">
-                            <p>Drag n drop here</p>
-                            <p>Or</p>
-                            <a href="#">Browse</a>
-                           </div>
-                            
+                          </div>
+                          <div class="drag">
+                            <p>Drag and drop here</p>
+                            <p>Or</p> 
+                            <a href="#" id="browse">Browse</a>
+                          
+                          </div>
+                          
                         </div>
                         <input type="file" id="real-file" hidden="hidden">
                         <div class="upload-bottom" id="custom-button">
-                            <button type="submit">Upload Now</button>
-                        </div>
+                          <button type="submit">Upload Now</button>
+                      </div>
                     </div>
                     
                     <div class="content-options">
-                        <button class="pry-btn">Download</button>
+                        <button class="pry-btn" id="download">Download</button>
                         <button class="pry-btn draft">Save to draft<span><i class="fa-solid fa-angle-right"></i></span>
                         <button class="pry-btn mobile-save">Save<span><i class="fa-solid fa-angle-right"></i></span>
                         </button>
@@ -175,7 +205,6 @@
                 <div class="section_install_container_hw">
                     <h1>Installation</h1>
                     <div class="conv-page-section-install">
-                        <h2 class="gen_page_section_title_hw zuricongen_blue_color mb_30_hw">Installation</h2>
                         <p class="plain_text_hw mb_30_hw">
                         First, use the download button to download the files listed below. Place the files in the root directory of your website.
                         <br/>

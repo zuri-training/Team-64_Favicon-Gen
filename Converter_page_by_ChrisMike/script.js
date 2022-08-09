@@ -32,8 +32,6 @@ const handleDrop = (e) => {
     const dt = e.dataTransfer;
     const files = dt.files;
     const fileArray = [...files];
-    console.log(files); // FileList
-    console.log(fileArray);
 } 
 
 
@@ -41,7 +39,11 @@ const handleDrop = (e) => {
 
 const realFileBtn = document.getElementById("real-file");
 const customBtn = document.getElementById("custom-button");
+const browseLink = document.getElementById("browse");
 
 customBtn.addEventListener("click", function() {
+    realFileBtn.click()
+})
+browseLink.addEventListener("click", function(){
     realFileBtn.click()
 })
