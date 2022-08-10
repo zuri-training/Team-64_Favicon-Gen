@@ -1,0 +1,13 @@
+# My name is Eke Christiana
+I am Crixxy on the slack channel. my team is team_64 and we are in the Favicon project group. 
+
+# How to  download images on python(django)
+My task on this involved researching on how to download the favicons(images), after the user uploaded whatever images, text or texticons, he/she wants to use.
+My team agreed on using python, django to be presice. so after the research, I created the project and app in a virtualenv and updated the appropriate files to effect the download function. There's also a requirement.txt.
+this is the github issue link for this task: https://github.com/zuri-training/Team-64_Favicon-Gen/issues/8
+
+# Implementation of Forgotten password page
+this involved creating the forgotten password page, for the user, so that he/she can be able to recover his/her password through a recovery link, sent to the user's email.
+I effected the media querry for desktop, tablet and mobile.
+this was created with html, css and javascript.
+this is the github issue link: https://github.com/zuri-training/Team-64_Favicon-Gen/issues/59
