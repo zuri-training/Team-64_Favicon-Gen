@@ -1,1 +1,64 @@
+This file contains a list and description: of all my tasks/ contributions to Team 64 in the Favicon Gen Project.
+
+TASK 1
+Task:
+
+Assistant Team Lead
+
+Description:
+
+I was chosen as the assistant team lead (for developers) for my team, of which as part of my duties I have hosted the group meetings, assigned and followed up on tasks, amongst other duties.
+
+At the beginning of the project while we waited for designers to work on the necessary pages, i assigned research tasks to all developers on the team on some backend functionalities, myself inclusive. I researched on APIs for file conversion. But later decided we implement the codes for backend ourselves
+
+I have worked alongside the general team leads Serah Nwoke @SerahN and David Adebola Adetoro @Bola001.
+
+
+
+TASK 2
+Task:
+
+Implement Landing Page
+
+Description:
+
+I implemented the landing page (frontend) for our webapp following the design created by the designers on the team.
+
+
+
+TASK 3
+Task:
+
+Master Merger (Merge branches in the repository after review)
+
+Description:
+
+This task involves reviewing the codes pushed by the collaborators (developers) on the team and merging them appropriately. The repository comprises of three classes of branches: main, dev (frontend and Backend) and feature/topic branches. Collaborators create feature branches which are merged by myself and my fellow master merger @SerahN into the corresponding dev branch, and ultimately into the main branch.
+
+Issue/ related links
+
+Issue link: https://github.com/zuri-training/Team-64_Favicon-Gen/issues/115
+
+Some merged commits: https://github.com/zuri-training/Team-64_Favicon-Gen/commit/efd5c09dd20133ffcfeeb03458f2addde236e56f
+
+https://github.com/zuri-training/Team-64_Favicon-Gen/commit/06e833e9c66294833fddb0d08c5d556d15b9b9d7
+
+TASK 4
+Task:
+
+Presenter for Zuri's final presentation
+
+Description:
+
+I'll be working alongside Maureen Chukwurah @Guzi-goz in presnting our completed webapp to the cordinators. This presentation is a major contribution towards the team's excellent performance.
+
+
+TASK 5
+Task:
+
+Implementing the Reviews page design
+
+Description:
+
+i implemented a pixel perfert representation of the reviews page, following the design created by the designers on the team.
 
