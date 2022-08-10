@@ -1,0 +1,26 @@
+My name is Mike Awoyemi. I am a developer and a member of Team_64. The following are my contributions on the ZuriconGen Project:
+
+# Implemented the Favicon Converter frontend page
+(Issue)
+https://github.com/zuri-training/Team-64_Favicon-Gen/issues/15
+(Commit)
+https://github.com/zuri-training/Team-64_Favicon-Gen/commit/2c67a8e4a58a2184db3fbd2160eccd39a84e8cb7
+
+
+# Implemented the navbar (authenticated and unauthenticated) frontend page
+(Issue)
+https://github.com/zuri-training/Team-64_Favicon-Gen/issues/84
+
+(Commits)
+https://github.com/zuri-training/Team-64_Favicon-Gen/commit/67440bee89738d5dafcd4cfd712411818bf6f32eted (authenticated)
+https://github.com/zuri-training/Team-64_Favicon-Gen/commit/836721824d52bd34d2ada2d91b3b013f333ea33c (unauthenticated)
+
+
+# Built the favicon link tag generation BACKEND (embed html) for the project. This was built on the earlier works (ImageUpload) done by Serah Nwoke
+(Issue)
+https://github.com/zuri-training/Team-64_Favicon-Gen/issues/9
+(Commit)
+https://github.com/zuri-training/Team-64_Favicon-Gen/commit/76f43cbb2ee96ff2dbf30c118cc423d32b6d4355
+
+
+
