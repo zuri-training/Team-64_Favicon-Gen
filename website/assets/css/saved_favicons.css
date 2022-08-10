@@ -226,12 +226,12 @@ align-items: center;
 
 
 .search{
-    width: 75%;
+    width: 85%;
     height: 40px;
-    
+    /* font-size: 12px !important; */
 }
 .icon{
-  left: 10%;
+  left: 5%;
   padding-top: 15px;
 }
 .favicon-control{

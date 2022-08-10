@@ -151,11 +151,11 @@ def faviconGeneration(request, document_root):
 
 
 
-@login_required(login_url="/login")
+
 def converterPage(request):
     return render(request, 'pages/converter.html')
 
-# @login_required(login_url="/login")
+@login_required(login_url="/login")
 def faviconConversion(request, document_root):
     if request.method == 'POST':
         current_user = request.user

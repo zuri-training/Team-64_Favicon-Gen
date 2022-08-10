@@ -91,7 +91,7 @@ footer {
 
   /* ****************************************************** */
 footer.footer_hw {
-padding: 50px 80px;
+padding: 50px 65px;
 padding-bottom: 25px !important;
 height: fit-content !important;
 }
@@ -106,9 +106,10 @@ height: fit-content !important;
 }
 .fc_hw .second__section {
 width: unset !important;
+margin-left: 20px !important;
 }
 .fc_hw .second__section > div {
-    margin-left: 100px !important;
+    margin-left: 50px !important;
 }
 .fc_hw .second__section > div h3 {
     margin-bottom: 15px;

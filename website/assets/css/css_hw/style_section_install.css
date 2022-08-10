@@ -25,6 +25,7 @@
 @media (max-width:920px) {
     .section_install_container_hw {
         width: 100%;
+        padding: 25px;
     }
     .favicons_html_code_zone_hw > *{
         margin-bottom: 20px !important;
