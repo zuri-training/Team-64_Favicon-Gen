@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>{% block title %}My Site{% endblock %}</title>    
+    <title>ZuriconGen | {% block title %}My Site{% endblock %}</title>    
     {% load static %}
     <link rel='icon' sizes='120x120' href="{% static 'img/ZuriconGen0.png' %}">
     
@@ -35,7 +35,7 @@
                             class="mobile-logo"
                             alt="logo"
                         />
-                        <h2>Zuricon<span class="span_nav">Gen</span></h2>
+                        <a href="/home"><h2>Zuricon<span class="span_nav">Gen</span></h2></a>
                     </div>
         
                     <div class="navlinks">
@@ -51,12 +51,12 @@
                                 </a>
                             </li>
                             <li>
-                                <a class="nav-link" href="#" >
+                                <a class="nav-link" href="/texticons" >
                                     Texticon
                                 </a>
                             </li>
                             <li>
-                                <a class="nav-link" href="#" >
+                                <a class="nav-link" href="/tutorial" >
                                     Tutorial
                                 </a>
                             </li>
@@ -65,8 +65,8 @@
         
                     <div class="auth__menu">
                         <div class="registration">
-                            <a href="#" class="btn">Log in</a>
-                            <a href="#" class="btn">Sign Up</a>
+                            <a href="/login" class="btn">Log in</a>
+                            <a href="/sign-up" class="btn">Sign Up</a>
                         </div>
             
                         <!-- <div class="menu-icon"></div> -->

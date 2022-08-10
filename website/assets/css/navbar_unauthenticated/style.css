@@ -44,6 +44,10 @@ button {
 .header_ma {
   margin: 0;
   padding: 0;
+  width: 100%;
+  position: fixed;
+  background: white;
+  z-index: 1000;
 }
 .top-container {
   position: relative;
@@ -51,6 +55,8 @@ button {
   max-width: 100%;
   margin: 0 auto;
   padding: 0;
+  height: 72px;
+  background: white;
 }
 .container {
   margin: 0;
@@ -227,7 +233,7 @@ button {
   }
   .mobile-menu {
     position: fixed;
-    top: 66px;
+    top: 72px;
     right: 0;
     left: 100%;
     width: 100%;

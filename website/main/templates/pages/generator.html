@@ -11,47 +11,6 @@
 <link rel="stylesheet" type="text/css" href="{% static 'css/css_hw/coloris.min.css' %}">
 {% endblock %}
 
-<!-- <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Generator Page</title>
-
-    {% load static %}
-    <link rel='icon' href="{% static 'img/ZuriconGen_Favicon_Generation.svg' %}">
-
-    <link rel="stylesheet" href="{% static 'css/css_hw/style_navbar.css' %}">
-    <link rel="stylesheet" href="{% static 'css/css_hw/style_header.css' %}">
-    <link rel="stylesheet" href="{% static 'css/css_hw/style_footer.css' %}">    
-    <link rel="stylesheet" href="{% static 'css/css_hw/style_section01.css' %}">
-    
-    <link rel="stylesheet" href="{% static 'css/css_hw/style_section_generator.css' %}">
-    <link rel="stylesheet" href="{% static 'css/css_hw/style_section_install.css' %}">
-    <link rel="stylesheet" href="{% static 'css/css_hw/style_hw.css' %}">
-
-    <link rel="stylesheet" type="text/css" href="{% static 'css/css_hw/coloris.min.css' %}">
-</head>
-<body>
-    <nav>
-        <input type="checkbox" name="triple_bar_menu_check" id="triple_bar_menu_check">
-        <label for="triple_bar_menu_check" class="triple_bar_menu"><span></span></label>
-
-        <a href="{% url 'home'%}"><h2>Zuricon<span>Gen</span></h2></a>
-        <div class="links">
-            <a href="/converter_page">Converter</a>
-            <a href="/generator_page">Generator</a>
-            <a href="#">Texticons</a>
-            <a href="#">Tutorials</a>
-        </div>
-
-        <div class="authentication__links">
-            <div class="login__btn">Login</div>
-            <div class="signin__btn">Sign in</div>
-        </div>
-    </nav> -->
-
 {% block content %}
 
     <header class="gen_page_header_hw">
@@ -230,78 +189,6 @@
     </section>
 
 {% endblock %}
-
-    <!-- <footer class="footer_hw">
-        <div class="footer__content fc_hw">
-          <section class="first__section">
-            <h2>Zuricon<span>Gen</span></h2>
-            <h3>About</h3>
-            <p>
-              We built ZuriconGen so as to make creating favicons an easy
-              process. The texticons were created by our designers. If you like
-              ZuriconGen or have a suggestion, feel free to contact us. Feedback
-              is much appreciated.
-            </p>
-          </section>
-
-          <section class="second__section">
-            <div class="first">
-              <h3>Built with</h3>
-              <ul>
-                <li>ZuriconGen.js</li>
-                <li>Center.js</li>
-                <li>Texticons</li>
-              </ul>
-            </div>
-
-            <div class="second">
-              <h3>Resources</h3>
-              <ul>
-                <li><a href="#">Favicon Converter</a></li>
-                <li><a href="#">Favicon Generator</a></li>
-                <li><a href="#">Texticons</a></li>
-              </ul>
-            </div>
-
-            <div class="third">
-              <h3>Contact</h3>
-              <a href="#">contact@zuri.team.com</a>
-            </div>
-          </section>
-        </div>
-
-        <hr />
-
-        <div class="copyrights">
-          <p>
-            Copyright ZuriconGen 2022. All rights reserved.
-            <a href="#" class="zuricongen_blue_color">Privacy and terms</a>
-          </p>
-
-          <div class="icons footer_icons_hw">
-                <a href="#">
-                    <img src="{% static 'img/Facebook.svg' %}" alt="">
-                </a>
-                <a href="#">
-                    <img src="{% static 'img/Twitter.svg' %}" alt="">
-                </a>
-                <a href="#">
-                    <img src="{% static 'img/LinkedIn_Circled.svg' %}" alt="">
-                </a>
-          </div>
-
-          <div class="bottom__links">
-            <a href="#">Privacy Policy</a>
-            <a href="#">Terms of use</a>
-            <a href="#">Security</a>
-            <a href="#">Cookies</a>
-          </div>
-        </div>
-    </footer> -->
-
-
-
-
 
 {% block js_scripts %}
 <!-- SCRIPTS START -->

@@ -2,7 +2,7 @@ from multiprocessing import context
 from unicodedata import name
 from django.http import HttpResponse, FileResponse, JsonResponse
 from django.shortcuts import render, redirect
-from .forms import RegisterForm
+from .forms import SignUpForm, SignInForm
 from django.contrib.auth import login, logout, authenticate
 from django.contrib.auth.decorators import login_required
 
@@ -24,13 +24,20 @@ from django.core.files.base import ContentFile, File
 # END:for_download_tuto
 # Create your views here.
 
-@login_required(login_url="/login")
 def home(request):
-    context = {'file':FilesAdmin.objects.all()}
-    return render(request, 'pages/home.html', context)
+    return render(request, 'pages/home.html')
+
+def reviews(request):
+    return render(request, 'pages/reviews.html')
+
+def tutorial(request):
+    return render(request, 'pages/tutorial.html')
+
+def texticons(request):
+    return render(request, 'pages/texticons.html')
 
 
-@login_required(login_url="/login")
+
 def generatorPage(request):
     return render(request, 'pages/generator.html')
 
@@ -277,30 +284,54 @@ def deleteFavicon(request, value):
 
 
 
+# START AUTHENTICATION
+def sign_in(request):
+    if request.user.is_anonymous:
+        if request.method == 'POST':
+            username = request.POST['username']
+            password = request.POST['password']
+            user = authenticate(username=username, password=password)
+            if user is not None:
+                login(request, user)
+                return redirect('/home')
+    else:
+        return redirect('/home')
 
+    form = SignInForm()
+    return render(request, 'auth/signin.html', {"form":form})
 
 def sign_up(request):
-    if request.method == 'POST':
-        form = RegisterForm(request.POST)
-        if form.is_valid():
-            user = form.save()
-            login(request, user)
-            return redirect('/home')
+    if request.user.is_anonymous:
+        if request.method == 'POST':
+            form = SignUpForm(request.POST)
+            
+            if form.is_valid():
+                username =form.cleaned_data.get("username")
+                password =form.cleaned_data.get("password1")
+                form.save()
+                new_user = authenticate(username=username, password=password)
+                if new_user is not None:
+                    login(request, new_user)
+                    return redirect('/home')
     else:
-        form = RegisterForm()
-    return render(request, 'registration/sign_up.html', {"form":form})
+        return redirect('/home')
+    
+    form = SignUpForm()
+    return render(request, 'auth/signup.html', {"form":form})
+
+# END AUTHENTICATION
 
 
-
+# ************************
 def success(request, filelink):
     return render(request, 'main/success.html', {"filelink":filelink})
 
 def error_w(request):
 	return HttpResponse('There was an error !')
+# ************************
 
 
-
-# EXTRA FUNCTIONS 
+# START EXTRA FUNCTIONS 
 def generateFaviconFile(convGen, savedToDrafts, current_user, gen_zipfile, pathToFiles, relativePathToFiles, 
                             pathToImgToConvert, convFileName, imgFormat, size):
 
@@ -336,3 +367,5 @@ def generateFaviconFile(convGen, savedToDrafts, current_user, gen_zipfile, pathT
         )            
     convgen_favicon.path.name=os.path.join(relativePathToFiles,convFileName+'-'+str(size)+'x'+str(size)+'.'+imgFormat)
     convgen_favicon.save()
+
+# END EXTRA FUNCTIONS 

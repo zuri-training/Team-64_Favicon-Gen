@@ -1,32 +1,124 @@
-{% extends 'main/base.html' %}
-{% block title %}Home Page{% endblock %}
-{% block content %}
 
-<h1>Converter</h1>
-
-<form action="{% url 'converter_page' %}" id="convertFormId" method="POST" enctype="multipart/form-data">
-    {% csrf_token %}
-    <div class="form-group">
-        <div class="row">
-            <div class="col">
-                <label>Insert Image</label>
-                <input type="file" id="myImgUploadInput" name="imgToConvert" enctype="multipart/form-data" accept="image/png, image/jpeg">
-            </div>
-        </div>          
-    </div>
-
-    <div id="loader_hw" class="loader_hw displayNone"></div>
-    <div id="upload_img_btn_group" class="form-group">
-        <a href="#" id="convert_img_btn" class="btn btn-primary">
-            Convert
-        </a>
-        <a href="#" id="save_img_btn" class="btn btn-primary">
-            Save
-        </a>
-        <small class="text-danger ml-3" id="convert_img_btn_msg"></small>
-        <!-- <button type="submit" class="btn btn-primary btn-lg btn-block" href="">Upload</button> -->
-    </div>
-</form>
-
+{% extends 'master/master.html' %}
+{% load static %}
+{% block title %}Converter{% endblock %}
+{% block css_styles %}
+<link rel="stylesheet" href="{% static 'css/converter/style.css' %}">
+<link rel="stylesheet" href="{% static 'css/css_hw/style_section_install.css' %}">
+<link rel="stylesheet" href="{% static 'css/css_hw/style_hw.css' %}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 {% endblock %}
 
+
+
+{% block content %}
+<main>
+    <section class="content">
+        <div class="container">
+            <div class="converter">
+                <div class="content-head">
+                    <h1>Converter</h1>
+                </div>
+            </div>
+
+            <div class="converter-box">
+                <div class="upload-top">
+                    <p>Upload File</p>
+                </div>
+
+                <div class="droparea">
+                    <div class="image">
+                    <img src="{% static 'img/converter/Icon24x24.png' %}" alt="">
+                    </div>
+                    <div class="drag">
+                    <p>Drag n drop here</p>
+                    <p>Or</p>
+                    <a href="#">Browse</a>
+                    </div>
+                    
+                </div>
+                <input type="file" id="real-file" hidden="hidden">
+                <div class="upload-bottom" id="custom-button">
+                    <button type="submit">Upload Now</button>
+                </div>
+            </div>
+            
+            <div class="content-options">
+                <button class="pry-btn">Download</button>
+                <button class="pry-btn draft">Save to draft
+                <button class="pry-btn mobile-save">Save<span><i class="fa-solid fa-angle-right"></i></span>
+                </button>
+            </div>
+        </div>
+    </section>
+        
+    <section class="how-to">
+        <div class="container">
+            <div class="text">
+                <h1>To convert and download your file;</h1>
+                <div class="steps">
+                    <ul>
+                        <li>Drag and drop your file into the above box, or you click the space in the box to upload your file</li>
+                        <li>Then, click "Download" to download the zip file.</li>
+                        <li>Or, click "Save" to allow you save in the drafts for you to download later.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- <hr class="divider"> -->
+
+    {% include 'components/installation.html' %}
+    <section>
+        
+
+        <!--------------------------Installation---------------->
+    <!-- </section>
+    <section class="section_install_hw">
+        <div class="section_install_container_hw">
+            <h1>Installation</h1>
+            <div class="conv-page-section-install">
+                <h2 class="gen_page_section_title_hw zuricongen_blue_color mb_30_hw">Installation</h2>
+                <p class="plain_text_hw mb_30_hw">
+                First, use the download button to download the files listed below. Place the files in the root directory of your website.
+                <br/>
+                </p>
+                <ul class="gen_ul_list_hw plain_text_hw">
+                <li>android-chrome-192x192.png</li>
+                <li>android-chrome-512x512.png</li>
+                <li>apple-touch-icon.png</li>
+                <li>favicon-16x16.png</li>
+                <li>favicon-32x32.png</li>
+                <li>favicon.ico</li>
+                <li>sie.webmanifest</li>
+                </ul>
+                <p class="plain_text_hw mb_30_hw">Next, copy the following link tags and paste them into the head of your HTML.
+                </p>
+            </div>
+            
+            
+            <div class="favicons_html_code_zone_hw plain_text_hw zuricongen_blue_color">
+                &lt;link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"&gt; 
+                <br/>
+                &lt;link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"&gt; 
+                <br/>
+                &lt;link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"&gt; 
+                <br/>
+                &lt;link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"&gt;
+            </div>
+            <div class="btn_install_container_hw">
+                <button class="btn_hw btn_zuricongen_filled_hw">
+                    Copy
+                </button>
+            </div>
+        </div>
+    </section> -->
+</main>
+{% endblock %}
+
+
+
+{% block js_scripts %}
+<script src="{% static 'script.js' %}" defer></script>
+{% endblock %}

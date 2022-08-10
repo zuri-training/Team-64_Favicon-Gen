@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ZuriconGen | {% block title %}My Site{% endblock %}</title>    
+    {% load static %}
+    <link rel='icon' sizes='120x120' href="{% static 'img/ZuriconGen0.png' %}">
+    
+    <link rel="stylesheet" href="{% static 'css/css_hw/style_hw.css' %}">  
+    <link rel="stylesheet" href="{% static 'css/signin/navbar.css' %}">      
+    <link rel="stylesheet" href="{% static 'css/css_hw/style_footer.css' %}"> 
+    {% block css_styles %}{% endblock %}
+</head>
+<body>
+    <header>
+        <div class="top-container">
+            <nav class="header_ma">                    
+                <div class="navbar_ma">                                        
+                    <div class="logo">
+                        <a href="/home">
+                            <img
+                            src="{% static 'img/navbar_unauthenticated/Group 100.png' %}"
+                            class="desktop-logo"
+                            alt="logo"
+                            />
+                        </a>
+                        <img
+                            src="{% static 'img/navbar_unauthenticated/Group 101.png' %}"
+                            class="mobile-logo"
+                            alt="logo"
+                        />
+                        <a href="/home"><h2>Zuricon<span class="span_nav">Gen</span></h2></a>
+                    </div>        
+                </div>
+            </nav>
+        </div>
+    </header>
+
+
+    <div class="container">
+        {% block content %}
+        {% endblock %}
+    </div>
+    
+
+
+
+    <script src="{% static 'js/jquery-2.2.4.min.js' %}"></script>
+
+    {% block js_scripts %}
+    {% endblock %}
+</body>
+</html>
