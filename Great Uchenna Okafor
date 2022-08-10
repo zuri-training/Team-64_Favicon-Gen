@@ -62,3 +62,12 @@ Description:
 
 i implemented a pixel perfert representation of the reviews page, following the design created by the designers on the team.
 
+TASK 6
+Task:
+
+linking all pages of our webapp (frontend) together
+
+Description:
+
+After successfull review and merging of our codes, i linked all the available frontend implementations together, ensuring that each link in the whole webapp is routed to the right page and are functioning correctly
+
