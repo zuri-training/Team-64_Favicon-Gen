@@ -230,12 +230,18 @@ I am working alongside Maureen Chukwurah @Guzi-goz on developing the script that
 
 1. Issue link: `https://github.com/zuri-training/Team-64_Favicon-Gen/issues/107`
 
-<!-- #### TASK
+#### TASK 14
 
 **Task:**
 
+Developers to be interviewed by designers.
+
 **Description:**
+
+I was interviewed by a designer on the team, Prosper Oke @Prospernias , during the design research.
 
 **Issue/ related links**
 
-Issue link: -->
+Issue link:
+
+1. `https://github.com/zuri-training/Team-64_Favicon-Gen/issues/139`
