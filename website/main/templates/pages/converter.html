@@ -67,6 +67,7 @@
         </div>
     </section>
 
+
     <!-- <hr class="divider"> -->
 
     {% include 'components/installation.html' %}
@@ -115,10 +116,15 @@
         </div>
     </section> -->
 </main>
+
+
+
+
 {% endblock %}
 
 
 
 {% block js_scripts %}
-<script src="{% static 'script.js' %}" defer></script>
+<script src="{% static 'js/converter/script.js' %}" defer></script>
+<script type="text/javascript" src="{% static 'js/js_hw/converter_hw.js' %}"></script>
 {% endblock %}
