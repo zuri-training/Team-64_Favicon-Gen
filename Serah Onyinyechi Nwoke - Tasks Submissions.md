@@ -166,6 +166,7 @@ I generated zip files containing the JPG, PNG, and ICO formats using the favicon
 **Issue/ related links**
 
 1. Issue link: `https://github.com/zuri-training/Team-64_Favicon-Gen/issues/105`
+2. Commit link: `https://github.com/zuri-training/Team-64_Favicon-Gen/commit/6579ad52e6c0a14351413b4f21bc2ff9165556e5`
 
 #### TASK 10
 
