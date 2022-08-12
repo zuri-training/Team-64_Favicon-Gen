@@ -1,0 +1,177 @@
+{% extends 'master/master.html' %}
+{% load static %}
+{% block title %}Saved Drafts{% endblock %}
+{% block css_styles %}
+<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="//use.fontawesome.com/releases/v4.7.0/css/font-awesome-css.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/brands.min.css"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" />
+<link rel="stylesheet" href="{% static 'css/saved_favicons.css' %}">
+{% endblock %}
+
+
+{% block content %}
+    
+<main>
+  <section class="main_jol">
+    <div class="panel_jol">
+      <div class="select_jol "> <h4 class="h4_jol">Downloads</h4></div>
+      <div class="select_jol active2"><h4 class="h4_jol">Drafts</h4></div>
+    </div>
+    <div class="content_jol drafts">
+      <div class="search-bar">
+        <i class="fas fa-search icon fa-xl"></i>
+        <input type="text" class="search" name="search" placeholder="Search Drafts" size="80" onkeyup="search()">
+      </div>
+      <p class="date">Generated Favicons</p>  
+
+      {% for item in savedGenfavicons %}
+      <div class="favicon-control" id="{{ item.favicon.name }}.{{ item.favicon.img_type }}">
+        <span class="image">
+          <img src="{{item.favicon.path.url}}" alt="">
+        </span>
+        <span class="title">
+          <h2>{{ item.favicon.name }}.{{ item.favicon.img_type }}</h2>
+          <a href="{{item.ziplink.path.url}}" download="{{item.ziplink.path.url}} " class="link">
+            Download
+          </a>
+        </span>
+      
+        <a href="/delete_favicon/{{item.ziplink.id}}">
+          <div class="x" >
+            <i class="fa-solid fa-xmark"></i>
+          </div>
+        </a>
+      </div>
+      {%endfor%}
+
+      <p class="date">Converted Favicons</p>
+      {% for item in savedConvfavicons %}
+    
+          
+      <div class="favicon-control " id="{{ item.favicon.name }}.{{ item.favicon.img_type }}">
+        <span class="image">
+          <img src="{{item.favicon.path.url}}" alt="">
+        </span>
+        <span class="title">
+          <h2>{{ item.favicon.name }}.{{ item.favicon.img_type }}</h2>
+          <a href="{{item.ziplink.path.url}}" download="{{item.ziplink.path.url}} " class="link">
+            Download
+          </a>
+        </span>
+      
+        <a href="/delete_favicon/{{item.ziplink.id}}">
+          <div class="x" >
+            <i class="fa-solid fa-xmark"></i>
+          </div>
+        </a>
+      </div>
+      {%endfor%}
+
+
+      <p class="date">Texticons</p>
+      {% for item in savedTexticons %}    
+          
+      <div class="favicon-control " id="{{ item.texticon.name }}.{{ item.texticon.img_type }}">
+        <span class="image">
+          <img src="{{item.texticon.img_path.url}}" alt="">
+        </span>
+        <span class="title">
+          <h2>{{ item.texticon.name }}.{{ item.texticon.img_type }}</h2>
+          <a href="{{item.texticon.zip_path.url}}" download="{{item.texticon.zip_path.url}} " class="link">
+            Download
+          </a>
+        </span>
+      
+        <a href="/delete_saved_texticon/{{item.texticon.id}}">
+          <div class="x" >
+            <i class="fa-solid fa-xmark"></i>
+          </div>
+        </a>
+      </div>
+      {%endfor%}
+    </div>
+
+
+    <div class="content_jol download hide">
+      <div class="search-bar">
+        <i class="fas fa-search icon fa-xl"></i>
+        <input type="text" class="search" name="search" placeholder="Search Downloads" size="80" onkeyup="search()"/>
+      </div>
+      <p class="date">Generated Favicons</p>  
+      {% for item in downloadedGenfavicons %}
+      <div class="favicon-control">
+        <span class="image">
+          <img src="{{item.favicon.path.url}}" alt="">
+        </span>
+        <span class="title">
+          <h2>{{ item.favicon.name }}.{{ item.favicon.img_type }}</h2>
+          <a href="{{item.ziplink.path.url}}" download="{{item.ziplink.path.url}} " class="link">Download</a>
+        </span>
+      
+        <a href="/delete_favicon/{{item.ziplink.id}}">
+          <div class="x" >
+            <i class="fa-solid fa-xmark"></i>
+          </div>
+        </a>
+      </div>
+      {%endfor%}
+
+
+      <p class="date">Converted Favicons</p>
+      {% for item in downloadedConvfavicons %}          
+      <div class="favicon-control">
+        <span class="image">
+          <img src="{{item.favicon.path.url}}" alt="">
+        </span>
+        <span class="title">
+          <h2>{{ item.favicon.name }}.{{ item.favicon.img_type }}</h2>
+          <a href="{{item.ziplink.path.url}}" download="{{item.ziplink.path.url}} " class="link">
+            Download
+          </a>
+        </span>
+        <a href="/delete_favicon/{{item.ziplink.id}}">
+          <div class="x">
+            <i class="fa-solid fa-xmark"></i>
+          </div>
+        </a>
+      </div>
+      {%endfor%}
+    </div>
+
+  </section>
+</main>
+      
+{% endblock %}
+
+
+{% block js_scripts %}
+<script type="text/javascript" src="{% static 'js/js_hw/drafts.js' %}"></script>
+<script>
+   const input1 = document.getElementsByClassName("search")[0];
+ 
+  let fav = document.getElementsByClassName("favicon-control");
+function search(){
+ console.log(input1.value.toUpperCase());
+
+  for (let i = 0; i < fav.length; i++) {
+   let new2 = fav[i].id.toString().toUpperCase();
+   if (new2.indexOf(input1.value.toUpperCase()) > -1){
+    fav[i].style.display = "";
+   }
+   else{
+    fav[i].style.display= "none";
+   }
+    
+  }
+
+}
+
+</script>
+{% endblock %}
+
+<!-- </body>
+</html> -->
+
+    
+    

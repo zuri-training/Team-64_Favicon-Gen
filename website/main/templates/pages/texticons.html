@@ -1,0 +1,74 @@
+
+{% extends 'master/master.html' %}
+{% load static %}
+{% block title %}Texticons{% endblock %}
+{% block css_styles %}
+<link rel="stylesheet" href="{% static 'css/texticons/Texticons.css' %}"/>
+<link rel="stylesheet" href="{% static 'css/css_hw/style_section_install.css' %}">
+<link rel="stylesheet" href="{% static 'css/css_hw/style_hw.css' %}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/brands.min.css"/>
+{% endblock %}
+
+
+
+{% block content %}
+
+<!-- Texticons-header -->
+<div class="Texticons-header">
+        <h1>Texticons</h1>
+        <p>
+          Choose from the variety of pre-designed <br />
+          <span>texticons</span>
+        </p>
+        <div class="Texticons-header_image">
+          <img src="{% static 'img/landing/section3.svg' %}" alt="Texticons header image" />
+        </div>
+      </div>
+      
+      <!-- Texticons-section -->
+      <div class="TexticonsSuperContainer">
+        <div class="TexticonsContainer">
+          
+          {% for item in texticonsList %}
+          <div class="texticonsBox">
+            <div class="image_box">
+              <div><img src="{{item.texticonItem.img_path.url}}" /></div>
+            </div>
+            <div class="links_container">
+              {% if user.is_authenticated %}
+              <div class="button-download">
+                <a href="{{item.texticonItem.zip_path.url}}">Download</a>
+              </div>
+              <div id="saveDraft_{{item.texticonItem.id}}" class="button-drafts">
+                  
+                {% if item.savedToDrafts == 0 %}
+                <a href="#">Save to drafts</a>
+                {% else %}                
+                <a class="disabledSaveBtn" href="javascript:void(0)">Saved</a>
+                {% endif %}
+              </div>
+              {% else %}
+              <div class="button-download">
+                <a href="/sign-in">Download</a>
+              </div>
+              <div class="button-drafts">
+                <a href="/sign-in">Save to drafts</a>                
+              </div>
+              {% endif %}
+            </div>
+          </div>
+          {% endfor %}
+
+        </div>
+      </div>
+
+      {% include 'components/installation.html' %}
+
+
+{% endblock %}
+
+
+
+{% block js_scripts %}
+<script src="{% static 'js/js_hw/texticons_hw.js' %}"></script>
+{% endblock %}

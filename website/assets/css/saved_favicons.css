@@ -1,0 +1,271 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    --gray: #a6a8a8;
+    font-family: Lato;
+    --green: #285052;
+    --yellow: #f7b05e;
+    --lightgray: #f8f8f8;
+    --blue: #251181;
+    --black: #151515;
+    --gray: #b0afaf;
+  }
+
+  body{
+    max-width: 1440px;
+    margin: auto;
+  }
+.main_jol{
+    display: flex;
+    padding-top: 3.75rem;
+    margin-bottom: 5rem;
+}
+.panel_jol{
+    display: flex;
+    
+    flex-direction: column;
+    width: 23%;
+    padding-top: 10.5rem;
+}
+.content_jol{
+    background: #F5F5F5;
+    border-radius: 90px 0px 0px 0px;
+    width: 77%;
+    min-height: 60vh;
+    height: fit-content;
+    padding-left: 5rem;
+    padding-top: 5rem;
+    padding-bottom: 3rem;
+    
+}
+
+.select_jol{
+    width: 100%;
+    height: 64px;
+    background-color:#F5F5F5;
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+    cursor: default;
+}
+h4.h4_jol{
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-align: left;
+}
+.select_jol h4{
+    width: 120px;
+}
+.select_jol:hover{
+    background-color: #5443A0;
+    color: white;
+}
+.active2{
+    background-color: #5443A0;
+    color: white;
+}
+.search-bar{
+    position: relative;
+    width: 80%;
+}
+.search-bar{
+      width: 100%; 
+}
+.search{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 25px 25px 25px 70px;
+    width: 80%;
+   
+    background: #EDECEC;
+    border-radius: 90px;
+    font-size: 1.5rem;
+    outline: none;
+    border: none;
+}
+::placeholder{
+    font-size: 1.5rem;
+    color: #151515;
+    width: 600px;
+   
+}
+.icon{
+    padding: 10px;
+    padding-top: 40px;
+    padding-left: 40px;
+    
+    color: #151515;
+    min-width: 40px;
+    position: absolute;
+}
+.date{
+    margin-top: 4rem;
+    font-weight: 500;
+    font-size: 20px;
+}
+.favicon-control{
+    position: relative;
+    background: #5443A0;
+border-radius: 15px;
+width: 80%;
+height: 100px;
+margin-top: 1.5rem;
+display: flex;
+}
+.image{
+    width: 20%;
+    border-right: 2px solid #EDECEC;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.image img{
+    width: 50%;
+}
+.favicon-control .title{
+width: 50%;
+color: white;
+padding-top: 0.5rem;
+padding-left: 1rem;
+}
+
+.favicon-control .link{
+    font-weight: 300;
+    font-size: 16px;
+    color: #FFFFFF;
+}
+.favicon-control span{
+    color: #FFFFFF;
+}
+.folder{
+    width: 20%;
+    padding-top: 8%;
+}
+.folder p{
+    font-weight: 300;
+    font-size: 16px;
+}
+.x{
+    background: #F7B05E;
+border-radius: 15px;
+transform: matrix(-1, 0, 0, 1, 0, 0);
+width: 30px;
+height: 30px;
+position: absolute;
+right: 0%;
+transform: translate(50%, -50%);
+display: flex;
+justify-content: center;
+align-items: center;
+}
+.fa-xmark{
+    color: white;
+}
+.hide{
+    display: none;
+}
+
+
+  
+  @media (max-width: 960px) {
+
+    .panel_jol{
+        width: 27%;
+    }
+    .content_jol{
+        width: 73%;
+    }
+
+    .favicon-control .title h2 {
+        font-size: 18px !important;
+        overflow: hidden;
+    }
+
+  }
+
+
+  @media (max-width: 650px) {
+ .main_jol{
+    flex-direction: column;
+ }
+.panel_jol{
+ flex-direction: row;
+ justify-content: center;
+ width: 100%;
+ padding-top: 2rem;
+}
+.select_jol{
+    font-size: 16px;
+    width: 140px;
+    border-radius: 20px 20px 0px 0px;
+    text-align: center;
+    justify-content: center;
+    margin-bottom: 0;
+}
+.select_jol h4{
+    width: fit-content;
+}
+
+.content_jol{
+    width: 100%;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 2rem;
+    font-size: 16px;
+    border-radius: 60px 60px 0px 0px;
+}
+.search-bar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.search{
+    width: 85%;
+    height: 40px;
+    /* font-size: 12px !important; */
+}
+.icon{
+  left: 5%;
+  padding-top: 15px;
+}
+.favicon-control{
+    width: 100%;
+    background-color: #F5F5F5;
+    height: 50px;
+    
+}
+
+.favicon-control .title {
+    margin-right: 10px;
+}
+.favicon-control h2, .favicon-control p{
+    color: #251181;
+}
+.favicon-control .link{
+    color: #151515;
+}
+.title h2{
+    font-size: 14px;
+}
+.favicon-control p{
+    font-size: 12px;
+}
+.folder{
+    display: none;
+}
+.x{
+    position: relative;
+    margin: auto auto;
+    top: auto;
+    transform: none;
+}
+
+   
+    
+  }

@@ -1,0 +1,393 @@
+/* @import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap"); */
+
+/* * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+}
+
+body {
+  font-family: "Lato", sans-serif;
+  scroll-behavior: smooth;
+} */
+
+.disabledSaveBtn {
+  opacity: 0.3 !important;
+  cursor: default !important;
+}
+.TexticonsPage-container {
+  max-width: 1440px;
+  margin: auto;
+}
+
+/* Texticons-header */
+.Texticons-header {
+  background-color: #f5f5f5;
+  width: 100%;
+  min-height: 512px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 128px;
+}
+
+.Texticons-header h1 {
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 48px;
+  letter-spacing: 0em;
+  color: #251181;
+  position: absolute;
+  bottom: 102%;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  font-family: Lato;
+}
+
+.Texticons-header p {
+  font-family: Lato;
+  font-size: 32px;
+  font-weight: bold;
+  /* font-weight: 400; */
+  line-height: 48px;
+  letter-spacing: 0em;
+  text-align: center;
+  color: #251181;
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+
+.Texticons-header p span {
+  color: #f7b05e;
+  text-align: center;
+}
+
+.Texticons-header_image {
+  position: relative;
+  width: 365px;
+  height: 350px;
+  overflow: hidden;
+}
+
+.Texticons-header_image img {
+  object-fit: cover;
+  height: auto;
+  width: 100%;
+}
+
+/* Media Responsiveness */
+/* Mobile */
+@media (max-width: 650px) {
+  
+
+  .Texticons-header {
+    min-height: unset;
+    padding-bottom: 20px;
+    margin-top: 70px;
+  }
+
+  .Texticons-header p {
+    font-size: 18px;
+    line-height: 21px;
+  }
+
+  .Texticons-header_image {
+    width: 265px;
+    height: 250px;
+  }
+}
+
+/* Texticons-section */
+
+.TexticonsSuperContainer {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding-left: 6%;
+  /* padding: 0 50px; */
+}
+.TexticonsContainer {
+  position: relative;
+  margin-top: 70px !important;
+  margin-bottom: 100px !important;
+  max-width: 1240px;
+  width: fit-content !important;
+  /* margin: auto; */
+  display: flex;
+  /* flex-wrap: wrap; */
+  flex-flow: row wrap;
+  /* gap: 60px; */
+  display: flex;
+  flex-wrap: wrap;
+  /* flex-direction: column; */
+  /* justify-self: center; */
+  /* justify-content: center; */
+  /* text-align: start; */
+  /* display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr; */
+}
+
+.texticonsBox {
+  background-color: #ffffff;
+  border: 1px solid #d9d9d9;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 20px;
+  /* width: 250px;
+  height: 262px;
+  margin: 30px; */
+  /* transform: scale(0.8); */
+  width: 200px;
+  height: 210px;
+  margin: 30px;
+  /* flex: 0 0 23%; */
+}
+
+.image_box {
+  height: 60%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* .image_box img {} */
+.links_container {
+  height: 40%;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.button-download,
+.button-drafts {
+  width: 100%;
+  border: none;
+  padding-top: .7rem;
+  padding-top: 7px;
+  /* gap: 4px; */
+  font-size: 24px;
+  font-weight: 400;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+}
+
+.button-download {
+  background-color: #1c0d65;
+  height: 50%;
+}
+
+.button-download a {
+  color: #ffffff;
+}
+.button-download:hover a {
+  color: #f7b05e;
+}
+
+.button-drafts {
+  border-radius: 0px 0px 20px 20px;
+  background-color: white;
+  height: 50%;
+  color: #1c0d65;
+}
+.button-drafts:hover{
+  background-color: #26118121;
+}
+
+/* Media Responsiveness */
+/* Tablet */
+@media (max-width: 920px) {
+  /* .TexticonsContainer {
+    grid-template-columns: 1fr 1fr 1fr;
+  } */
+
+  .button-download,
+  .button-drafts {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 650px) {
+  /* .TexticonsContainer {
+    grid-template-columns: 1fr 1fr;
+  } */
+
+  .button-download,
+  .button-drafts {
+    /* font-size: 12px; */
+  }
+}
+
+@media (max-width: 420px) {
+  /* .TexticonsContainer {
+    grid-template-columns: 1fr;
+    place-items: center;
+  } */
+}
+
+/* Installation-section */
+.installation-section {
+  position: relative;
+  margin-top: 70px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 150px;
+}
+
+.installation-section1 {
+  background: #f5f5f5;
+  padding: 50px;
+  width: 80%;
+}
+
+.installation-section1 h2 {
+  font-size: 24px;
+  color: #251181;
+  margin-bottom: 30px;
+}
+
+.installation-section1 p {
+  margin-bottom: 30px;
+  font-family: Lato;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 17px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #151515
+}
+
+.installation-links {
+  position: relative;
+  list-style: none;
+  padding-left: 25px;
+  margin-top: 10px;
+  line-height: 28px;
+  font-family: Lato;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0em;
+  text-align: left;
+}
+
+.installation-links li {
+  position: relative;
+  display: block;
+}
+
+.installation-links li:after {
+  content: "";
+  position: absolute;
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
+  left: -25px;
+  top: 18%;
+  background: #000;
+}
+
+.favicons-codes {
+  margin-top: 150px;
+  margin-bottom: 50px;
+  background: #EDF3F8;
+  padding: 30px;
+  width: 80%;
+  line-height: 32px !important;
+  font-family: Lato;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 17px;
+  letter-spacing: 0em;
+  text-align: left;
+}
+
+.installation-button {
+  margin-bottom: 30px;
+}
+
+.installation-button1 {
+  outline: none;
+  font-size: 20px;
+  padding: 10px 30px;
+  border-radius: 5px;
+  border: 1px solid #251181;
+  min-width: 182px;
+  min-height: 55px;
+  cursor: pointer;
+  background: #251181;
+  color: #fff;
+}
+
+.installation-button1:hover {
+  color: #f7b05e;
+}
+
+/* Media Responsiveness */
+/* Tablet */
+@media (max-width: 920px) {
+  .installation-section1 {
+    width: 100%;
+    background: #FFFFFF;
+  }
+
+  .favicons-codes {
+    background: #F5F5F5;
+  }
+
+  .favicons-codes>* {
+    margin-bottom: 20px !important;
+  }
+}
+
+/* Mobile */
+@media (max-width: 650px) {
+  .installation-section1 {
+    background: #F5F5F5;
+  }
+
+  .installation-section1 h2 {
+    font-size: 18px;
+  }
+
+  .installation-section1 p {
+    font-size: 16px;
+    text-align: left;
+    width: 70%;
+  }
+
+  .installation-button1 {
+    font-style: 14px;
+    margin-bottom: 15px;
+  }
+
+  .favicons-codes {
+    background: #fff;
+  }
+}
+
+
+/* Media Responsiveness */
+/* Tablet */
+@media (max-width: 920px) {
+  
+  .first__section p {
+    width: auto;
+  }
+
+}
+
+/* Mobile */
+@media (max-width: 778px) {
+  .TexticonsSuperContainer {
+    padding-left: unset;;
+  }
+  .TexticonsContainer {
+    justify-content: center;
+  }
+  
+
+}

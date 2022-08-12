@@ -1,0 +1,32 @@
+{% extends 'main/base.html' %}
+{% block title %}Home Page{% endblock %}
+{% block content %}
+
+<h1>Converter</h1>
+
+<form action="{% url 'create_texticons' %}" id="convertFormId" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="form-group">
+        <div class="row">
+            <div class="col">
+                <label>Insert Image</label>
+                <input type="file" id="myImgUploadInput" name="imgToConvert" enctype="multipart/form-data" accept="image/png, image/jpeg">
+            </div>
+        </div>          
+    </div>
+
+    <div id="loader_hw" class="loader_hw displayNone"></div>
+    <div id="upload_img_btn_group" class="form-group">
+        <!-- <a href="#" id="convert_img_btn" class="btn btn-primary">
+            Convert
+        </a>
+        <a href="#" id="save_img_btn" class="btn btn-primary">
+            Save
+        </a>
+        <small class="text-danger ml-3" id="convert_img_btn_msg"></small> -->
+        <button type="submit" class="btn btn-primary btn-lg btn-block" href="">Create Texitcons</button>
+    </div>
+</form>
+
+{% endblock %}
+

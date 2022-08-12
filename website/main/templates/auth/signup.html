@@ -1,0 +1,138 @@
+
+{% extends 'master/master_auth.html' %}
+{% load static %}
+{% block title %}Sign Up{% endblock %}
+{% block css_styles %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"/>
+<link rel="stylesheet" href="{% static 'css/signup/signup.css' %}" />
+{% endblock %}
+
+{% block content %}
+<main>
+    <img src="{% static 'img/signup/Smiling Face.png' %}" alt="Avatar" class="smiling-avatar" />
+    <div class="wrapper">
+        <div class="container-1">
+        <img src="{% static 'img/signup/Zuricon-img1.png' %}" alt="Avatar" class="img-avatar" />
+        </div>
+        <div class="container-2">
+        <p class="text">
+            Create stunning favicons with us. We offer the best!
+        </p>
+        <p class="text-2">Try ZuriconGen today. Its absolutely free!</p>
+        <form class="box" action="/sign-up" method="POST">
+            {% csrf_token %}
+            <div class="form-control">
+                <label for="username" class="label">Username:</label>
+                {{form.username}}
+                <!-- <input
+                    type="text"
+                    id="username"
+                    placeholder="Username"
+                    required
+                /> -->
+            </div>
+            <div class="form-control">
+                <label for="email" class="label">Email:</label>
+                {{form.email}}
+                <!-- <input
+                    type="email"
+                    id="email"
+                    placeholder="name@email.com"
+                    required
+                /> -->
+            </div>
+            <div class="form-control">
+                <label for="password" class="label">Password:</label>
+                {{form.password1}}
+                <!-- <input
+                    type="password"
+                    placeholder="Password"
+                    required
+                    id="password1"
+                /> -->
+                <span class="eye" onclick="myFunction1()">
+                    <i id="hide11" class="fa-solid fa-eye"></i>
+                    <i id="hide21" class="fa-solid fa-eye-slash"></i>
+                </span>
+            </div>
+            <div class="form-control">
+                <label for="password" class="label">Confirm password:</label>
+                {{form.password2}}
+                <!-- <input
+                    type="password"
+                    placeholder="Password"
+                    required
+                    id="password2"
+                /> -->
+                <span class="eye" onclick="myFunction2()">
+                    <i id="hide12" class="fa-solid fa-eye"></i>
+                    <i id="hide22" class="fa-solid fa-eye-slash"></i>
+                </span>
+            </div>
+            <div class="sign">
+                <button type="submit">SIGN UP</button>
+                <small
+                    >Already have an account?
+                    <a href="/sign-in">Sign in</a>
+                </small>
+            </div>
+            <p class="or">OR</p>
+            <div class="google">
+            <p>Sign up with:</p>
+            <a class="circle" href="#" target="blank">
+                <img src="{% static 'img/signup/google.png' %}"/>
+            </a>
+            </div>
+        </form>
+        </div>
+    </div>
+    <div class="terms">
+        <p>
+        <small>
+            By creating an account, I agree to ZuriconGen's
+            <a href="#">Terms of Service, Privacy Policy</a> and default
+            <a href="#">Notification Settings.</a>
+        </small>
+        </p>
+    </div>
+    <hr />
+</main>
+{% endblock %}
+
+
+
+{% block js_scripts %}
+<script>
+    function myFunction1() {
+    var x1 = document.getElementById("password1");    
+    var y1 = document.getElementById("hide11");
+    var z1 = document.getElementById("hide21");
+
+        if (x1.type === "password") {
+            x1.type = "text";
+            y1.style.display = "block";
+            z1.style.display = "none";
+        } else {
+            x1.type = "password";
+            y1.style.display = "none";
+            z1.style.display = "block";
+        }
+    }
+    function myFunction2() {
+
+    var x2 = document.getElementById("password2");    
+    var y2 = document.getElementById("hide12");
+    var z2 = document.getElementById("hide22");
+
+        if (x2.type === "password") {
+            x2.type = "text";
+            y2.style.display = "block";
+            z2.style.display = "none";
+        } else {
+            x2.type = "password";
+            y2.style.display = "none";
+            z2.style.display = "block";
+        }
+    }
+</script>
+{% endblock %}

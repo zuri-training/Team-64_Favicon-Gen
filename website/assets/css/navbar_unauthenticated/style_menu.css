@@ -1,0 +1,111 @@
+/* ********************* HERMANN ***************** */
+#triple_bar_menu_check,
+.triple_bar_menu {
+    display: none;
+}
+
+.savedFaviconsNavLink {
+    white-space: nowrap;
+}
+.userInitial {
+    text-transform: capitalize !important;
+    height: 42px;
+    width: 42px;
+    border-radius: 50%;
+    background-color: #251181;
+    color: #f7b05e;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* /////////////////////// RESPONSIVE 1 //////////////////////// */
+
+@media (max-width:960px) {
+    
+    nav .authentication__links .login__btn,
+    nav .authentication__links .signin__btn {
+        min-width: 100px !important;
+    }
+
+    .triple_bar_menu {
+        display: block;
+    }
+    .triple_bar_menu {
+        position: absolute;
+        right: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+        margin-left: 10px;
+        height: 2px;
+        width: 23px;
+        background: #251181;
+        z-index: 1000;
+    }
+    .triple_bar_menu:before,
+    .triple_bar_menu:after {
+        content: '';
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        background: #251181;
+        bottom: 250%;
+    }
+    .triple_bar_menu:after {
+        border: unset;
+        top: 250%;
+    }
+
+    .triple_bar_menu span {
+        position: absolute;
+        width: 100%;
+        height: 30px;
+        top: -15px;
+        left: 0;
+        background: transparent;
+        z-index: -1003;
+    }
+
+    input#triple_bar_menu_check {
+        display: none;
+    }
+    input#triple_bar_menu_check:checked ~ .links{
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 100;
+    }
+    input#triple_bar_menu_check:checked ~ .triple_bar_menu {
+    background: transparent;
+    }
+    input#triple_bar_menu_check:checked ~ .triple_bar_menu:before {
+    transform: rotate(45deg);
+    bottom: 0%;
+    }
+    input#triple_bar_menu_check:checked ~ .triple_bar_menu:after {
+    transform: rotate(-45deg);
+        top: 0%;
+    }
+
+}
+
+
+/* /////////////////////// RESPONSIVE 2 //////////////////////// */
+
+@media (max-width:650px) {
+   
+
+    input#triple_bar_menu_check:checked ~ .authentication__links {
+        display: flex !important;
+    }
+}

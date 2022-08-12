@@ -1,0 +1,83 @@
+{% extends 'master/master_auth.html' %}
+{% load static %}
+{% block title %}Sign In{% endblock %}
+{% block css_styles %}
+<link rel="stylesheet" href="{% static 'css/signin/signin.css' %}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" />
+{% endblock %}
+
+
+
+{% block content %}
+<main>
+    <div class="body">
+        <div class="form">
+
+            <div class="emoji"><img src="{% static 'img/signin/emoji.svg' %}" alt=""></div>
+            <h3>Welcome!</h3>
+            <form action="" method="POST">
+                {% csrf_token %}
+                <p class="signin_sentence">Sign in to your account</p>
+                <label for="username">Username</label>
+                <br>
+                <!-- <input type="text" name="username" placeholder="Your username..."/> -->
+                {{form.username}}
+                <div class="password-control">
+
+                    <label for="password">Password</label>
+                    {{form.password}}
+                    <!-- <input type="password" placeholder="Your password..." name="password" id="myInput"/> -->
+                    <span class="eye" onclick="myFunction()">
+                        <i id="hide1" class="fa-solid fa-eye"></i>
+                        <i id="hide2" class="fa-solid fa-eye-slash"></i>
+                    </span>
+
+                </div>
+                <div class="check">
+                    <span class="rem"> 
+                        <input type="checkbox" name="remember" id="remember"/> 
+                        <span class="checkmark"></span>
+                        <label for="remember">Remember me</label>
+                    </span>
+                    <span>
+                        <a href="/forgotten_password">Forgot Password?</a>
+                    </span>
+                </div>
+            
+            <button type="submit" id="signin">LOG IN</button>
+            
+            <button id="google"><p>Or log in with:</p><img src="{% static 'img/signin/Google.svg' %}" alt=""></button>
+
+            </form>
+            <p class="signup">Don't have an account? <a href="/sign-up">Sign up to get started!</a></p>
+
+
+        </div>
+    </div>
+</main>
+{% endblock %}
+
+
+
+{% block js_scripts %}
+<script>
+    var x = document.getElementById("password").setAttribute('type', "password");
+    function myFunction(){
+        var x = document.getElementById("password");
+        var y = document.getElementById("hide1");
+        var z = document.getElementById("hide2");
+
+        if(x.type ==='password'){
+            x.type = "text";
+            y.style.display = "block";
+            z.style.display = "none";
+        }
+
+        else{
+            x.type = "password";
+            y.style.display = "none";
+            z.style.display = "block";
+        }
+    }
+</script>
+{% endblock %}

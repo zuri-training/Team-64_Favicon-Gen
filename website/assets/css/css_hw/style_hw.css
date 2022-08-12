@@ -1,0 +1,224 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Poppins:wght@400;500;600;700&display=swap');
+
+
+/* @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,500;1,600;1,700&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Mouse+Memoirs&family=Poppins:wght@400;500;600;700&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Square+Peg&family=Uchen&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,500;1,600;1,700&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Lobster&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Mouse+Memoirs&family=Pacifico&family=Poppins:wght@400;500;600;700&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Square+Peg&family=Uchen&display=swap');
+
+/* 
+font-family: 'Dancing Script', cursive;
+font-family: 'Josefin Sans', sans-serif;
+font-family: 'Lato', sans-serif;
+font-family: 'Lobster', cursive;
+font-family: 'Montserrat', sans-serif;
+font-family: 'Mouse Memoirs', sans-serif;
+font-family: 'Pacifico', cursive;
+font-family: 'Poppins', sans-serif;
+font-family: 'Raleway', sans-serif;
+font-family: 'Roboto Mono', monospace;
+font-family: 'Square Peg', cursive;
+font-family: 'Uchen', serif;
+
+*/
+body, * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Lato;
+    scroll-behavior: smooth;
+}
+.displayNone {
+    display: none !important;
+}
+a {
+    text-decoration: none !important;
+}
+ul, ol {
+    list-style: none !important;
+}
+/* ******************************* */
+.mb_30_hw {
+    margin-bottom: 30px;
+}
+/* **************************************** */
+.fs20_bold{
+    font-size: 20px;
+    font-weight: bold;
+}
+.fs18_bold{
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* ******************************* */
+.gen_page_title1_hw {
+    font-size: 40px;
+    color: #251181;
+}
+.gen_page_section_title_hw {
+    font-size: 24px;
+    color: #251181;
+}
+.plain_text_hw {
+    font-size: 20px;
+    line-height: 28px;
+    color: black;
+}
+.text_align_center {
+    text-align: center;
+}
+.text_align_right {
+    text-align: right;
+}
+
+/* ******************************* */
+.posa_center_top_hw {
+    position: absolute;
+    bottom: 102%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+
+/* ******************************* */
+.highlight_yellow_hw {
+    color: #f7b05e;
+}
+.zuricongen_blue_color {
+    color: #251181
+}
+.zuricongen_yellow_color {
+    color: #f7b05e
+}
+
+/* ul list */
+/* ******************************* */
+.gen_ul_list_hw {
+    position: relative;
+    list-style: none;
+    padding-left: 25px;
+    margin-top: 10px;
+}
+.gen_ul_list_hw li {
+    position: relative;
+    display: block;
+    color: #000;
+}
+.gen_ul_list_hw li:after {
+    content: '';
+    position: absolute;
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+    left: -25px;
+    top: 38%;
+    /* transform: translateY(-50%); */
+    background: #000;
+}
+
+
+/* **************************************** */
+
+.btn_hw {
+    outline: none;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    padding: 10px 30px;
+    border-radius: 5px;
+    border: 1px solid #251181;
+    min-width: 182px;
+    min-height: 55px;
+    cursor: pointer;
+}
+.btn_zuricongen_filled_hw {
+    background: #251181;
+    color: #fff;
+}
+.btn_zuricongen_filled_hw:hover {
+    color: #f7b05e;
+}
+.btn_zuricongen_outlined_hw {
+    background: transparent;
+    color: #251181;
+}
+.btn_zuricongen_outlined_hw:hover {
+    background: #25118120;
+}
+
+.btn_text_img_hw {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    white-space: nowrap;
+}
+.btn_text_img_hw :first-child {
+    margin-right: 10px;
+}
+
+/* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+.loader_hw{
+    position: relative;
+    border: 3px solid #25118120;
+    border-radius: 50%;
+    border-top: 3px solid #251181;
+    width: 55px;
+    height: 55px;
+    -webkit-animation: spin 2s linear infinite; /* Safari */
+    animation: spin 2s linear infinite;
+}
+.loader_hw {
+    margin-top: 30px;
+}
+.loader_conv_hw {
+    position: relative;
+    border: 3px solid #25118120;
+    border-radius: 50%;
+    border-top: 3px solid #251181;
+    width: 55px;
+    height: 55px;
+    -webkit-animation: spin 2s linear infinite; /* Safari */
+    animation: spin 2s linear infinite;
+}
+  
+  
+  @-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
+  }  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  /* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+
+
+/* /////////////////////// RESPONSIVE 2 //////////////////////// */
+
+@media (max-width:650px) {
+    .gen_page_title1_hw {
+        font-size: 40px;
+    }
+    .gen_page_section_title_hw {
+        font-size: 18px;
+    }
+    .plain_text_hw {
+        font-size: 16px;
+        color: black;
+    }
+
+    .btn_hw {
+        font-style: 14px;
+        margin-bottom: 15px;
+    }
+}
+
+
+
+
+
+
+
+
+

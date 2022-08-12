@@ -1,0 +1,13 @@
+<link rel='icon' href='ZuriconGen_Favicon_Generation.svg'>
+<link rel='icon' sizes='16x16' href='ZuriconGen_Favicon_Generation-16x16.png'>
+<link rel='icon' sizes='32x32' href='ZuriconGen_Favicon_Generation-32x32.png'>
+<link rel='icon' sizes='96x96' href='ZuriconGen_Favicon_Generation-96x96.png'>
+<link rel='icon' sizes='180x180' href='ZuriconGen_Favicon_Generation-180x180.png'>
+<link rel='icon' sizes='16x16' href='ZuriconGen_Favicon_Generation-16x16.jpg'>
+<link rel='icon' sizes='32x32' href='ZuriconGen_Favicon_Generation-32x32.jpg'>
+<link rel='icon' sizes='96x96' href='ZuriconGen_Favicon_Generation-96x96.jpg'>
+<link rel='icon' sizes='180x180' href='ZuriconGen_Favicon_Generation-180x180.jpg'>
+<link rel='icon' sizes='16x16' href='ZuriconGen_Favicon_Generation-16x16.ico'>
+<link rel='icon' sizes='32x32' href='ZuriconGen_Favicon_Generation-32x32.ico'>
+<link rel='icon' sizes='96x96' href='ZuriconGen_Favicon_Generation-96x96.ico'>
+<link rel='icon' sizes='180x180' href='ZuriconGen_Favicon_Generation-180x180.ico'>

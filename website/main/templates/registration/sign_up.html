@@ -1,0 +1,27 @@
+{% extends 'main/base.html' %}
+
+{% block title %}Login{% endblock %}
+
+{% block content %}
+
+<!-- BOOTSTRAP FORM -->
+
+<div class="container d-flex flex-column justify-content-center mt-5" style="width: 100%;">
+    <div class="col mt-5">
+        <form action="" method="post" class="justify-content-center">
+            {% csrf_token %}
+            <table>
+                {{form.as_table}}
+            </table>
+            <p>Have an account ? Login <a href="/sign-in">Here</a></p>
+            <div class="" style="width: 10%;">
+                <input type="submit" class="btn btn-primary btn-lg" value="Register" style="margin: 15px;">                
+            </div>    
+        </form> 
+
+    </div>
+</div>
+
+<!-- END BOOTSTRAP FORM -->
+
+{% endblock %}
