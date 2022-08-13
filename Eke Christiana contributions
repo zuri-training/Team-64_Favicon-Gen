@@ -7,7 +7,12 @@ My team agreed on using python, django to be presice. so after the research, I c
 this is the github issue link for this task: https://github.com/zuri-training/Team-64_Favicon-Gen/issues/8
 
 # Implementation of Forgotten password page
-this involved creating the forgotten password page, for the user, so that he/she can be able to recover his/her password through a recovery link, sent to the user's email.
+This involved creating the forgotten password page, for the user, so that he/she can be able to recover his/her password through a recovery link, sent to the user's email.
 I effected the media querry for desktop, tablet and mobile.
 this was created with html, css and javascript.
 this is the github issue link: https://github.com/zuri-training/Team-64_Favicon-Gen/issues/59
+
+# Implementation of user authentication for forgotten Password
+This involves giving the user the access(ability) to log back into our web app, if they forget their password. They do this by asking for a recovery email by inputting the email they registered with. Once the email is sent, a password reset link will be found there. Which will then be used following the instructions to get a new password and the user is in.
+This was built with django authentication framework. 
+Below is the GitHub issue link:
