@@ -6,11 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>ZuriconGen | {% block title %}My Site{% endblock %}</title>    
     {% load static %}
-    <link rel='icon' sizes='120x120' href="{% static '../img/ZuriconGen0.png' %}">
+    <link rel='icon' sizes='120x120' href="{% static 'img/ZuriconGen0.png' %}">
     
-    <link rel="stylesheet" href="{% static '../css/css_hw/style_hw.css' %}">  
-    <link rel="stylesheet" href="{% static '../css/signin/navbar.css' %}">      
-    <link rel="stylesheet" href="{% static '../css/css_hw/style_footer.css' %}"> 
+    <link rel="stylesheet" href="{% static 'css/css_hw/style_hw.css' %}">  
+    <link rel="stylesheet" href="{% static 'css/signin/navbar.css' %}">      
+    <link rel="stylesheet" href="{% static 'css/css_hw/style_footer.css' %}"> 
     {% block css_styles %}{% endblock %}
 </head>
 <body>
@@ -21,13 +21,13 @@
                     <div class="logo">
                         <a href="/home">
                             <img
-                            src="{% static '../img/navbar_unauthenticated/Group 100.png' %}"
+                            src="{% static 'img/navbar_unauthenticated/Group 100.png' %}"
                             class="desktop-logo"
                             alt="logo"
                             />
                         </a>
                         <img
-                            src="{% static '../img/navbar_unauthenticated/Group 101.png' %}"
+                            src="{% static 'img/navbar_unauthenticated/Group 101.png' %}"
                             class="mobile-logo"
                             alt="logo"
                         />
@@ -54,7 +54,7 @@
 
 
 
-    <script src="{% static '../js/jquery-2.2.4.min.js' %}"></script>
+    <script src="{% static 'js/jquery-2.2.4.min.js' %}"></script>
 
     {% block js_scripts %}
     {% endblock %}
