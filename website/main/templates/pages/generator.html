@@ -3,12 +3,12 @@
 {% load static %}
 {% block title %}Generator{% endblock %}
 {% block css_styles %}
-<link rel="stylesheet" href="{% static '../css/css_hw/style_header.css' %}">   
-<link rel="stylesheet" href="{% static '../css/css_hw/style_section01.css' %}">
-<link rel="stylesheet" href="{% static '../css/css_hw/style_section_generator.css' %}">
-<link rel="stylesheet" href="{% static '../css/css_hw/style_section_install.css' %}">
-<link rel="stylesheet" href="{% static '../css/css_hw/style_hw.css' %}">
-<link rel="stylesheet" type="text/css" href="{% static '../css/css_hw/coloris.min.css' %}">
+<link rel="stylesheet" href="{% static 'css/css_hw/style_header.css' %}">   
+<link rel="stylesheet" href="{% static 'css/css_hw/style_section01.css' %}">
+<link rel="stylesheet" href="{% static 'css/css_hw/style_section_generator.css' %}">
+<link rel="stylesheet" href="{% static 'css/css_hw/style_section_install.css' %}">
+<link rel="stylesheet" href="{% static 'css/css_hw/style_hw.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'css/css_hw/coloris.min.css' %}">
 {% endblock %}
 
 {% block content %}
@@ -21,7 +21,7 @@
             You can style and generate your <span class="highlight_yellow_hw">favicons</span><br/> from only your texts
         </p>
         <div class="header_img_container_hw">
-            <img src="{% static '../img/gen_header_img.svg' %}" alt="Generator Header Image">
+            <img src="{% static 'img/gen_header_img.svg' %}" alt="Generator Header Image">
         </div>
     </header>
     
@@ -40,10 +40,10 @@
             <span class="zuricongen_blue_color">Example :</span>
             <div class="gen_examples_boxes_container_hw">
                 <div class="gen_examples_box_hw">
-                    <img src="{% static '../img/example/ZuriconGen_Favicon_Generation_Z.svg' %}" alt="">
+                    <img src="{% static 'img/example/ZuriconGen_Favicon_Generation_Z.svg' %}" alt="">
                 </div>
                 <div class="gen_examples_box_hw">
-                    <!-- <img src="{% static '../img/example/ZuriconGen_Favicon_Generation_H.svg' %}" alt=""> -->
+                    <!-- <img src="{% static 'img/example/ZuriconGen_Favicon_Generation_H.svg' %}" alt=""> -->
                 </div>
                 <div class="gen_examples_box_hw"></div>
             </div>
@@ -151,7 +151,7 @@
                     </a>
                     <a href="#" id="save_generation_btn" class="btn_hw btn_zuricongen_outlined_hw btn_text_img_hw">
                         <span>Save to drafts</span>
-                        <img src="{% static '../img/chevron_right.svg' %}" width="12px" alt="">
+                        <img src="{% static 'img/chevron_right.svg' %}" width="12px" alt="">
                     </a>
                     {% else %}
                     <a href="/sign-in" id="" class="btn_hw btn_zuricongen_filled_hw">
@@ -159,7 +159,7 @@
                     </a>
                     <a href="/sign-in" id="" class="btn_hw btn_zuricongen_outlined_hw btn_text_img_hw">
                         <span>Save to drafts</span>
-                        <img src="{% static '../img/chevron_right.svg' %}" width="12px" alt="">
+                        <img src="{% static 'img/chevron_right.svg' %}" width="12px" alt="">
                     </a>
                     {% endif %}
                 </form>
@@ -208,11 +208,11 @@
 
 {% block js_scripts %}
 <!-- SCRIPTS START -->
-<script src="{% static '../js/jquery-2.2.4.min.js' %}"></script>
-<script type="text/javascript" src="{% static '../js/js_hw/range_slider.js' %}"></script>
-<script type="text/javascript" src="{% static '../js/js_hw/generator_hw.js' %}"></script>
+<script src="{% static 'js/jquery-2.2.4.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/js_hw/range_slider.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/js_hw/generator_hw.js' %}"></script>
  
-<script type="text/javascript" src="{% static '../js/js_hw/coloris.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/js_hw/coloris.min.js' %}"></script>
 <script type="text/javascript">
 /** Default configuration **/
 
