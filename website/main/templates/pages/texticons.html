@@ -3,9 +3,9 @@
 {% load static %}
 {% block title %}Texticons{% endblock %}
 {% block css_styles %}
-<link rel="stylesheet" href="{% static 'css/texticons/Texticons.css' %}"/>
-<link rel="stylesheet" href="{% static 'css/css_hw/style_section_install.css' %}">
-<link rel="stylesheet" href="{% static 'css/css_hw/style_hw.css' %}">
+<link rel="stylesheet" href="{% static '../css/texticons/Texticons.css' %}"/>
+<link rel="stylesheet" href="{% static '../css/css_hw/style_section_install.css' %}">
+<link rel="stylesheet" href="{% static '../css/css_hw/style_hw.css' %}">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/brands.min.css"/>
 {% endblock %}
 
@@ -21,7 +21,7 @@
           <span>texticons</span>
         </p>
         <div class="Texticons-header_image">
-          <img src="{% static 'img/landing/section3.svg' %}" alt="Texticons header image" />
+          <img src="{% static '../img/landing/section3.svg' %}" alt="Texticons header image" />
         </div>
       </div>
       
@@ -70,5 +70,5 @@
 
 
 {% block js_scripts %}
-<script src="{% static 'js/js_hw/texticons_hw.js' %}"></script>
+<script src="{% static '../js/js_hw/texticons_hw.js' %}"></script>
 {% endblock %}
