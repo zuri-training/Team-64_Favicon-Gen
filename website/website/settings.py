@@ -136,7 +136,7 @@ STATIC_URL = 'static/'
 STATIC_ROOT = os.path.join(BASE_DIR, '/static/')
 STATICFILES_DIRS= [
     # START:for_download_tuto
-    os.path.join(BASE_DIR,'static'),
+    # os.path.join(BASE_DIR,'static'),
     # END:for_download_tuto
     os.path.join(BASE_DIR,'assets')]
 
