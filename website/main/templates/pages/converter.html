@@ -3,10 +3,10 @@
 {% load static %}
 {% block title %}Converter{% endblock %}
 {% block css_styles %}
-<link rel="stylesheet" href="{% static 'css/converter/style.css' %}">
-<link rel="stylesheet" href="{% static 'css/converter/dragndrop.css' %}">
-<link rel="stylesheet" href="{% static 'css/css_hw/style_section_install.css' %}">
-<link rel="stylesheet" href="{% static 'css/css_hw/style_hw.css' %}">
+<link rel="stylesheet" href="{% static '../css/converter/style.css' %}">
+<link rel="stylesheet" href="{% static '../css/converter/dragndrop.css' %}">
+<link rel="stylesheet" href="{% static '../css/css_hw/style_section_install.css' %}">
+<link rel="stylesheet" href="{% static '../css/css_hw/style_hw.css' %}">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 {% endblock %}
 
@@ -32,7 +32,7 @@
 
                 <div class="droparea">
                     <div class="image">
-                        <img src="{% static 'img/converter/Icon24x24.png' %}" alt="">
+                        <img src="{% static '../img/converter/Icon24x24.png' %}" alt="">
                     </div>
                     <div class="drag">
                         <p>Drag and drop here</p>
@@ -138,7 +138,7 @@
 
 
 {% block js_scripts %}
-<script src="{% static 'js/converter/script.js' %}" defer></script>
-<script src="{% static 'js/converter/dragndrop.js' %}" defer></script>
-<script type="text/javascript" src="{% static 'js/js_hw/converter_hw.js' %}"></script>
+<script src="{% static '../js/converter/script.js' %}" defer></script>
+<script src="{% static '../js/converter/dragndrop.js' %}" defer></script>
+<script type="text/javascript" src="{% static '../js/js_hw/converter_hw.js' %}"></script>
 {% endblock %}
