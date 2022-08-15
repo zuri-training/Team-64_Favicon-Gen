@@ -71,3 +71,23 @@ Description:
 
 After successfull review and merging of our codes, i linked all the available frontend implementations together, ensuring that each link in the whole webapp is routed to the right page and are functioning correctly
 
+TASK 7
+Task:
+
+implemented forgotten-password page
+
+Description:
+
+i implemented the frontend of the forgotten password page
+
+Task 8
+Task:
+
+implemented google authentication
+
+Description:
+
+i implemented login and signup authentication with google on our webapp, with Assistance from my teammate Hermann
+
+
+
