@@ -14,32 +14,34 @@ The main feature is the **Favicon Converter** which will allow users to upload a
 
 ### Development Team :
 
-1. Serah Onyinyechi Nwoke (SerahN) [Fullstack developer : July 2022 - till date]
-2. Great Okafor (Thelordgreat) [Fullstack developer : July 2022 - till date]
-3. (jolomi212) [Fullstack developer : July 2022 - till date]
-4. Eke Christina (Crixxee) [Fullstack developer : July 2022 - till date]
-5. Arinze Blessing (blessingarizona) [Fullstack developer : July 2022 - till date]
-6. Akpe Peace (akpe01) [Fullstack developer : July 2022 - till date]
-7. Hermann Wakam (Wakherv7) [Fullstack developer : July 2022 - till date]
-8. Adebayo Ganiu (Blaze-snr) [Fullstack developer : July 2022 - till date]
-9. Awoyemi Michael (ChrisMike10) [Fullstack developer : July 2022 - till date]
+Information given: Name, GitHub username, and period of collaboration.
+
+1. Serah Onyinyechi Nwoke (SerahN) [Fullstack developer : July 2022 - August 2022]
+2. Great Okafor (Thelordgreat) [Fullstack developer : July 2022 - August 2022]
+3. (jolomi212) [Fullstack developer : July 2022 - August 2022]
+4. Eke Christina (Crixxee) [Fullstack developer : July 2022 - August 2022]
+5. Arinze Blessing (blessingarizona) [Fullstack developer : July 2022 - August 2022]
+6. Akpe Peace (akpe01) [Fullstack developer : July 2022 - August 2022]
+7. Hermann Wakam (Wakherv7) [Fullstack developer : July 2022 - August 2022]
+8. Adebayo Ganiu (Blaze-snr) [Fullstack developer : July 2022 - August 2022]
+9. Awoyemi Michael (ChrisMike10) [Fullstack developer : July 2022 - August 2022]
 
 ### Design Team :
 
-1. Bola001 [Product Designer : July 2022 - till date]
-2. Fisayo Ogunle (Trippyog44) [Product Designer : July 2022 - till date]
-3. Olamide Alamutu (midealamutu) [Product Designer : July 2022 - till date]
-4. mamoblack [Product Designer : July 2022 - till date]
-5. softlife12 [Product Designer : July 2022 - till date]
-6. AmakaSilas [Product Designer : July 2022 - till date]
-7. vanessa27-tech [Product Designer : July 2022 - till date]
-8. Prospernias [Product Designer : July 2022 - till date]
-9. Bamidele-Aminat [Product Designer : July 2022 - till date]
-10. Designbybecca [Product Designer : July 2022 - till date]
-11. Rerealonge [Product Designer : July 2022 - till date]
-12. Kobimdi [Product Designer : July 2022 - till date]
-13. Maureen Ngozi Chukwurah (Guzi-goz) [Product Designer : July 2022 - till date]
-14. Udoka Ineh (Udokaineh) [Product Designer : July 2022 - till date]
+1. David Adebola Adetoro (Bola001) [Product Designer : July 2022 - August 2022]
+2. Fisayo Ogunle (Trippyog44) [Product Designer : July 2022 - August 2022]
+3. Olamide Alamutu (midealamutu) [Product Designer : July 2022 - August 2022]
+4. Matthew Anyebe (mamoblack) [Product Designer : July 2022 - August 2022]
+5. Temilade Mogaji (softlife12) [Product Designer : July 2022 - August 2022]
+6. Amaka Offor (AmakaSilas) [Product Designer : July 2022 - August 2022]
+7. Vanessa Anya (vanessa27-tech) [Product Designer : July 2022 - August 2022]
+8. Oke Prosper (Prospernias) [Product Designer : July 2022 - August 2022]
+9. Bamidele Aminat Olanike (Bamidele-Aminat) [Product Designer : July 2022 - August 2022]
+10. Bukunmu Sonibare (Designbybecca) [Product Designer : July 2022 - August 2022]
+11. Rere Alonge (Rerealonge) [Product Designer : July 2022 - August 2022]
+12. Odogwu Dominion (Kobimdi) [Product Designer : July 2022 - August 2022]
+13. Maureen Ngozi Chukwurah (Guzi-goz) [Product Designer : July 2022 - August 2022]
+14. Udoka Ineh (Udokaineh) [Product Designer : July 2022 - August 2022]
 
 ### Web URL : `http://zuricongen.pythonanywhere.com/`
 
@@ -116,7 +118,13 @@ Hello future dev, comments are made throughout the codes for easy understanding.
 
 ## References
 
-Design elements like participant note, pain points, empathy map, user flow, information architecture and idea prioritization can be found here: `https://www.figma.com/file/2P8rcupisqFHMPfaX5TeDl/Team-64_Favicon_gen?node-id=95%3A713`
+The (User Experience Design) Research documentation can be found here: `https://docs.google.com/document/d/1lJeFEHFBVzyME7ht9RB-mifZzaeGIxM-HAnsudWQUds/edit?usp=sharing`
+
+Design research elements like participant note, pain points, empathy map, user flow, information architecture and idea prioritization can be found here: `https://www.figma.com/file/2P8rcupisqFHMPfaX5TeDl/Team-64_Favicon_gen?node-id=95%3A713`
 
 The wireframes and designs for this project can be found on the team's figma board here:
 `https://www.figma.com/file/Q6kNdChpgQzLfjIKwSl2Ok/Team-64_Favicon_gen?node-id=50%3A2`
+
+The database schema for this project can be found here: `https://drive.google.com/file/d/1HiMyBAbYz_H4sFE8chP49i1qXhE_sC2g/view?usp=sharing`
+
+The workflow documentation for this project can be found here: `https://drive.google.com/file/d/1ewR4YWZk7R6iItfuXfh_NQAaed1TBK31/view?usp=sharing`
