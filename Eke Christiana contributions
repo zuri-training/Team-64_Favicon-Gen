@@ -16,5 +16,5 @@ this is the github issue link: https://github.com/zuri-training/Team-64_Favicon-
 This involves giving the user the access(ability) to log back into our web app, if they forget their password. They do this by asking for a recovery email by inputting the email they registered with. Once the email is sent, a password reset link will be found there. Which will then be used following the instructions to get a new password and the user is in.
 This was built with django authentication framework. 
 Below is the GitHub issue link:
-https://github.com/zuri-training/Team-64_Favicon-Gen/pull/136#
+https://github.com/zuri-training/Team-64_Favicon-Gen/pull/140#
 https://github.com/zuri-training/Team-64_Favicon-Gen/issues/114
