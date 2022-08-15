@@ -1,145 +1,122 @@
-# Team 64_Favicon Gen
-## ABOUT THE PROJECT
+# **Welcome to ZuriconGen**
 
-This project is being developed by Team 64 and is aimed at building a web application for favicon generation.
+## Project Overview
 
-The main feature is the Favicon Converter which will allow users to upload an image and have it converted to a favicon. 
+This project is being developed by Team 64 of Zuri Training Organization and is aimed at building a web application for favicon generation.
 
-## TECHNOLOGIES EMPLOYED IN THIS PROJECT
-1) Client-Side Scripting / Coding
-      
-      HTML (HyperText Markup Language)
+The main feature is the **Favicon Converter** which will allow users to upload an image and have it converted to a favicon. The web app also has two other favicon generating features: **Favicon Generator** and **Texticons**.
 
-      CSS (Cascading Style Sheets)
-      
-      JavaScript
-2) Server-Side Scripting / Coding
+## App and team details
 
-      Python
+### App Name : ZuriconGen
 
-## COLLABORATORS' GUIDE
+### Customer : Zuri Training Organization
 
-Collaborators on this project are to use the Shared Repository Model. This model allows collaborators push access to a single shared repository but topic (feature) branches must be created when changes need to be made or a feature added.
+### Development Team :
 
-This repository contains the following branches:
-1) The main branch
+1. Serah Onyinyechi Nwoke (SerahN) [Fullstack developer : July 2022 - till date]
+2. Great Okafor (Thelordgreat) [Fullstack developer : July 2022 - till date]
+3. (jolomi212) [Fullstack developer : July 2022 - till date]
+4. Eke Christina (Crixxee) [Fullstack developer : July 2022 - till date]
+5. Arinze Blessing (blessingarizona) [Fullstack developer : July 2022 - till date]
+6. Akpe Peace (akpe01) [Fullstack developer : July 2022 - till date]
+7. Hermann Wakam (Wakherv7) [Fullstack developer : July 2022 - till date]
+8. Adebayo Ganiu (Blaze-snr) [Fullstack developer : July 2022 - till date]
+9. Awoyemi Michael (ChrisMike10) [Fullstack developer : July 2022 - till date]
 
-(WARNING: Do not push to the main branch! Only the Master Merger(s) assigned by the team can do this after pull request reviews on the Dev branches.)
+### Design Team :
 
-2) Dev branches
+1. Bola001 [Product Designer : July 2022 - till date]
+2. Fisayo Ogunle (Trippyog44) [Product Designer : July 2022 - till date]
+3. Olamide Alamutu (midealamutu) [Product Designer : July 2022 - till date]
+4. mamoblack [Product Designer : July 2022 - till date]
+5. softlife12 [Product Designer : July 2022 - till date]
+6. AmakaSilas [Product Designer : July 2022 - till date]
+7. vanessa27-tech [Product Designer : July 2022 - till date]
+8. Prospernias [Product Designer : July 2022 - till date]
+9. Bamidele-Aminat [Product Designer : July 2022 - till date]
+10. Designbybecca [Product Designer : July 2022 - till date]
+11. Rerealonge [Product Designer : July 2022 - till date]
+12. Kobimdi [Product Designer : July 2022 - till date]
+13. Maureen Ngozi Chukwurah (Guzi-goz) [Product Designer : July 2022 - till date]
+14. Udoka Ineh (Udokaineh) [Product Designer : July 2022 - till date]
 
-i) frontend branch
-All subsequent frontend branches created by collaborators will be merged here by the Master merger(s).
+### Web URL : `http://zuricongen.pythonanywhere.com/`
 
-ii) Backend branch
-All subsequent backend branches created by collaborators will be merged here by the Master merger(s).
+## About this documentation file
 
-3) Topic (Feature) branches
-These branches are made by contributors for each feature, e.g., LogIn, SignUp, etc. 
+This file is designed to provide overview, setup instructions and background details of this project.
 
-### STEPS TO FOLLOW
-Follow the steps below to collaborate here properly.
+Members of the development team are assigned to ensure that this file is always up-to-date, and can be followed through conveniently.
 
-**A] Clone the repo to your local machine.**
+Note : Developers must include new dependencies in the requirements.txt file and ensure they are updated in the main branch.
 
-To do this, 
-Open your code editor and choose "Clone Git Repository", then click on "Clone from GitHub", and enter 
+## Technologies employed in this project
 
-```https://github.com/zuri-training/Team-64_Favicon-Gen.git```
+1. Client-Side Scripting / Coding
 
-to search for this repository. 
-Next, select the clone directory and "open the cloned repository".
+   HTML (HyperText Markup Language)
 
-**B] Create a new (feature/ topic) branch**
+   CSS (Cascading Style Sheets)
 
-**Firstly**, run the –set-upstream switch. This informs your new branch of the remote repo to pull changes from to update your local repo.
+   JavaScript
 
-To do this, run this command in your terminal:
+2. Server-Side Scripting / Coding
 
-```git remote add upstream https://github.com/zuri-training/Team-64_Favicon-Gen```
+   Django with Python
 
-**Secondly**, switch to the appropriate dev branch i.e., Backend or frontend.
+## Set-Up Instructions
 
-To do this, run either of these commands in your terminal:
+As mentioned earlier , this is a Django project.
 
-```git checkout frontend```
+Please, take note of the operating system you are using as the steps may vary.
 
-OR
+This set-up instructions aims at helping a developer get the code from the git repository to run on their system, for possibly further development.
 
-```git checkout Backend```
+### Fetch git code to local machine
 
-**Then**, create a feature branch.
+Follow these steps to fetch the git code to your system:
 
-To do this, run this command in your terminal:
+Clone this project's repository.
+To do this, open your code editor and choose "Clone Git Repository", then click on "Clone from GitHub", and enter `https://github.com/zuri-training/Team-64_Favicon-Gen.git`
 
-```git checkout -b branchname```
+As at the time of writing this set-up instructions, the branch used for development is : main
 
-Good!
+### Activate a virtual environment and install the project dependencies
 
-**C] Now, activate your virtual environment and install the project dependencies (run: pip install -r requirements.txt)**
+The project dependencies are contained in the requirements.txt file in the main branch.
 
-**D] Work in your feature branch:**
+Run these commands in your command line:
 
-i) Add your codes to your feature branch,
+    pip
+    pip install virtualenv
+    virtualenv envname
+    envname\scripts\activate
+    pip install -r requirements.txt
 
-ii) stage the changes, and
+### Move into the project directory
 
-iii) commit the changes with a clear commit message.
+The project directory is titled 'website', so run this in your command line:
 
-**E] Update from your upstream branch.**
+    cd website
 
-Right before you push your codes to your feature branch, check for any updates to the upstream branch. 
+The collaborators' worked following this guide: `https://github.com/zuri-training/Team-64_Favicon-Gen/blob/main/Collaborators'-Guide.md`
 
-To do this, run this command in your terminal:
+## Build information
 
-```git pull upstream frontend```
+This project runs on Python 3.8.13 as found in the runtime.txt file here: `https://github.com/zuri-training/Team-64_Favicon-Gen/blob/main/runtime.txt`
 
-OR
+## Deployment
 
-```git pull upstream Backend```
+This web application, ZuriconGen, is deployed on the pythonanywhere.com server. The login credentials can be obtained from the team lead, SerahN. She can be contacted via seraho.nwoke@gmail.com
 
-(Check for any ensuing conflicts, resolve them, and commit the changes before you push)
+## Note for future maintainers/ developers
 
-**F] Publish/ Push your branch.**
+Hello future dev, comments are made throughout the codes for easy understanding. Study these well and follow the set-up instructions.
 
-Publish your feature branch and the committed changes.
+## References
 
-To do this, run this command in your terminal:
+Design elements like participant note, pain points, empathy map, user flow, information architecture and idea prioritization can be found here: `https://www.figma.com/file/2P8rcupisqFHMPfaX5TeDl/Team-64_Favicon_gen?node-id=95%3A713`
 
-```git push origin branchname```
-
-**G] Make a Pull Request.**
-
-When you have made all necessary commits:
-Move over to the GitHub repo, and create a Pull Request to the appropriate dev branch i.e., frontend or Backend. Include the changes you made or feature you built in your topic branch, and tag the assigned Master Merger(s) to alert them for a review.
-
-## CONTRIBUTORS TO THIS PROJECT
-(GitHub Usernames)
-
-### Developers
-1) SerahN (Master Merger)
-2) Thelordgreat (Master Merger)
-3) jolomi212
-4) Crixxee
-5) blessingarizona
-6) akpe01
-7) Wakherv7
-8) Blaze-snr
-9) ChrisMike10
-
-### Product Designers 
-(These collaborators cannot push codes to the repo)
-1) Bola001
-2) Trippyog44
-3) midealamutu
-4) mamoblack
-5) softlife12
-6) AmakaSilas
-7) vanessa27-tech
-8) Prospernias
-9) Bamidele-Aminat
-10) Designbybecca
-11) Rerealonge
-12) Kobimdi
-13) Guzi-goz
-14) Udokaineh
+The wireframes and designs for this project can be found on the team's figma board here:
+`https://www.figma.com/file/Q6kNdChpgQzLfjIKwSl2Ok/Team-64_Favicon_gen?node-id=50%3A2`
