@@ -14,6 +14,11 @@
   font-family: Lato;
   --blue: #251181;
 }
+#hide11,
+#hide12 {
+  display: none;
+}
+
 .nav {
   height: 6.375rem;
   width: 100%;

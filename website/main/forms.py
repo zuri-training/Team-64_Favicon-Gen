@@ -1,5 +1,5 @@
 from django import forms
-from django.contrib.auth.forms import UserCreationForm, AuthenticationForm, PasswordResetForm
+from django.contrib.auth.forms import UserCreationForm, AuthenticationForm, PasswordResetForm, SetPasswordForm
 from django.contrib.auth.models import User
 
 class SignUpForm(UserCreationForm):
@@ -68,14 +68,36 @@ class SignInForm(AuthenticationForm):
 
 class ForgottenPasswordForm(PasswordResetForm):
     def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-        self.fields["email"].widget.attrs.update({
-            'required':'',
-            'type':'email',
-            'id':'email',
-            'placeholder':'name@email.com',
-        })
+        super(ForgottenPasswordForm, self).__init__(*args, **kwargs)
 
-    class Meta:
-        model = User
-        fields = ["email"]
+    email = forms.CharField(widget=forms.TextInput(attrs={
+        'required':'',
+        'type':'email',
+        'id':'email',
+        'placeholder':'name@email.com'
+    }))
+
+
+class NewPasswordForm(SetPasswordForm):
+    def __init__(self, *args, **kwargs):
+        super(NewPasswordForm, self).__init__(*args, **kwargs)
+
+    
+    new_password1 = forms.CharField(
+        widget=forms.PasswordInput(attrs={
+            'required':'',
+            'type':'password',
+            'id':'password1',
+            'name':'password1',
+            'placeholder':'Your password...',
+    }))
+
+    new_password2 = forms.CharField(
+        strip=False,
+        widget=forms.PasswordInput(attrs={
+            'required':'',
+            'type':'password',
+            'id':'password2',
+            'name':'password2',
+            'placeholder':'Confirm your password...',
+    }))

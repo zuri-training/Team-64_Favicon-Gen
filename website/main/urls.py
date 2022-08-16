@@ -22,7 +22,7 @@ urlpatterns = [
     # Auth
     path('sign-in', views.sign_in, name="sign_in"),
     path('sign-up', views.sign_up, name="sign_up"),
-    path('forgotten_password', views.forgotten_password, name="forgotten_password"),
+    # path('forgotten_password', views.forgotten_password, name="forgotten_password"),
    
     # Status msg
     re_path(r'^success/(?P<filelink>[-\w]*)/$', views.success, name='success'),

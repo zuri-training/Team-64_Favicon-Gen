@@ -35,6 +35,10 @@ a {
 ul, ol {
     list-style: none !important;
 }
+.height_fit_hw {
+    min-height: unset !important;
+    height: fit-content !important;
+}
 /* ******************************* */
 .mb_30_hw {
     margin-bottom: 30px;
@@ -50,6 +54,11 @@ ul, ol {
 }
 
 /* ******************************* */
+.bold_page_title_hw {
+    font-size: 40px;
+    font-weight: bold;
+    color: #251181;
+}
 .gen_page_title1_hw {
     font-size: 40px;
     color: #251181;

@@ -20,8 +20,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-ah%4r(d5)uifnh7latewogunqj_)tb_tk!a9@(rdbfk8fm=jhw'
-
+# SECRET_KEY = 'django-insecure-ah%4r(d5)uifnh7latewogunqj_)tb_tk!a9@(rdbfk8fm=jhw'
+SECRET_KEY = 'uaih&0)#*4d)m9#^=tq$6+h61mn394l1k4=$ram1e5dkpqzk!^'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
@@ -136,17 +136,14 @@ USE_TZ = True
 STATIC_URL = 'static/'
 STATIC_ROOT = os.path.join(BASE_DIR, '/assets/')
 STATICFILES_DIRS= [
-    # os.path.join(BASE_DIR,'static'),
     os.path.join(BASE_DIR,'assets')]
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
 
 
-# START:for_download_tuto
 MEDIA_URL = "/media/"
 MEDIA_ROOT = os.path.join(BASE_DIR,'medias')
 # MEDIA_ROOT = os.path.join(BASE_DIR,'media_cdn')
-# END:for_download_tuto
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
@@ -159,9 +156,10 @@ LOGOUT_REDIRECT_URL = '/sign-in'
 
 
 
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.sendgrid.net'
+EMAIL_HOST_USER = 'apikey' #keep this as it is
+EMAIL_HOST_PASSWORD = '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' 
 EMAIL_PORT = 587
-EMAIL_HOST_USER = 'your gmail account'
-EMAIL_HOST_PASSWORD = 'your account’s password'
+EMAIL_USE_TLS = True
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+DEFAULT_FROM_EMAIL = 'zuricongen@gmail.com' 

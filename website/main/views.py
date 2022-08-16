@@ -154,7 +154,7 @@ def faviconGeneration(request, document_root):
             # Write file : remove line 8            
             with open(copyPath, 'w') as fp:
                 for number, line in enumerate(lines):
-                    if number not in [8]:
+                    if number not in [4]:
                         fp.write(line)
                 
             drawing = svg2rlg(copyPath)
@@ -410,9 +410,9 @@ def sign_up(request):
     form = SignUpForm()
     return render(request, 'auth/signup.html', {"form":form})
 
-def forgotten_password(request):
-    form = ForgottenPasswordForm()
-    return render(request, 'auth/forgotten_password_form.html', {"form":form})
+# def forgotten_password(request):
+#     form = ForgottenPasswordForm()
+#     return render(request, 'auth/forgotten_password_form.html', {"form":form})
 
 # END AUTHENTICATION
 
